@@ -16,22 +16,15 @@
  *  
  */
 void setup() {
-  
-  mqtt_and_wifi_setup();
+      
+    mqtt_and_wifi_setup();
 
 }
 
 void loop() {
   
-  mqttClient.poll(); //keep mqtt connection alive
-  
-  unsigned long currentMillis = millis();
-  
-  if (currentMillis - previousMillis >= interval) { //delay function
-    // save the last time a message was sent
-    previousMillis = currentMillis;
-    
+    mqttClient.poll(); //keep mqtt connection alive
+      
     SendMessageToBroker( getTemperature(true) ); //sending digital temperature sensor value
-    Serial.println(getTemperature(false));       //testing analog temperature sensor
-  }
+    delay(1000);
 }
