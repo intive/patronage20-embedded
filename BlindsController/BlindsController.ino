@@ -1,5 +1,6 @@
 /* BlindsController by Kuba Bartoszewicz */
 
+
 /* defining pins for Stepper controller */
 #define IN1 16 
 #define IN2 5 
@@ -12,13 +13,12 @@
 #define SW1 14
 #define SW2 12
 
-
-
 /* initialize basic variables */
 int _step = 0; 
 boolean dir = false; /* false = blinds go DOWN, true = blinds go UP */
 int range = 0;
 int currentVal = 0;
+int settedValue = 0;
 int i;
 
 void setup() 
@@ -40,6 +40,7 @@ void setup()
 void loop() 
 { 
     /* manually move (by switch) blinds up until fully open or stopped by user */
+
     if (digitalRead(SW1) == LOW) {
         delay(300);
         blindsUp(0);
@@ -54,9 +55,32 @@ void loop()
     }
 
     /* move blinds to specific value - outside signal (gatevay, serial port) */
+    if (Serial.available() > 1) {
+        setBlindsToValue(Serial.parseInt());
+        Serial.println(currValPrc(currentVal));
+    }
+}
 
-    /* IN PROGRESS */
-    
+
+
+
+void setBlindsToValue(float settedValue) 
+{
+    if (settedValue > 100) {
+        settedValue = 100;
+    }
+    if (settedValue < 0) {
+        settedValue = 0;
+    }
+    settedValue = (settedValue / 100) * range;
+    settedValue = (int)settedValue;
+    if (settedValue != currentVal) {
+        if (settedValue > currentVal) {
+            blindsDown(settedValue);
+        } else if (settedValue < currentVal) {
+            blindsUp(settedValue);
+        }
+    }
 }
 
 int currValPrc (float a) 
@@ -68,9 +92,10 @@ int currValPrc (float a)
 
 void blindsUp (int val) 
 {
+    int i;
     dir = true;
     
-    for (int i = currentVal; i >= val; i--) {
+    for (i = currentVal; i >= val; i--) {
         stepperR();
         currentVal = i;
         if (digitalRead(SW1) == LOW || digitalRead(SW2) == LOW) {
@@ -82,9 +107,10 @@ void blindsUp (int val)
 
 void blindsDown (int val) 
 {
+    int i;
     dir = false;
     
-    for (int i = currentVal; i <= val; i++) {
+    for (i = currentVal; i <= val; i++) {
         stepperR();
         currentVal = i;
         if (digitalRead(SW1) == LOW || digitalRead(SW2) == LOW) {
