@@ -1,2 +1,4 @@
-output
+output/*
 .vscode
+.py
+Network.h
