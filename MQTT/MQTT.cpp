@@ -42,4 +42,22 @@ void MQTT::callback(char* topic, byte* payload, unsigned int length) {
   #if DEBUG==1
   Serial.print(payload_string);
   #endif
+  if(returnFunct!=nullptr)
+    returnFunct(payload_string);
+}
+
+void MQTT::loop(){
+  if(WiFi.isConnected())
+    if (!client.connected())
+      reconnect();
+  
+  client.loop();
+}
+
+MQTT::MQTT(){
+  client.setClient(wifiClient);
+  client.setServer(broker, port);
+
+  std::function<void(char*, uint8_t*, unsigned int)> WhereCatsDoMEWMEW = std::bind(&MQTT::callback, this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3);
+  client.setCallback(WhereCatsDoMEWMEW);         
 }

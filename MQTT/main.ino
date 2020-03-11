@@ -17,7 +17,10 @@ const char pass[] = "87654321";
 // 3) Change broker value to a server with a known SSL/TLS root certificate 
 //    flashed in the WiFi module.
 MQTT mqtt;
-
+void printLast(String s){
+  Serial.println();
+  Serial.println(s[1]);
+}
 void setup() {
   //Initialize serial and wait for port to open:
   Serial.begin(115200);
@@ -36,6 +39,9 @@ void setup() {
     Serial.print(".");
     delay(1000);
   }
+  mqtt.setReturnFunct(printLast);
+  mqtt.loop();
+  mqtt.send("4321");
 }
 
 void loop() {
