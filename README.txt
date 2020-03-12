@@ -11,3 +11,6 @@ Change digitalPin to pin number on your board:
 - In default on ESP8266 pin D8's number is 15 so it is set.
 
 Change topic onto whatever topic you'd like to publish on.
+
+To listen at chanel you'd like to: 
+Change first argument of client.subscribe("Embedded/#") -> to "Topic/#", where # means listening to all channels at this topic.
