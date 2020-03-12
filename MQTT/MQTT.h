@@ -7,7 +7,14 @@
 
 #define DEBUG 1
 
-const char broker[] = "broker.hivemq.com";
+// Public broker
+// const char broker[] = "broker.hivemq.com";
+// int        port     = 1883;
+// const char topic[]  = "intive/embedded";
+// const char outTopic[] = "intive/embedded_o";
+
+// Our broker
+const char broker[] = "pszczodrowski.pl";
 int        port     = 1883;
 const char topic[]  = "intive/embedded";
 const char outTopic[] = "intive/embedded_o";
@@ -38,5 +45,6 @@ class MQTT{
         void send(String t, const char* s){client.publish(t.c_str(),s);};
 
 };
+
 
 #endif
