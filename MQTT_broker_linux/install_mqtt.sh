@@ -15,4 +15,3 @@ sudo ufw allow from any to any port 1883 proto tcp
 
 #publish
 # mosquitto_pub -m "1" -t "intive/embedded"
-
