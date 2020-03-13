@@ -1,68 +1,68 @@
 {
-"temperatureSensors": [
-{
-"id": 0,
-"type": "string",
-"value": 0
+    "temperatureSensors": [
+        {
+            "id": 0,
+            "type": "string",
+            "value": 0
+        }
+    ],
+    "windowSensors": [
+        {
+            "id": 0,
+            "type": "string",
+            "status": "open"
+        }
+    ],
+    "windowBlinds": [
+        {
+            "id": 0,
+            "type": "string",
+            "position": 0
+        }
+    ],
+    "RFIDSensors": [
+        {
+            "id": 0,
+            "type": "string",
+            "lastTag": {
+                "id": 0,
+                "type": "string",
+                "timestamp": 0
+            }
+        }
+    ],
+    "smokeSensors": [
+        {
+            "id": 0,
+            "type": "string",
+            "isSmokeDetected": false
+        }
+    ],
+    "HVACStatus": {
+        "type": "string",
+        "heating": false,
+        "cooling": false
+    },
+    "HVACRooms": [
+        {
+            "id": 0,
+            "type": "string",
+            "heating-temperature": 0,
+            "cooling-temperature": 0,
+            "hysteresis": 0,
+            "temperatureSensorId": 0,
+            "windowSensorIds": [
+                0
+            ]
+        }
+    ],
+    "lights": [
+        {
+            "id": 0,
+            "type": "string",
+            "hue": 0,
+            "saturation": 0,
+            "value": 0
+        }
+    ]
 }
-],
-"windowSensors": [
-{
-"id": 0,
-"type": "string",
-"status": "open"
-}
-],
-"windowBlinds": [
-{
-"id": 0,
-"type": "string",
-"position": 0
-}
-],
-"RFIDSensors": [
-{
-"id": 0,
-"type": "string",
-"lastTag": {
-"id": 0,
-"type": "string",
-"timestamp": 0
-}
-}
-],
-"smokeSensors": [
-{
-"id": 0,
-"type": "string",
-"isSmokeDetected": false
-}
-],
-"HVACStatus": {
-"type": "string",
-"heating": false,
-"cooling": false
-},
-"HVACRooms": [
-{
-"id": 0,
-"type": "string",
-"heating-temperature": 0,
-"cooling-temperature": 0,
-"hysteresis": 0,
-"temperatureSensorId": 0,
-"windowSensorIds": [
-0
-]
-}
-],
-"lights": [
-{
-"id": 0,
-"type": "string",
-"hue": 0,
-"saturation": 0,
-"value": 0
-}
-]
-},
