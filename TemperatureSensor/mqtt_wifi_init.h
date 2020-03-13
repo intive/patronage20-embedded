@@ -14,9 +14,6 @@ const char broker[] = "broker.hivemq.com";
 int        port     = 1883;
 const char topic[]  = "Embedded";
 
-const long interval = 1000;
-unsigned long previousMillis = 0;
-
 void mqtt_and_wifi_setup() 
     {
         Serial.begin(9600); //Initialize serial and wait for port to open:
