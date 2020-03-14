@@ -16,7 +16,7 @@ bool SetLED_RGB_Value(int redPIN, int greenPIN, int bluePIN, String JsonInput)
         saturation = doc["saturation"];
         value = doc["value"];
         
-        HSVtoRGB(hue, saturation/100, value/100, RGB);
+        HSVtoRGB(hue, double (saturation)/double(100), double (value)/double(100), RGB);
         
         analogWrite(redPIN,RGB[0]);        //set PWM value for red
         analogWrite(greenPIN, RGB[1]);     //set PWM value for blue
