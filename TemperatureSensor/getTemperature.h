@@ -3,7 +3,7 @@
 #include "ReadDigitalTemperature.h"
 #include "ReadAnalogTemperature.h"
 
-String getTemperature(bool digital)
+String getTemperature(bool digital, int inPin)
     {
         String JsonOutput = "";
         StaticJsonDocument<200> root;
@@ -11,10 +11,9 @@ String getTemperature(bool digital)
         root["id"] = 1;
         root["type"] = "TemperatureSensor";
         if(digital)
-            root["value"] = ReadDigitalTemperature(4);else
-            root["value"] = ReadAnalogTemperature(0);
+            root["value"] = ReadDigitalTemperature(inPin);else
+            root["value"] = ReadAnalogTemperature(inPin);
 
-        serializeJson(root, Serial);
         serializeJson(root, JsonOutput);
 
         return JsonOutput;
