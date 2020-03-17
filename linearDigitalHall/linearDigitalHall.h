@@ -20,11 +20,11 @@ String linearDigital(int pin)
     doc["type"] = "windowSensors";
     if(digitalRead(pin) == window_sensor_state::open)
     {
-        doc["value"] = "open";
+        doc["status"] = "open";
     }
     else
     {
-        doc["value"] = "closed";
+        doc["status"] = "closed";
     }
     
     serializeJsonPretty(doc, output);

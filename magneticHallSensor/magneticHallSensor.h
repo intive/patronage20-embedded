@@ -12,11 +12,11 @@ String magneticDigital(int pin)
     doc["type"] = "windowSensors";
     if(digitalRead(pin) == LOW)
     {
-        doc["value"] = "closed";
+        doc["status"] = "closed";
     }
     else
     {
-        doc["value"] = "open";
+        doc["status"] = "open";
     }
     
     serializeJsonPretty(doc, output);
