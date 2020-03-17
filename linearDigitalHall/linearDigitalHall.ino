@@ -32,6 +32,6 @@ void setup()
 void loop()
 {
   mqtt.loop();
-  mqtt.send(prepJson(digitalPin));
+  mqtt.send(linearDigital(digitalPin));
   delay(100);
 }

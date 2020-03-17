@@ -3,7 +3,7 @@
 #include <ArduinoJson.h>
 
 // Returns prepared json file filled with sensor status
-String prepJson(int pin)
+String magneticDigital(int pin)
 {
     String output = "";
     StaticJsonDocument<100> doc;
