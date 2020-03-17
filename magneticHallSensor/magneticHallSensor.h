@@ -8,7 +8,7 @@ String prepJson(int pin)
     String output = "";
     StaticJsonDocument<100> doc;
 
-    doc["id"] = 7;
+    doc["id"] = 77;
     doc["type"] = "windowSensors";
     if(digitalRead(pin) == LOW)
     {
