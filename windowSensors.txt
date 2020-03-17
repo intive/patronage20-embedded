@@ -1,4 +1,4 @@
-# Both linear and magnetic sensors contains *.h file w/ *.ino example.
+Both linear and magnetic sensors contains *.h file w/ *.ino example.
 
-## To properly configure set SSID to your network, and passwd to this network's password.
-## Also make sure to define your pin number to proper one on board.
+To properly configure set SSID to your network, and passwd to this network's password.
+Also make sure to define your pin number to proper one on board.
