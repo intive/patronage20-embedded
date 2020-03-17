@@ -1,61 +1,37 @@
-#include "EspMQTTClient.h"
-#include <ArduinoJson.h>
+// Author: Szymon Wojtach
+
+#include <Arduino.H>
+#include <ESP8266WiFi.h>
+#include "MQTT.h"
+#include "linearDigitalHall.h"
 
 #define digitalPin 15
 
-enum windowSensorsState{
-  open,
-  closed
-};
-
-EspMQTTClient client(
-  "SSID",
-  "password",
-  "brokerIP",
-  "deviceName",
-  1234
-);
-
-
-int value;
-const char *topic = "Embedded/1";
+const char ssid[] = "example_ssid";
+const char passwd[] = "example_password";
+MQTT mqtt;
 
 void setup()
 {
   Serial.begin(115200);
   pinMode(digitalPin, INPUT);
-  client.enableDebuggingMessages();
-  client.enableLastWillMessage(topic, "Device went offline");
+  while (!Serial)
+  {
+    ;
+  }
+  Serial.print("Trying to connect to: ");
+  Serial.println(ssid);
+  WiFi.begin(ssid, passwd);
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    Serial.print(".");
+    delay(1000);
+  }
 }
 
-void onConnectionEstablished()
+void loop()
 {
-  client.subscribe("Embedded/#", [](const String & message){
-    Serial.println(message);  
-  });
-
-  client.publish(topic, "Device says hello!");
-}
-
-
-void loop() 
-{
-  client.loop();
-  client.publish(topic, prepareJson(digitalRead(digitalPin)));
+  mqtt.loop();
+  mqtt.send(prepJson(digitalPin));
   delay(100);
-}
-
-String prepareJson(int digValue)
-{
-  String output = "";
-  StaticJsonDocument<100> doc;
-
-  doc["id"] = 7;
-  doc["type"] = "windowSensors";
-  if (digitalRead(digitalPin) == windowSensorsState::open)
-    doc["value"] = "open";
-  else
-    doc["value"] = "closed";
-  serializeJsonPretty(doc, output);
-  return output;
 }
