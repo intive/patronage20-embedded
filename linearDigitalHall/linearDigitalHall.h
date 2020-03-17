@@ -11,7 +11,7 @@ enum window_sensor_state
 int value;
 
 // Returns prepared json file filled with sensor status
-String prepJson(int pin)
+String linearDigital(int pin)
 {
     String output = "";
     StaticJsonDocument<100> doc;
