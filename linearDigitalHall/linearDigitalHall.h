@@ -2,7 +2,8 @@
 
 #include <ArduinoJson.h>
 
-enum window_sensor_state{
+enum window_sensor_state
+{
     open,
     closed
 };
