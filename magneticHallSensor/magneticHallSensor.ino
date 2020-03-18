@@ -15,15 +15,13 @@ void setup()
 {
   Serial.begin(115200);
   pinMode(digitalPin, INPUT);
-  while (!Serial)
-  {
+  while (!Serial) {
     ;
   }
   Serial.print("Trying to connect to: ");
   Serial.println(ssid);
   WiFi.begin(ssid, passwd);
-  while (WiFi.status() != WL_CONNECTED)
-  {
+  while (WiFi.status() != WL_CONNECTED) {
     Serial.print(".");
     delay(100);
   }

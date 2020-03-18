@@ -7,17 +7,13 @@ String magneticDigital(int pin)
 {
     String output = "";
     StaticJsonDocument<100> doc;
-
     doc["id"] = 77;
     doc["type"] = "windowSensors";
+    
     if(digitalRead(pin) == LOW)
-    {
         doc["status"] = "closed";
-    }
     else
-    {
         doc["status"] = "open";
-    }
     
     serializeJsonPretty(doc, output);
     return output;

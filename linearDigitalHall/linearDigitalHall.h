@@ -15,17 +15,13 @@ String linearDigital(int pin)
 {
     String output = "";
     StaticJsonDocument<100> doc;
-
     doc["id"] = 7;
     doc["type"] = "windowSensors";
+
     if(digitalRead(pin) == window_sensor_state::open)
-    {
         doc["status"] = "open";
-    }
     else
-    {
         doc["status"] = "closed";
-    }
     
     serializeJsonPretty(doc, output);
     return output;
