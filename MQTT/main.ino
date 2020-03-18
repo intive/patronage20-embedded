@@ -20,11 +20,14 @@ DynamicJsonDocument JSONdoc(2048);
 // 3) Change broker value to a server with a known SSL/TLS root certificate 
 //    flashed in the WiFi module.
 MQTT mqtt;
-void ledPlain(String s){
+
+/*  Sample input parser. Only for presentation.  */
+void led_plain(String s){
   if(s[0]=='0') digitalWrite(LED,HIGH);
   else if(s[0]=='1') digitalWrite(LED,LOW);
 }
-void ledJSON(String s){
+/*  Sample json parser. Only for presentation.  */
+void led_json(String s){
   deserializeJson(JSONdoc, s);
   if(JSONdoc["command"].as<String>().equals("LED"))
     if(JSONdoc["state"].as<int>() == 0)
@@ -34,10 +37,10 @@ void ledJSON(String s){
 }
 
 void setup() {
-  //Initialize serial and wait for port to open:
+  /* Initialize serial and wait for port to open: */
   Serial.begin(115200);
   while (!Serial) {
-    ; // wait for serial port to connect. Needed for native USB port only
+    ; /* wait for serial port to connect. Needed for native USB port only */
   }
   pinMode(LED, OUTPUT);
   digitalWrite(LED, HIGH);
@@ -51,8 +54,8 @@ void setup() {
     Serial.print(".");
     delay(1000);
   }
-  // mqtt.setReturnFunct(ledPlain);
-  mqtt.setReturnFunct(ledJSON);
+  // mqtt.set_return_function(led_plain);
+  mqtt.set_return_function(led_json);
   // mqtt.loop();
   // mqtt.send("4321");
 }

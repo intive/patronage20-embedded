@@ -29,14 +29,24 @@ class MQTT{
         PubSubClient client;
         callback_function returnFunct = nullptr; // variable to store function pointer type
         //TODO:Add pointer to function or handle how to get callback return
+
+        /*  Gets whole traffic from MQTT and interprets it */
         void callback(char* topic, byte* payload, unsigned int length);
+
         void reconnect();
     public:
+        /*  In constructot a library configures mqtt and setup callback function  */
         MQTT();
+
+        /*  This should be called in loop function in main device file  */
         void loop();
-        void setReturnFunct(callback_function _returnFunct){
+
+        /*  Sets a pointer on the function that callback should be returned   */
+        void set_return_function(callback_function _returnFunct){
             this->returnFunct = _returnFunct;
         }
+
+        /*   Send a message to a specific topic. It's overloaded for a lot of scenarios  */
         void send(const char* s){client.publish(outTopic, s);};
         void send(String s){client.publish(outTopic,s.c_str());};
         void send(const char* t, const char* s){client.publish(t,s);};

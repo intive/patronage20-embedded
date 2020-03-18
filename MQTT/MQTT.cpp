@@ -26,10 +26,11 @@ void MQTT::reconnect() {
   }
 }
 
+/*  Gets whole traffic from MQTT and interprets it */
 void MQTT::callback(char* topic, byte* payload, unsigned int length) {
   // DEBUG
   #if DEBUG==1
-  Serial.print("Message arrived [");
+  Serial.print("\nMessage arrived [");
   Serial.print(topic);
   Serial.print("] ");
   #endif
@@ -46,6 +47,7 @@ void MQTT::callback(char* topic, byte* payload, unsigned int length) {
     returnFunct(payload_string);
 }
 
+/*  This should be called in loop function in main device file  */
 void MQTT::loop(){
   if(WiFi.isConnected())
     if (!client.connected())
@@ -54,6 +56,7 @@ void MQTT::loop(){
   client.loop();
 }
 
+/*  In constructot a library configures mqtt and setup callback function  */
 MQTT::MQTT(){
   client.setClient(wifiClient);
   client.setServer(broker, port);
