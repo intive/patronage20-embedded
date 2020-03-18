@@ -1,17 +1,13 @@
-// Author: Szymon Wojtach
+/* Author: Szymon Wojtach */
 
 #include <ArduinoJson.h>
 
-enum window_sensor_state
-{
-    open,
-    closed
-};
+enum window_sensor_state {open, closed};
 
 int value;
 
-// Returns prepared json file filled with sensor status
-String linearDigital(int pin)
+/* Returns prepared json file filled with sensor status */
+String linear_digital(int pin)
 {
     String output = "";
     StaticJsonDocument<100> doc;

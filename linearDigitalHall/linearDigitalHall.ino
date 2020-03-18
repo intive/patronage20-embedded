@@ -1,4 +1,4 @@
-// Author: Szymon Wojtach
+/* Author: Szymon Wojtach */
 
 #include <Arduino.H>
 #include <ESP8266WiFi.h>
@@ -30,6 +30,6 @@ void setup()
 void loop()
 {
   mqtt.loop();
-  mqtt.send(linearDigital(digitalPin));
+  mqtt.send(linear_digital(digitalPin));
   delay(100);
 }
