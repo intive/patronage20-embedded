@@ -19,11 +19,11 @@ float c = 5.f / 9.f * (f - 32.f);
 ```
 Atop your .c and .h files should be a comment that summarize what your program (or that particular file) does, as in:
 ```c
-/* Says hello to the world
+/* Says hello to the world */
 ```
 Atop each of your functions (except, perhaps, main), meanwhile, should be a comment that summarizes what your function is doing, as in:
 ```c
-/* Returns the square of n  */
+/* Returns the square of n */
 int square(int n)
 {
     return n * n;
@@ -34,9 +34,11 @@ Conditions should be styled as follows:
 ```c
 if (x > 0) {
     printf("x is positive\n");
-} else if (x < 0) {
+}
+else if (x < 0) {
     printf("x is negative\n");
-} else {
+}
+else {
     printf("x is zero\n");
 }
 ```
@@ -95,9 +97,17 @@ for (i = 0; i < LIMIT; i++) {
 }
 ```
 
+`do...while` loops always with braces, like this:
+```c
+do {
+    /* Do something */
+} while (/*condition*/);
+```
+
+It's the only case when we write something after the closing bracket, so it would be obvious that `while ()` ends the loop and does not start it.
+
 ## Variables
 Do not define all of your variables at the very top of your functions but, rather, when and where you actually need them.
-Moreover, scope your variables as tightly as possible. For instance, if `i` is only needed for the sake of a loop, declare `i` within the loop itself:
 ```c
 int i;
 for (i = 0; i < LIMIT; i++) {
@@ -106,13 +116,8 @@ for (i = 0; i < LIMIT; i++) {
 ```
 Though it’s fine to use variables like `i`, `j`, and `k` for iteration, most of your variables should be more specifically named. If your variable’s name warrants two words (e.g., `is_ready`), put an underscore between them.
 Keep assignment and declaration in one line.
-If declaring multiple variables of the same type at once, declare them all in separate lines, as in:
-```c
-int variable = 2;
-int another_variable = 0;
-```
 
-## Funcions
+## Functions
 Avoid functions longer than 40 lines.
 Functions names should start with lower-case and have a `_` separator between each word.
 ```c
