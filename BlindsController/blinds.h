@@ -1,5 +1,10 @@
 /* Library that provide functions responsible for BlindsController */
 
+#ifndef BLINDS_CONTROLLER_H
+#define BLINDS_CONTROLLER_H
+
+
+
 /* Initialize basic variables */
 int stepper_pin[4];     /* keeping pins number where stepper are connected, from IN1 - IN4 */
 int switches_pin[2];    /* keeping pins number where switches are connected */
@@ -9,7 +14,7 @@ int range = 0;          /* innitial Val for max range due to blinds dimension */
 int currentVal = 0;     /* innitial val for position of blinds (stepper) */
 
 /* Fnc responsible for moving the stepper */
-void stepper_run(bool dir, int *stepper_pin, int d) 
+static void stepper_run(bool dir, int *stepper_pin, int d) 
 {    
     switch(_step){ 
         
@@ -96,7 +101,7 @@ void stepper_run(bool dir, int *stepper_pin, int d)
 }
 
 /* Convert currentVal to prc (0-100) due to range */
-int convert_to_percent(float a) 
+static int convert_to_percent(float a) 
 {
     float b = range;
     float c = (a / b) * 100;
@@ -104,7 +109,7 @@ int convert_to_percent(float a)
 }
 
 /* Fnc responsible for moving blinds up to setted val until switch 1 or 2 pushed or achieve min range - 0 */
-void blinds_move_up(int val, int *sw) 
+static void blinds_move_up(int val, int *sw) 
 {
     int i;
     bool dir = true;
@@ -120,7 +125,7 @@ void blinds_move_up(int val, int *sw)
 }
 
 /* Fnc responsible for moving blinds down until switch 1 or 2 pushed or achieve max range - 100 */
-void blinds_move_down(int val, int *sw) 
+static void blinds_move_down(int val, int *sw) 
 {
     int i;
     bool dir = false;
@@ -136,7 +141,7 @@ void blinds_move_down(int val, int *sw)
 }
 
 /* Fnc responsible for calibrating the stepper/blinds */
-int blinds_calibrate(int controlSwitch) 
+static int blinds_calibrate(int controlSwitch) 
 {
     bool dir = false; 
     int count = 0;
@@ -174,7 +179,7 @@ int blinds_calibrate(int controlSwitch)
 }
 
 /* Move blinds into setted value, value in prc 0-100  */
-void blinds_move_targetValue(float targetValue) 
+static void blinds_move_targetValue(float targetValue) 
 {
     if (targetValue > 100) {
         targetValue = 100;
@@ -194,3 +199,4 @@ void blinds_move_targetValue(float targetValue)
     }
 }
   
+#endif /* BLINDS_CONTROLLER_H */
