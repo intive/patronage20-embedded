@@ -13,7 +13,6 @@ bool detect_motion()
 
     else
         return false;
-  }
 }
 
 /* Returns json string with sensor status */
