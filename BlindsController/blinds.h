@@ -3,19 +3,18 @@
 #ifndef BLINDS_CONTROLLER_H
 #define BLINDS_CONTROLLER_H
 
-
-
 /* Initialize basic variables */
-int stepper_pin[4];     /* keeping pins number where stepper are connected, from IN1 - IN4 */
-int switches_pin[2];    /* keeping pins number where switches are connected */
+static int stepper_pin[4];     /* keeping pins number where stepper are connected, from IN1 - IN4 */
+static int switches_pin[2];    /* keeping pins number where switches are connected */
 
-int _step = 0;          /* innitial step val to control the stepper */
-int range = 0;          /* innitial Val for max range due to blinds dimension */
-int currentVal = 0;     /* innitial val for position of blinds (stepper) */
+static int range = 0;          /* innitial Val for max range due to blinds dimension */
+static int currentVal = 0;     /* innitial val for position of blinds (stepper) */
 
 /* Fnc responsible for moving the stepper */
 static void stepper_run(bool dir, int *stepper_pin, int d) 
 {    
+    static int _step = 0;
+
     switch(_step){ 
         
         case 0: 
@@ -101,11 +100,9 @@ static void stepper_run(bool dir, int *stepper_pin, int d)
 }
 
 /* Convert currentVal to prc (0-100) due to range */
-static int convert_to_percent(float a) 
+static int convert_to_percent(int a) 
 {
-    float b = range;
-    float c = (a / b) * 100;
-    return c;
+    return (a * 100) / range;
 }
 
 /* Fnc responsible for moving blinds up to setted val until switch 1 or 2 pushed or achieve min range - 0 */
@@ -179,7 +176,7 @@ static int blinds_calibrate(int controlSwitch)
 }
 
 /* Move blinds into setted value, value in prc 0-100  */
-static void blinds_move_targetValue(float targetValue) 
+static void blinds_move_targetValue(int targetValue) 
 {
     if (targetValue > 100) {
         targetValue = 100;
@@ -187,8 +184,7 @@ static void blinds_move_targetValue(float targetValue)
     if (targetValue < 0) {
         targetValue = 0;
     }
-    targetValue = (targetValue / 100) * range;
-    targetValue = (int)targetValue;
+    targetValue = (targetValue * range) / 100;
     if (targetValue != currentVal) {
         if (targetValue > currentVal) {
             blinds_move_down(targetValue, switches_pin);
