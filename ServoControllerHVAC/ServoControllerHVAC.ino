@@ -6,7 +6,8 @@ Servo servo;
 
 int servoAng;
 
-void setup() {
+void setup() 
+{
   servo.attach(PIN);
   servo.write(10);
   Serial.begin(9600);
