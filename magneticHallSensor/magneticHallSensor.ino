@@ -13,23 +13,23 @@ MQTT mqtt;
 
 void setup()
 {
-  Serial.begin(115200);
-  pinMode(digitalPin, INPUT);
-  while (!Serial) {
-    ;
-  }
-  Serial.print("Trying to connect to: ");
-  Serial.println(ssid);
-  WiFi.begin(ssid, passwd);
-  while (WiFi.status() != WL_CONNECTED) {
-    Serial.print(".");
-    delay(100);
-  }
+    Serial.begin(115200);
+    pinMode(digitalPin, INPUT);
+    while (!Serial) {
+        ;
+    }
+    Serial.print("Trying to connect to: ");
+    Serial.println(ssid);
+    WiFi.begin(ssid, passwd);
+    while (WiFi.status() != WL_CONNECTED) {
+        Serial.print(".");
+        delay(100);
+    }
 }
 
-void loop() 
+void loop()
 {
-  mqtt.loop();
-  mqtt.send(magnetic_digital(digitalPin));
-  delay(100);
+    mqtt.loop();
+    mqtt.send(magnetic_digital(digitalPin));
+    delay(100);
 }
