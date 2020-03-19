@@ -28,6 +28,6 @@ void setup()
 void loop() 
 {
     mqtt.loop();
-    mqtt.send(motion_sensor());
+    mqtt.send(motion_sensor(PIN));
     delay(100);
 }
