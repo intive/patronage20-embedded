@@ -2,33 +2,34 @@
 #define MQTT_H
 
 #include <PubSubClient.h>
-#include <ESP8266WiFi.h>        // Include the Wi-Fi library
+#include <ESP8266WiFi.h>        /* Include the Wi-Fi library */
 #include <Arduino.h>
 
 #define DEBUG 1
 
-// Public broker
-// const char broker[] = "broker.hivemq.com";
-// int        port     = 1883;
-// const char topic[]  = "intive/embedded";
-// const char outTopic[] = "intive/embedded_o";
+/* Public broker */
+/* 
+const char broker[] = "broker.hivemq.com";
+int port = 1883; 
+const char topic[] = "intive/embedded";
+const char outTopic[] = "intive/embedded_o"; 
+*/
 
-// Our broker
+/* Our broker */
 const char broker[] = "pszczodrowski.pl";
-int        port     = 1883;
-const char topic[]  = "intive/embedded";
+int port = 1883;
+const char topic[] = "intive/embedded";
 const char outTopic[] = "intive/embedded_o";
 
 const char serialnumber[] = "12345678";
-// Function with string parameters only
-typedef void (*callback_function)(String); // type for conciseness
+/* Function with string parameters only */
+typedef void (*callback_function)(String); /* type for conciseness */
 
 class MQTT{
     private:
         WiFiClient wifiClient;
         PubSubClient client;
-        callback_function returnFunct = nullptr; // variable to store function pointer type
-        //TODO:Add pointer to function or handle how to get callback return
+        callback_function returnFunct = nullptr; /* variable to store function pointer type */
 
         /*  Gets whole traffic from MQTT and interprets it */
         void callback(char* topic, byte* payload, unsigned int length);
