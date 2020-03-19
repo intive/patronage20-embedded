@@ -14,7 +14,7 @@ void setup()
     Serial.begin(115200);
     pinMode(PIN, INPUT);
     while (!Serial) {
-        ;
+        delay(100);
     }
     Serial.print("Trying to connect to: ");
     Serial.println(ssid);
