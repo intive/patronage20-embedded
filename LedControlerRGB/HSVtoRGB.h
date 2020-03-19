@@ -1,7 +1,4 @@
-#include<cmath> // Needed for fmod()
-using namespace std;
-
-//varible for LED gamma correction
+/* varible for LED gamma correction */
 const uint8_t PROGMEM gamma8[] = {
         0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
         0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,
@@ -22,51 +19,50 @@ const uint8_t PROGMEM gamma8[] = {
 
 /*
  * H(Hue): 0 - 360 degree (integer)
- * S(Saturation): 0 - 1.00 (double)
+ * S(aturation): 0 - 1.00 (double)
  * V(Value): 0 - 1.00 (double)
  * 
- * output[3]: Output, array size 3, int
+ * rgb_array[3]: Output, array size 3, int
  */
-void HSVtoRGB(int H, double S, double V, int output[3]) {
-  double C = S * V;
-  double X = C * (1 - abs(fmod(H / 60.0, 2) - 1));
-  double m = V - C;
-  double Rs, Gs, Bs;
+void hsv_to_rgb(int hue, int saturation, int value, int rgb_array[3])
+{
+    int chroma = (255 * saturation * value)/(10000); 
+    int intermediate = chroma * (1 - abs(((hue / 60)%2) - 1)); 
+    int rgb_component  = value + 155 - chroma;
+    int red_component, green_component, blue_component;
 
-
-
-  if(H >= 0 && H < 60) {
-    Rs = C;
-    Gs = X;
-    Bs = 0; 
-  }
-  else if(H >= 60 && H < 120) { 
-    Rs = X;
-    Gs = C;
-    Bs = 0; 
-  }
-  else if(H >= 120 && H < 180) {
-    Rs = 0;
-    Gs = C;
-    Bs = X; 
-  }
-  else if(H >= 180 && H < 240) {
-    Rs = 0;
-    Gs = X;
-    Bs = C; 
-  }
-  else if(H >= 240 && H < 300) {
-    Rs = X;
-    Gs = 0;
-    Bs = C; 
-  }
-  else {
-    Rs = C;
-    Gs = 0;
-    Bs = X; 
-  }
-  
-  output[0] = pgm_read_byte(&gamma8[int((Rs + m) * 255)]); //LED gamma correction included
-  output[1] = pgm_read_byte(&gamma8[int((Gs + m) * 255)]);
-  output[2] = pgm_read_byte(&gamma8[int((Bs + m) * 255)]);
+    if(hue >= 0 && hue < 60) {
+        red_component = chroma;
+        green_component = intermediate;
+        blue_component = 0; 
+    }
+    else if(hue >= 60 && hue < 120) { 
+        red_component = intermediate;
+        green_component = chroma;
+        blue_component = 0; 
+    }
+    else if(hue >= 120 && hue < 180) {
+        red_component = 0;
+        green_component = chroma;
+        blue_component = intermediate; 
+    }
+    else if(hue >= 180 && hue < 240) {
+        red_component = 0;
+        green_component = intermediate;
+        blue_component = chroma; 
+    }
+    else if(hue >= 240 && hue < 300) {
+        red_component = intermediate;
+        green_component = 0;
+        blue_component = chroma; 
+    }
+    else {
+        red_component = chroma;
+        green_component = 0;
+        blue_component = intermediate; 
+    }
+    /* LED gamma correction included */
+    rgb_array[0] = pgm_read_byte(&gamma8[int((red_component + rgb_component ) % 256)]); 
+    rgb_array[1] = pgm_read_byte(&gamma8[int((green_component + rgb_component ) % 256)]);
+    rgb_array[2] = pgm_read_byte(&gamma8[int((blue_component + rgb_component ) % 256)]);
 }
