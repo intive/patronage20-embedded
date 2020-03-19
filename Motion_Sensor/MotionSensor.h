@@ -4,7 +4,7 @@
 /* and false when there is no motion */
 bool detect_motion(int pin)
 {
-    long state = digitalRead(pin);
+    bool state = digitalRead(pin);
   
     if (state == HIGH)
         return true;
