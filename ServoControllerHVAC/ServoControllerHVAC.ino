@@ -8,9 +8,9 @@ int servoAng;
 
 void setup() 
 {
-  servo.attach(PIN);
-  servo.write(10);
-  Serial.begin(9600);
+    servo.attach(PIN);
+    servo.write(10);
+    Serial.begin(9600);
 }
 
 
