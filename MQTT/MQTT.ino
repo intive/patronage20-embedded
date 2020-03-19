@@ -28,10 +28,10 @@ void led_plain(String s){
 void led_json(String s){
     deserializeJson(JSONdoc, s);
     if(JSONdoc["command"].as<String>().equals("LED"))
-        if(JSONdoc["state"].as<int>() == 0)
-            digitalWrite(LED, HIGH);
-        else if(JSONdoc["state"].as<int>() == 1)
+        if(JSONdoc["state"].as<int>())
             digitalWrite(LED, LOW);
+        else if(JSONdoc["state"].as<int>())
+            digitalWrite(LED, HIGH);
 }
 
 void setup() {
