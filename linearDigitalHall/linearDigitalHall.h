@@ -1,10 +1,8 @@
 /* Author: Szymon Wojtach */
+#ifndef LINEAR_DIGITAL_H
+#define LINEAR_DIGITAL_H
 
 #include <ArduinoJson.h>
-
-enum window_sensor_state {open, closed};
-
-int value;
 
 /* Returns prepared json file filled with sensor status */
 String linear_digital(int pin)
@@ -14,7 +12,7 @@ String linear_digital(int pin)
     doc["id"] = 7;
     doc["type"] = "windowSensors";
 
-    if (digitalRead(pin) == window_sensor_state::open)
+    if (digitalRead(pin) == 0)
         doc["status"] = "open";
     else
         doc["status"] = "closed";
@@ -22,3 +20,5 @@ String linear_digital(int pin)
     serializeJsonPretty(doc, output);
     return output;
 }
+
+#endif
