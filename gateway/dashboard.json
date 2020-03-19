@@ -1,51 +1,51 @@
 {
     "temperatureSensors": [
         {
-            "id": 101,
+            "id": 0,
             "type": "temperatureSensor",
             "value": 22
         },
         {
-            "id": 102,
+            "id": 1,
             "type": "temperatureSensor",
             "value": 21.4
         }
     ],
     "windowSensors": [
         {
-            "id": 201,
+            "id": 2,
             "type": "windowSensor",
             "status": "open"
         },
         {
-            "id": 202,
+            "id": 3,
             "type": "windowSensor",
             "status": "open"
         },
         {
-            "id": 203,
+            "id": 4,
             "type": "windowSensor",
             "status": "open"
         }
     ],
     "windowBlinds": [
         {
-            "id": 301,
+            "id": 5,
             "type": "windowBlind",
             "position": 40
         },
         {
-            "id": 302,
+            "id": 6,
             "type": "windowBlind",
             "position": 90
         }
     ],
     "RFIDSensors": [
         {
-            "id": 401,
+            "id": 7,
             "type": "RFIDSensor",
             "lastTag": {
-                "id": 411,
+                "id": 8,
                 "type": "RFIDTag",
                 "timestamp": 0
             }
@@ -53,7 +53,7 @@
     ],
     "smokeSensors": [
         {
-            "id": 501,
+            "id": 9,
             "type": "smokeSensor",
             "isSmokeDetected": false
         }
@@ -65,31 +65,31 @@
     },
     "HVACRooms": [
         {
-            "id": 601,
+            "id": 10,
             "type": "HVACRoom",
             "heating-temperature": 18,
             "cooling-temperature": 25,
             "hysteresis": 0.5,
-            "temperatureSensorId": 101,
+            "temperatureSensorId": 0,
             "windowSensorIds": [
-                201
+                2
             ]
         },
         {
-            "id": 602,
+            "id": 11,
             "type": "HVACRoom",
             "heating-temperature": 18,
             "cooling-temperature": 25,
             "hysteresis": 1,
-            "temperatureSensorId": 102,
+            "temperatureSensorId": 1,
             "windowSensorIds": [
-                202
+                3
             ]
         }
     ],
     "lights": [
         {
-            "id": 701,
+            "id": 12,
             "type": "RGBLight",
             "hue": 0,
             "saturation": 255,
