@@ -9,7 +9,7 @@ int range = 0;          /* innitial Val for max range due to blinds dimension */
 int currentVal = 0;     /* innitial val for position of blinds (stepper) */
 
 /* Fnc responsible for moving the stepper */
-void stepper_run (bool dir, int *stepper_pin) 
+void stepper_run(bool dir, int *stepper_pin, int d) 
 {    
     switch(_step){ 
         
@@ -89,11 +89,14 @@ void stepper_run (bool dir, int *stepper_pin)
     if (_step < 0)  
         _step = 7; 
 
-    delay(1); 
+    if (d < 1) 
+        delay(1); 
+    else 
+        delay(d);
 }
 
 /* Convert currentVal to prc (0-100) due to range */
-int convert_currVal_to_prcVal (float a) 
+int convert_to_percent(float a) 
 {
     float b = range;
     float c = (a / b) * 100;
@@ -101,13 +104,13 @@ int convert_currVal_to_prcVal (float a)
 }
 
 /* Fnc responsible for moving blinds up to setted val until switch 1 or 2 pushed or achieve min range - 0 */
-void blinds_move_up (int val, int *sw) 
+void blinds_move_up(int val, int *sw) 
 {
     int i;
     bool dir = true;
     
     for (i = currentVal; i >= val; i--) {
-        stepper_run(dir, stepper_pin);
+        stepper_run(dir, stepper_pin, 1);
         currentVal = i;
         if (digitalRead(sw[0]) == LOW || digitalRead(sw[1]) == LOW) {
             delay(300);
@@ -117,13 +120,13 @@ void blinds_move_up (int val, int *sw)
 }
 
 /* Fnc responsible for moving blinds down until switch 1 or 2 pushed or achieve max range - 100 */
-void blinds_move_down (int val, int *sw) 
+void blinds_move_down(int val, int *sw) 
 {
     int i;
     bool dir = false;
     
     for (i = currentVal; i <= val; i++) {
-        stepper_run(dir, stepper_pin);
+        stepper_run(dir, stepper_pin, 1);
         currentVal = i;
         if (digitalRead(sw[0]) == LOW || digitalRead(sw[1]) == LOW) {
             delay(300);
@@ -133,7 +136,7 @@ void blinds_move_down (int val, int *sw)
 }
 
 /* Fnc responsible for calibrating the stepper/blinds */
-int blinds_calibrate (int controlSwitch) 
+int blinds_calibrate(int controlSwitch) 
 {
     bool dir = false; 
     int count = 0;
@@ -148,7 +151,7 @@ int blinds_calibrate (int controlSwitch)
     Serial.println(" Blinds moving down - PRESS switch to stop.");
     
     while (dir == false) {
-        stepper_run(dir, stepper_pin);
+        stepper_run(dir, stepper_pin, 1);
         while (digitalRead(controlSwitch) == LOW) {
             delay(300);
             dir = !dir;
@@ -158,7 +161,7 @@ int blinds_calibrate (int controlSwitch)
     Serial.println(" Blinds moving up - PRESS switch to stop.");
     
     while (dir == true) {
-        stepper_run(dir, stepper_pin);
+        stepper_run(dir, stepper_pin, 1);
         count++;
         while (digitalRead(controlSwitch) == LOW) {
             delay(300);
@@ -171,22 +174,22 @@ int blinds_calibrate (int controlSwitch)
 }
 
 /* Move blinds into setted value, value in prc 0-100  */
-void blinds_move_settedPrcValue(float settedValue) 
+void blinds_move_targetValue(float targetValue) 
 {
-    if (settedValue > 100) {
-        settedValue = 100;
+    if (targetValue > 100) {
+        targetValue = 100;
     }
-    if (settedValue < 0) {
-        settedValue = 0;
+    if (targetValue < 0) {
+        targetValue = 0;
     }
-    settedValue = (settedValue / 100) * range;
-    settedValue = (int)settedValue;
-    if (settedValue != currentVal) {
-        if (settedValue > currentVal) {
-            blinds_move_down(settedValue, switches_pin);
+    targetValue = (targetValue / 100) * range;
+    targetValue = (int)targetValue;
+    if (targetValue != currentVal) {
+        if (targetValue > currentVal) {
+            blinds_move_down(targetValue, switches_pin);
         } 
-        else if (settedValue < currentVal) {
-            blinds_move_up(settedValue, switches_pin);
+        else if (targetValue < currentVal) {
+            blinds_move_up(targetValue, switches_pin);
         }
     }
 }

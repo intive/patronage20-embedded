@@ -46,19 +46,19 @@ void loop()
     if (digitalRead(SW1) == LOW) {
         delay(300);
         blinds_move_up(0, switches_pin);
-        Serial.println(convert_currVal_to_prcVal(currentVal));
+        Serial.println(convert_to_percent(currentVal));
     }
     
     /* Manually move (by switch) blinds down until fully closed or stopped by user */
     if (digitalRead(SW2) == LOW) {
         delay(300);
         blinds_move_down(range, switches_pin);
-        Serial.println(convert_currVal_to_prcVal(currentVal));
+        Serial.println(convert_to_percent(currentVal));
     }
 
     /* Move blinds to specific value - outside signal (gatevay, serial port) */
     if (Serial.available() > 1) {
-        blinds_move_settedPrcValue(Serial.parseInt());
-        Serial.println(convert_currVal_to_prcVal(currentVal));
+        blinds_move_targetValue(Serial.parseInt());
+        Serial.println(convert_to_percent(currentVal));
     }
 }
