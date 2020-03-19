@@ -1,68 +1,99 @@
 {
     "temperatureSensors": [
         {
-            "id": 0,
-            "type": "string",
-            "value": 0
+            "id": 101,
+            "type": "temperatureSensor",
+            "value": 22
+        },
+        {
+            "id": 102,
+            "type": "temperatureSensor",
+            "value": 21.4
         }
     ],
     "windowSensors": [
         {
-            "id": 0,
-            "type": "string",
+            "id": 201,
+            "type": "windowSensor",
+            "status": "open"
+        },
+        {
+            "id": 202,
+            "type": "windowSensor",
+            "status": "open"
+        },
+        {
+            "id": 203,
+            "type": "windowSensor",
             "status": "open"
         }
     ],
     "windowBlinds": [
         {
-            "id": 0,
-            "type": "string",
-            "position": 0
+            "id": 301,
+            "type": "windowBlind",
+            "position": 40
+        },
+        {
+            "id": 302,
+            "type": "windowBlind",
+            "position": 90
         }
     ],
     "RFIDSensors": [
         {
-            "id": 0,
-            "type": "string",
+            "id": 401,
+            "type": "RFIDSensor",
             "lastTag": {
-                "id": 0,
-                "type": "string",
+                "id": 411,
+                "type": "RFIDTag",
                 "timestamp": 0
             }
         }
     ],
     "smokeSensors": [
         {
-            "id": 0,
-            "type": "string",
+            "id": 501,
+            "type": "smokeSensor",
             "isSmokeDetected": false
         }
     ],
     "HVACStatus": {
-        "type": "string",
+        "type": "HVACStatus",
         "heating": false,
         "cooling": false
     },
     "HVACRooms": [
         {
-            "id": 0,
-            "type": "string",
-            "heating-temperature": 0,
-            "cooling-temperature": 0,
-            "hysteresis": 0,
-            "temperatureSensorId": 0,
+            "id": 601,
+            "type": "HVACRoom",
+            "heating-temperature": 18,
+            "cooling-temperature": 25,
+            "hysteresis": 0.5,
+            "temperatureSensorId": 101,
             "windowSensorIds": [
-                0
+                201
+            ]
+        },
+        {
+            "id": 602,
+            "type": "HVACRoom",
+            "heating-temperature": 18,
+            "cooling-temperature": 25,
+            "hysteresis": 1,
+            "temperatureSensorId": 102,
+            "windowSensorIds": [
+                202
             ]
         }
     ],
     "lights": [
         {
-            "id": 0,
-            "type": "string",
+            "id": 701,
+            "type": "RGBLight",
             "hue": 0,
-            "saturation": 0,
-            "value": 0
+            "saturation": 255,
+            "value": 200
         }
     ]
 }
