@@ -1,5 +1,4 @@
 #include "dependencies/crow_all.h"
-#include "dependencies/json.hpp"
 
 #define GATEWAY_PORT 42893
 
@@ -13,16 +12,16 @@ int main()
 
     CROW_ROUTE(gateway, "/dashboard").methods(crow::HTTPMethod::Get)([](){
         
-        crow::json::wvalue dahsboard_response;
-        nlohmann::json dashboard;
+        crow::json::wvalue dashboard_response;
 
-        std::ifstream i ("dashboard.json");
-        i>>dashboard;
+        std::ifstream i("dashboard.json");
+        std::stringstream dashboard_raw;
+        dashboard_raw<<i.rdbuf();
         i.close();
         
-        dahsboard_response = crow::json::load(dashboard.dump());
+        dashboard_response = crow::json::load(dashboard_raw.str());
 
-        return crow::response(dahsboard_response);
+        return crow::response(dashboard_response);
     });
 
     gateway.port(GATEWAY_PORT).multithreaded().run();
