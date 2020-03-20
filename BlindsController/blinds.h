@@ -14,84 +14,28 @@ static int currentVal = 0;     /* innitial val for position of blinds (stepper) 
 static void stepper_run(bool dir, int *stepper_pin, int d) 
 {    
     static int _step = 0;
-
-    switch(_step){ 
-        
-        case 0: 
-            digitalWrite(stepper_pin[0], LOW);  
-            digitalWrite(stepper_pin[1], LOW); 
-            digitalWrite(stepper_pin[2], LOW); 
-            digitalWrite(stepper_pin[3], HIGH); 
-        break;  
+    bool stepPinVal[8][4] {
+        {0, 0, 0, 1},
+        {0, 0, 1, 1},
+        {0, 0, 1, 0},
+        {0, 1, 1, 0},
+        {0, 1, 0, 0},
+        {1, 1, 0, 0},
+        {1, 0, 0, 0},
+        {1, 0, 0, 1}
+    };
     
-        case 1: 
-            digitalWrite(stepper_pin[0], LOW);  
-            digitalWrite(stepper_pin[1], LOW); 
-            digitalWrite(stepper_pin[2], HIGH); 
-            digitalWrite(stepper_pin[3], HIGH); 
-        break;  
+    digitalWrite(stepper_pin[0], stepPinVal[_step][0]);  
+    digitalWrite(stepper_pin[1], stepPinVal[_step][1]); 
+    digitalWrite(stepper_pin[2], stepPinVal[_step][2]); 
+    digitalWrite(stepper_pin[3], stepPinVal[_step][3]);
         
-        case 2: 
-            digitalWrite(stepper_pin[0], LOW);  
-            digitalWrite(stepper_pin[1], LOW); 
-            digitalWrite(stepper_pin[2], HIGH); 
-            digitalWrite(stepper_pin[3], LOW); 
-        break;  
-        
-        case 3: 
-            digitalWrite(stepper_pin[0], LOW);  
-            digitalWrite(stepper_pin[1], HIGH); 
-            digitalWrite(stepper_pin[2], HIGH); 
-            digitalWrite(stepper_pin[3], LOW); 
-        break;  
-        
-        case 4: 
-            digitalWrite(stepper_pin[0], LOW);  
-            digitalWrite(stepper_pin[1], HIGH); 
-            digitalWrite(stepper_pin[2], LOW); 
-            digitalWrite(stepper_pin[3], LOW); 
-        break;  
-   
-        case 5: 
-            digitalWrite(stepper_pin[0], HIGH);  
-            digitalWrite(stepper_pin[1], HIGH); 
-            digitalWrite(stepper_pin[2], LOW); 
-            digitalWrite(stepper_pin[3], LOW); 
-        break;  
-        
-        case 6: 
-            digitalWrite(stepper_pin[0], HIGH);  
-            digitalWrite(stepper_pin[1], LOW); 
-            digitalWrite(stepper_pin[2], LOW); 
-            digitalWrite(stepper_pin[3], LOW); 
-        break;  
-        
-        case 7: 
-            digitalWrite(stepper_pin[0], HIGH);  
-            digitalWrite(stepper_pin[1], LOW); 
-            digitalWrite(stepper_pin[2], LOW); 
-            digitalWrite(stepper_pin[3], HIGH); 
-        break;  
-   
-        default: 
-            digitalWrite(stepper_pin[0], LOW);  
-            digitalWrite(stepper_pin[1], LOW); 
-            digitalWrite(stepper_pin[2], LOW); 
-            digitalWrite(stepper_pin[3], LOW); 
-        break;  
-    } 
-    
     if (dir)  
         _step--;
     else  
         _step++;
-     
-    
-    if (_step > 7)  
-        _step = 0; 
-    
-    if (_step < 0)  
-        _step = 7; 
+
+    _step &= 0x7;
 
     if (d < 1) 
         delay(1); 
