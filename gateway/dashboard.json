@@ -67,23 +67,24 @@
         {
             "id": 10,
             "type": "HVACRoom",
-            "heating-temperature": 18,
-            "cooling-temperature": 25,
-            "hysteresis": 0.5,
+            "heating-temperature": 400,
+            "cooling-temperature": 70,
+            "hysteresis": 5,
             "temperatureSensorId": 0,
             "windowSensorIds": [
-                2
+                2,
+                3
             ]
         },
         {
             "id": 11,
             "type": "HVACRoom",
-            "heating-temperature": 18,
-            "cooling-temperature": 25,
-            "hysteresis": 1,
+            "heating-temperature": 300,
+            "cooling-temperature": 100,
+            "hysteresis": 10,
             "temperatureSensorId": 1,
             "windowSensorIds": [
-                3
+                4
             ]
         }
     ],
@@ -92,8 +93,8 @@
             "id": 12,
             "type": "RGBLight",
             "hue": 0,
-            "saturation": 255,
-            "value": 200
+            "saturation": 100,
+            "value": 90
         }
     ]
 }
