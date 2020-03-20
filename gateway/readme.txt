@@ -1,9 +1,9 @@
-Kompilacja g++:
+Compilation in g++:
 g++ -O3 -std=c++11 gateway.cpp -lboost_thread -lboost_system -pthread -o server
 
-Crow wymaga bibliotek Boosta do działania. Pakiet:
+Crow requires Boost to work:
 sudo apt-get install libboost-all-dev
 
-Endpointy:
+Endpoints:
 http://localhost:8080/dashboard 
 http://localhost:8080/hello
