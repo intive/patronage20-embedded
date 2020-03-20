@@ -23,7 +23,6 @@ void setup()
     while (!Serial) {    
     }
 
-    //pinMode(analog_pin, INPUT);
     pinMode(digital_pin, INPUT);
 }
 

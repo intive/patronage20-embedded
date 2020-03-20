@@ -4,7 +4,7 @@
  
 int read_digital_temperature(int in_pin) 
 {
-    int high_byte, low_byte, t_reading, sign_bit, tc_100, whole;
+    int high_byte, low_byte, t_reading, sign_bit, tc_100, whole, start_conversation = 0x44;
     byte i;
     byte present = 0;
     byte data[12];
@@ -18,7 +18,7 @@ int read_digital_temperature(int in_pin)
  
     ds.reset();
     ds.select(addr);
-    ds.write(0x44,1); 
+    ds.write(start_conversation,1); /* start conversion, with parasite power on at the end */
   
     present = ds.reset();
     ds.select(addr);    
