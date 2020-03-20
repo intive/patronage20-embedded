@@ -1,3 +1,6 @@
+#ifndef HSVTORGB_H
+#define HSVTORGB_H
+
 /* varible for LED gamma correction */
 const uint8_t PROGMEM gamma8[] = {
         0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
@@ -66,3 +69,4 @@ void hsv_to_rgb(int hue, int saturation, int value, int rgb_array[3])
     rgb_array[1] = pgm_read_byte(&gamma8[int((green_component + rgb_component ) % 256)]);
     rgb_array[2] = pgm_read_byte(&gamma8[int((blue_component + rgb_component ) % 256)]);
 }
+#endif /* HSVTORGB_H */
