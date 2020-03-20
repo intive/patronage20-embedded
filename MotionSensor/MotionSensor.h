@@ -18,7 +18,7 @@ static bool detect_motion(int pin)
 /* Returns json string with sensor status */
 static String motion_sensor(int pin)
 {
-    String output;
+    String output = "";
     StaticJsonDocument<100> root;
 
     root["id"] = 1;
