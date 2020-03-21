@@ -1,3 +1,6 @@
+#ifndef READDIGITALTEMPERATURE_H
+#define READDIGITALTEMPERATURE_H
+
 /* Function for reading digital temperature */
 
 #include <OneWire.h>
@@ -46,3 +49,4 @@ int read_digital_temperature(int in_pin)
         return  whole;
     }
 }
+#endif /* READDIGITALTEMPERATURE_H */

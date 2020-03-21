@@ -1,3 +1,5 @@
+#ifndef READANALOGTEMPERATURE_H
+#define READANALOGTEMPERATURE_H
 /* Function for reading analog temperature */
 
 #include <math.h>
@@ -10,3 +12,4 @@ int read_analog_temperature(int in_pin)
     temperature = temperature - 273.15; /* Convert Kelvin to Celcius */
     return int (temperature - 34); /* Return calibrated temperature value */
 }
+#endif /* READANALOGTEMPERATURE_H */

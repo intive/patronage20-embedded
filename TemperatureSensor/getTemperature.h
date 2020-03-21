@@ -1,3 +1,6 @@
+#ifndef GETTEMPERATURE_H
+#define GETTEMPERATURE_H
+
 /* Function for reading digital or analog temperature */
 
 #include <ArduinoJson.h>
@@ -7,7 +10,7 @@
 
 String get_temperature(bool digital, int in_pin)
 {
-    String JsonOutput = "";
+    String json_output = "";
     StaticJsonDocument<200> root;
   
     root["id"] = 1;
@@ -18,6 +21,7 @@ String get_temperature(bool digital, int in_pin)
     }else {
         root["value"] = read_analog_temperature(in_pin);
     }
-    serializeJson(root, JsonOutput);
-    return JsonOutput;
+    serializeJson(root, json_output);
+    return json_output;
 }
+#endif /* GETTEMPERATURE_H */
