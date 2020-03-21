@@ -57,5 +57,5 @@ void loop()
 
     serializeJson(root, json_output);
     set_led_rgb_value(D6, D5, D7, json_output);
-    delay(100);  
+    delay(2000);  
 }
