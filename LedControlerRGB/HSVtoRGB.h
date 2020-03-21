@@ -22,15 +22,15 @@ const uint8_t PROGMEM gamma8[] = {
 
 /*
  * H(Hue): 0 - 360 degree (integer)
- * S(aturation): 0 - 1.00 (double)
- * V(Value): 0 - 1.00 (double)
+ * S(aturation): 0 - 100 (integer)
+ * V(Value): 0 - 100 (integer)
  * 
  * rgb_array[3]: Output, array size 3, int
  */
 void hsv_to_rgb(int hue, int saturation, int value, int rgb_array[3])
 {
     int chroma = (255 * saturation * value)/(10000); 
-    int intermediate = chroma * (1 - abs(((hue / 60)%2) - 1)); 
+    int intermediate = chroma * (60 - abs(((hue % 120)%2) - 60)) / 60; 
     int rgb_component  = value + 155 - chroma;
     int red_component, green_component, blue_component;
 
