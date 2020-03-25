@@ -4,7 +4,6 @@ Author:Patryk Szczodrowski
 #include <Arduino.h>
 #include "MQTT.h"
 #include <ESP8266WiFi.h>        /* Include the Wi-Fi library */
-
 #include <ArduinoJson.h>
 
 #define LED 2 /* Define blinking LED pin */
@@ -19,18 +18,13 @@ DynamicJsonDocument JSONdoc(2048);
     flashed in the WiFi module. */
 MQTT mqtt;
 
-/*  Sample input parser. Only for presentation.  */
-void led_plain(String s){
-    if(s[0]=='0') digitalWrite(LED,HIGH);
-    else if(s[0]=='1') digitalWrite(LED,LOW);
-}
 /*  Sample json parser. Only for presentation.  */
 void led_json(String s){
     deserializeJson(JSONdoc, s);
     if(JSONdoc["command"].as<String>().equals("LED"))
         if(JSONdoc["state"].as<int>())
             digitalWrite(LED, LOW);
-        else if(JSONdoc["state"].as<int>())
+        else
             digitalWrite(LED, HIGH);
 }
 
@@ -55,7 +49,7 @@ void setup() {
     /* mqtt.set_return_function(led_plain); */
     mqtt.set_return_function(led_json);
     /* mqtt.loop(); */
-    /* mqtt.send("4321"); */
+    mqtt.send("TEMAT","4321");
 }
 
 void loop() {
