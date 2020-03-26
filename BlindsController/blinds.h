@@ -46,7 +46,7 @@ static void stepper_run(bool dir, int *stepper_pin, int d)
 /* Convert currentVal to prc (0-100) due to range */
 static int convert_to_percent(int a) 
 {
-    return (a * 100) / range;
+    return ((a * 100) + (range / 2)) / range;
 }
 
 /* Fnc responsible for moving blinds up to setted val until switch 1 or 2 pushed or achieve min range - 0 */
@@ -128,7 +128,7 @@ static void blinds_move_targetValue(int targetValue)
     if (targetValue < 0) {
         targetValue = 0;
     }
-    targetValue = (targetValue * range) / 100;
+    targetValue = ((targetValue * range) + 50) / 100;
     if (targetValue != currentVal) {
         if (targetValue > currentVal) {
             blinds_move_down(targetValue, switches_pin);
