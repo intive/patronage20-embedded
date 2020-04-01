@@ -86,6 +86,28 @@ struct Lights
     int _value;
 };
 
+struct Servo
+{
+    int _id;
+    std::string _type = "Servo";
+    int _angle;
+};
+
+struct LightColor
+{
+    int _id;
+    std::string _type = "lightColor";
+    int _value;
+};
+
+struct Keyboard
+{
+    int _id;
+    std::string _type = "keyboard";
+    std::string _message;
+};
+
+
 void to_json(json& j, const TemperatureSensor& sensor)
 {
     j = json{
@@ -166,6 +188,31 @@ void to_json(json& j, const Lights& sensor)
     };
 }
 
+void to_json(json& j, const Servo& sensor)
+{
+    j = json{
+        { "id", sensor._id},
+        {"type", sensor._type},
+        {"angle", sensor._angle}
+    };
+}
+void to_json(json& j, const LightColor& color)
+{
+    j = json{
+        { "id", color._id},
+        {"type", color._type},
+        {"value", color._value}
+    };
+}
+void to_json(json& j, const Keyboard& keyboard)
+{
+    j = json{
+        { "id", keyboard._id},
+        {"type", keyboard._type},
+        {"message", keyboard._message}
+    };
+}
+
 
 
 void from_json(const json& j,  TemperatureSensor& sensor)
@@ -222,6 +269,7 @@ void from_json(const json& j,  HVACRoom& room)
     j.at("temperatureSensorId").get_to( room._temperature_sensor_id);
     j.at("windowSensorIds").get_to( room._window_sensor_ids);
 }
+
 void from_json(const json& j,  Lights& sensor)
 {
     j.at("id").get_to(sensor._id);
@@ -231,3 +279,23 @@ void from_json(const json& j,  Lights& sensor)
     j.at("value").get_to( sensor._value);
 }
 
+void from_json(const json& j, Servo& servo)
+{
+    j.at("id").get_to(servo._id);
+    //j.at("type").get_to(servo._type);
+    j.at("angle").get_to(servo._angle);
+}
+
+void from_json(const json& j,  LightColor& color)
+{
+    j.at("id").get_to(color._id);
+    //j.at("type").get_to(color._type);
+    j.at("value").get_to(color._value);
+}
+
+void from_json(const json& j,  Keyboard& keyboard)
+{
+    j.at("id").get_to(keyboard._id);
+    //j.at("type").get_to(keyboard._type);
+    j.at("message").get_to(keyboard._message);
+}
