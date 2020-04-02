@@ -4,11 +4,10 @@
 #include <ESP8266WiFi.h>
 #include "MQTT.h"
 #include "magneticHallSensor.h"
+#include "init_config.h"
 
 #define digitalPin 15
 
-const char ssid[] = "ssid_example";
-const char passwd[] = "password_example";
 MQTT mqtt;
 
 void setup()

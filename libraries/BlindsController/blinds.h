@@ -3,6 +3,8 @@
 #ifndef BLINDS_CONTROLLER_H
 #define BLINDS_CONTROLLER_H
 
+#include <ArduinoJson.h>
+
 /* Initialize basic variables */
 static int stepper_pin[4];     /* keeping pins number where stepper are connected, from IN1 - IN4 */
 static int switches_pin[2];    /* keeping pins number where switches are connected */
@@ -128,6 +130,20 @@ static void blinds_move_targetValue(int targetValue)
             blinds_move_up(targetValue, switches_pin);
         }
     }
+}
+
+/* Preparing JSON filled with station ID and currentValue */
+static String return_JSON(int id, int v) 
+{
+    String output = "";
+    StaticJsonDocument<100> doc;
+    
+    doc["id"] = id;
+    doc["type"] = "BlindsController";
+    doc["value"] = v;
+    
+    serializeJsonPretty(doc, output);
+    return output;
 }
   
 #endif /* BLINDS_CONTROLLER_H */
