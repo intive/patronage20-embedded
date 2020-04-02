@@ -25,7 +25,7 @@ void MQTT_blinds_move(String s)
     StaticJsonDocument<100> doc;
     deserializeJson(doc, s);
     if (doc["id"].as<int>() == SUBST_ID) {
-        blinds_move_targetValue(doc["value"]);
+        blinds_move_targetValue(doc["position"]);
     }
     Serial.print("Current value: ");
     Serial.println(convert_to_percent(currentVal));
