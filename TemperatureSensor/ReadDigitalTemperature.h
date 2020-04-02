@@ -1,13 +1,16 @@
 #ifndef READDIGITALTEMPERATURE_H
 #define READDIGITALTEMPERATURE_H
 
+#define START_CONVERSATION 0x44
+#define READ_SCRATCHPAD 0xBE
+
 /* Function for reading digital temperature */
 
 #include <OneWire.h>
  
 int read_digital_temperature(int in_pin) 
 {
-    int high_byte, low_byte, t_reading, sign_bit, tc_100, whole, start_conversation = 0x44;
+    int high_byte, low_byte, t_reading, temperature_in_celsius;
     byte i;
     byte present = 0;
     byte data[12];
@@ -16,16 +19,18 @@ int read_digital_temperature(int in_pin)
   
     if (!ds.search(addr)) {
         ds.reset_search();
-        return -1;
+        /*didn't find any sensor, return value under absolute zero */
+        return -300;
     }
  
     ds.reset();
     ds.select(addr);
-    ds.write(start_conversation,1); /* start conversion, with parasite power on at the end */
-  
+    /* Start conversion, with parasite power on at the end */
+    ds.write(START_CONVERSATION, 1); 
     present = ds.reset();
     ds.select(addr);    
-    ds.write(0xBE);  
+    /* Setup for reading */ 
+    ds.write(READ_SCRATCHPAD); 
  
     for (i = 0; i < 9; i++) { 
         data[i] = ds.read();
@@ -34,19 +39,9 @@ int read_digital_temperature(int in_pin)
     low_byte = data[0];
     high_byte = data[1];
     t_reading = (high_byte << 8) + low_byte;
-    sign_bit = t_reading & 0x8000;  
-       
-    if (sign_bit) {
-        t_reading = (t_reading ^ 0xffff) + 1;
-    }
-       
-    tc_100 = (6 * t_reading) + t_reading / 4; 
-    whole = tc_100 / 100; 
-
-    if (sign_bit) {
-        return -whole;
-    } else {
-        return  whole;
-    }
+    
+    temperature_in_celsius = t_reading >> 4;
+    
+    return temperature_in_celsius;
 }
 #endif /* READDIGITALTEMPERATURE_H */
