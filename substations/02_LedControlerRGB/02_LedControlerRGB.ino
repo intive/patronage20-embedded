@@ -2,6 +2,7 @@
 
 #include <ArduinoJson.h>
 #include "HSVtoRGB.h"
+#include "init_config.h"
 
 String json_output = "";
 static const uint8_t D0   = 16;

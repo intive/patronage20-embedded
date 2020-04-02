@@ -2,3 +2,4 @@ output/
 .vscode/
 *.py
 Network.h
+init_config.h

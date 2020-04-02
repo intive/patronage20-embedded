@@ -1,5 +1,7 @@
 #include <ESP8266WiFi.h>
 #include "MotionSensor.h"
+#include "MQTT.h"
+#include "init_config.h"
 
 #define PIN 13
 
