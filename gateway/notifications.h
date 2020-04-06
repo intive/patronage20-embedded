@@ -22,30 +22,30 @@ NLOHMANN_JSON_SERIALIZE_ENUM(type,{
 
 class Notifications
 {
-    json _notifications;
+    json notifications;
 
     public:
 
     Notifications(std::string filepath)
     {
         std::ifstream i(filepath);
-        i >> _notifications;
+        i >> notifications;
         i.close();
     }
 
     json get_notifications()
     {
-        return _notifications;
+        return notifications;
     }
 
     int delete_notification(int64_t id)
     {
-        for (json::iterator it = _notifications.begin(); it != _notifications.end(); it++)
+        for (json::iterator it = notifications.begin(); it != notifications.end(); it++)
         {
             json j = it.value();
             if (j["id"] == id)
             {
-                _notifications.erase(it);
+                notifications.erase(it);
                 return 0;
             }
         }

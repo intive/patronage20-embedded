@@ -17,199 +17,199 @@ NLOHMANN_JSON_SERIALIZE_ENUM(window_status,{
 struct TemperatureSensor
 {
     /*Properties*/
-    int _id;
-    std::string _type = "temperatureSensor";
-    int _value;
+    int id;
+    std::string type = "temperatureSensor";
+    int value;
 };
 
 struct WindowSensor
 {
-    int _id;
-    std::string _type = "windowSensor";
-    window_status _status;
+    int id;
+    std::string type = "windowSensor";
+    window_status status;
 };
 
 struct WindowBlind
 {
-    int _id;
-    std::string _type = "windowBlind";
-    int _position;
+    int id;
+    std::string type = "windowBlind";
+    int position;
 };
 
 struct LastTag
 {
-    int64_t _id;
-    std::string _type = "RFIDTag";
-    int64_t _timestamp;
+    int64_t id;
+    std::string type = "RFIDTag";
+    int64_t timestamp;
 };
 
 struct RFIDSensor
 {
-    int _id;
-    std::string _type = "RFIDSensor";
-    LastTag _last_tag;
+    int id;
+    std::string type = "RFIDSensor";
+    LastTag last_tag;
 };
 
 struct SmokeSensor
 {
-    int _id;
-    std::string _type = "smokeSensor";
-    bool _is_smoke_detected;
+    int id;
+    std::string type = "smokeSensor";
+    bool is_smoke_detected;
  
 };
 
 struct HVACStatus
 {
-    std::string _type = "HVACStatus";
-    bool _heating;
-    bool _cooling;
+    std::string type = "HVACStatus";
+    bool heating;
+    bool cooling;
 };
 
 struct HVACRoom
 {
-    int _id;
-    std::string _type = "HVACRoom";
-    int _heating_temperature;
-    int _cooling_temperature;
-    int _hysteresis;
-    int _temperature_sensor_id;
-    std::vector<int> _window_sensor_ids;
+    int id;
+    std::string type = "HVACRoom";
+    int heating_temperature;
+    int cooling_temperature;
+    int hysteresis;
+    int temperature_sensor_id;
+    std::vector<int> window_sensor_ids;
    
 };
 
 struct Lights
 {
-    int _id;
-    std::string _type = "RGBLight";
-    int _hue;
-    int _saturation;
-    int _value;
+    int id;
+    std::string type = "RGBLight";
+    int hue;
+    int saturation;
+    int value;
 };
 
 struct Servo
 {
-    int _id;
-    std::string _type = "Servo";
-    int _angle;
+    int id;
+    std::string type = "Servo";
+    int angle;
 };
 
 struct LightColor
 {
-    int _id;
-    std::string _type = "lightColor";
-    int _value;
+    int id;
+    std::string type = "lightColor";
+    int value;
 };
 
 struct Keyboard
 {
-    int _id;
-    std::string _type = "keyboard";
-    std::string _message;
+    int id;
+    std::string type = "keyboard";
+    std::string message;
 };
 
 
 void to_json(json& j, const TemperatureSensor& sensor)
 {
     j = json{
-        { "id", sensor._id},
-        {"type", sensor._type},
-        {"value", sensor._value}
+        { "id", sensor.id},
+        {"type", sensor.type},
+        {"value", sensor.value}
     };
 }
 void to_json(json& j, const WindowSensor& sensor)
 {
     j = json{
-        { "id", sensor._id},
-        {"type", sensor._type},
-        {"status", sensor._status}
+        { "id", sensor.id},
+        {"type", sensor.type},
+        {"status", sensor.status}
     };
 }
 void to_json(json& j, const WindowBlind& sensor)
 {
     j = json{
-        { "id", sensor._id},
-        {"type", sensor._type},
-        {"position", sensor._position}
+        { "id", sensor.id},
+        {"type", sensor.type},
+        {"position", sensor.position}
     };
 }
 void to_json(json& j, const LastTag& tag)
 {
     j = json{
-        { "id", tag._id},
-        {"type", tag._type},
-        {"timestamp", tag._timestamp}
+        { "id", tag.id},
+        {"type", tag.type},
+        {"timestamp", tag.timestamp}
     };
 }
 void to_json(json& j, const RFIDSensor& sensor)
 {
     j = json{
-        { "id", sensor._id},
-        {"type", sensor._type},
-        {"lastTag", sensor._last_tag}
+        { "id", sensor.id},
+        {"type", sensor.type},
+        {"lastTag", sensor.last_tag}
     };
 }
 
 void to_json(json& j, const SmokeSensor& sensor)
 {
     j = json{
-        { "id", sensor._id},
-        {"type", sensor._type},
-        {"isSmokeDetected", sensor._is_smoke_detected}
+        { "id", sensor.id},
+        {"type", sensor.type},
+        {"isSmokeDetected", sensor.is_smoke_detected}
     };
 }
 void to_json(json& j, const HVACStatus& status)
 {
     j = json{
-        {"type", status._type},
-        {"heating", status._heating},
-        {"cooling", status._cooling}
+        {"type", status.type},
+        {"heating", status.heating},
+        {"cooling", status.cooling}
     };
 }
 void to_json(json& j, const HVACRoom& room)
 {
     j = json{
-        { "id", room._id},
-        {"type", room._type},
-        {"heatingTemperature", room._heating_temperature},
-        {"coolingTemperature", room._cooling_temperature},
-        {"hysteresis", room._hysteresis},
-        {"temperatureSensorId", room._temperature_sensor_id},
-        {"coolingTemperature", room._cooling_temperature}
+        { "id", room.id},
+        {"type", room.type},
+        {"heatingTemperature", room.heating_temperature},
+        {"coolingTemperature", room.cooling_temperature},
+        {"hysteresis", room.hysteresis},
+        {"temperatureSensorId", room.temperature_sensor_id},
+        {"coolingTemperature", room.cooling_temperature}
     };
 }
 void to_json(json& j, const Lights& sensor)
 {
     j = json{
-        { "id", sensor._id},
-        {"type", sensor._type},
-        {"hue", sensor._hue},
-        {"saturation", sensor._saturation},
-        {"value", sensor._value}
+        { "id", sensor.id},
+        {"type", sensor.type},
+        {"hue", sensor.hue},
+        {"saturation", sensor.saturation},
+        {"value", sensor.value}
     };
 }
 
 void to_json(json& j, const Servo& sensor)
 {
     j = json{
-        { "id", sensor._id},
-        {"type", sensor._type},
-        {"angle", sensor._angle}
+        { "id", sensor.id},
+        {"type", sensor.type},
+        {"angle", sensor.angle}
     };
 }
 void to_json(json& j, const LightColor& color)
 {
     j = json{
-        { "id", color._id},
-        {"type", color._type},
-        {"value", color._value}
+        { "id", color.id},
+        {"type", color.type},
+        {"value", color.value}
     };
 }
 void to_json(json& j, const Keyboard& keyboard)
 {
     j = json{
-        { "id", keyboard._id},
-        {"type", keyboard._type},
-        {"message", keyboard._message}
+        { "id", keyboard.id},
+        {"type", keyboard.type},
+        {"message", keyboard.message}
     };
 }
 
@@ -217,85 +217,85 @@ void to_json(json& j, const Keyboard& keyboard)
 
 void from_json(const json& j,  TemperatureSensor& sensor)
 {
-    j.at("id").get_to(sensor._id);
-    //j.at("type").get_to(sensor._type);
-    j.at("value").get_to(sensor._value);
+    j.at("id").get_to(sensor.id);
+    //j.at("type").get_to(sensor.type);
+    j.at("value").get_to(sensor.value);
 }
 void from_json(const json& j,  WindowSensor& sensor)
 {
-    j.at("id").get_to(sensor._id);
-    //j.at("type").get_to(sensor._type);
-    j.at("status").get_to(sensor._status);
+    j.at("id").get_to(sensor.id);
+    //j.at("type").get_to(sensor.type);
+    j.at("status").get_to(sensor.status);
 }
 void from_json(const json& j,  WindowBlind& sensor)
 {
-    j.at("id").get_to(sensor._id);
-    //j.at("type").get_to(sensor._type);
-    j.at("position").get_to(sensor._position);
+    j.at("id").get_to(sensor.id);
+    //j.at("type").get_to(sensor.type);
+    j.at("position").get_to(sensor.position);
 }
 void from_json(const json& j,  LastTag& tag)
 {
-    j.at("id").get_to(tag._id);
-    //j.at("type").get_to(tag._type);
-    j.at("timestamp").get_to(tag._timestamp);
+    j.at("id").get_to(tag.id);
+    //j.at("type").get_to(tag.type);
+    j.at("timestamp").get_to(tag.timestamp);
 }
 void from_json(const json& j,  RFIDSensor& sensor)
 {
-    j.at("id").get_to(sensor._id);
-    //j.at("type").get_to(sensor._type);
-    j.at("lastTag").get_to(sensor._last_tag);
+    j.at("id").get_to(sensor.id);
+    //j.at("type").get_to(sensor.type);
+    j.at("lastTag").get_to(sensor.last_tag);
 }
 
 void from_json(const json& j,  SmokeSensor& sensor)
 {
-    j.at("id").get_to(sensor._id);
-    //j.at("type").get_to(sensor._type);
-    j.at("isSmokeDetected").get_to(sensor._is_smoke_detected);
+    j.at("id").get_to(sensor.id);
+    //j.at("type").get_to(sensor.type);
+    j.at("isSmokeDetected").get_to(sensor.is_smoke_detected);
 }
 void from_json(const json& j,  HVACStatus& status)
 {
-    j.at("type").get_to(status._type);
-    //j.at ("heating").get_to( status._heating);
-    j.at("cooling").get_to(status._cooling);
+    j.at("type").get_to(status.type);
+    //j.at ("heating").get_to( status.heating);
+    j.at("cooling").get_to(status.cooling);
     
 }
 void from_json(const json& j,  HVACRoom& room)
 {
-    j.at("id").get_to(room._id);
-    //j.at("type").get_to(room._type);
-    j.at("heating-temperature").get_to( room._heating_temperature);
-    j.at("cooling-temperature").get_to( room._cooling_temperature);
-    j.at("hysteresis").get_to( room._hysteresis);
-    j.at("temperatureSensorId").get_to( room._temperature_sensor_id);
-    j.at("windowSensorIds").get_to( room._window_sensor_ids);
+    j.at("id").get_to(room.id);
+    //j.at("type").get_to(room.type);
+    j.at("heating-temperature").get_to( room.heating_temperature);
+    j.at("cooling-temperature").get_to( room.cooling_temperature);
+    j.at("hysteresis").get_to( room.hysteresis);
+    j.at("temperatureSensorId").get_to( room.temperature_sensor_id);
+    j.at("windowSensorIds").get_to( room.window_sensor_ids);
 }
 
 void from_json(const json& j,  Lights& sensor)
 {
-    j.at("id").get_to(sensor._id);
-    //j.at("type").get_to(sensor._type);
-    j.at("hue").get_to( sensor._hue);
-    j.at("saturation").get_to( sensor._saturation);
-    j.at("value").get_to( sensor._value);
+    j.at("id").get_to(sensor.id);
+    //j.at("type").get_to(sensor.type);
+    j.at("hue").get_to( sensor.hue);
+    j.at("saturation").get_to( sensor.saturation);
+    j.at("value").get_to( sensor.value);
 }
 
 void from_json(const json& j, Servo& servo)
 {
-    j.at("id").get_to(servo._id);
-    //j.at("type").get_to(servo._type);
-    j.at("angle").get_to(servo._angle);
+    j.at("id").get_to(servo.id);
+    //j.at("type").get_to(servo.type);
+    j.at("angle").get_to(servo.angle);
 }
 
 void from_json(const json& j,  LightColor& color)
 {
-    j.at("id").get_to(color._id);
-    //j.at("type").get_to(color._type);
-    j.at("value").get_to(color._value);
+    j.at("id").get_to(color.id);
+    //j.at("type").get_to(color.type);
+    j.at("value").get_to(color.value);
 }
 
 void from_json(const json& j,  Keyboard& keyboard)
 {
-    j.at("id").get_to(keyboard._id);
-    //j.at("type").get_to(keyboard._type);
-    j.at("message").get_to(keyboard._message);
+    j.at("id").get_to(keyboard.id);
+    //j.at("type").get_to(keyboard.type);
+    j.at("message").get_to(keyboard.message);
 }
