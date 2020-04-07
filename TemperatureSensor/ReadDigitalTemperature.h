@@ -41,7 +41,8 @@ int read_digital_temperature(int in_pin)
     t_reading = (high_byte << 8) + low_byte;
     
     temperature_in_celsius = t_reading >> 4;
-    
-    return temperature_in_celsius;
+
+    /* Return temperature in tens of degrees of Celsius */
+    return temperature_in_celsius * 10;
 }
 #endif /* READDIGITALTEMPERATURE_H */

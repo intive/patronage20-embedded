@@ -20,14 +20,14 @@ int read_analog_temperature(int in_pin)
      
     resistance = log(resistance);
     resistance_cube = resistance * resistance * resistance;
-    
+
     /* Calculating resistance, Steinhart–Hart equation */
     resistance = 1 / (a + b * resistance + c * resistance_cube);
     
-    /* Convert Kelvin to Celcius */
-    temperature = resistance - 273.15; 
+    /* Convert Kelvin to Celcius in tens of degrees of Celsius */
+    temperature = (resistance - 273.15) * 10; 
 
-    /* Return calibrated temperature value */
+    /* Return value of the temperature */
     return temperature; 
 }
 #endif /* READANALOGTEMPERATURE_H */
