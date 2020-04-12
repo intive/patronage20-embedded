@@ -25,26 +25,32 @@ public:
     {
         window_sensors.push_back(sensor);
     }
+
     void add_window_blind(WindowBlind sensor)
     {
         window_blinds.push_back(sensor);
     }
+
     void add_rfid_sensor(RFIDSensor sensor)
     {
         rfid_sensors.push_back(sensor);
     }
+
     void add_smoke_sensor(SmokeSensor sensor)
     {
         smoke_sensors.push_back(sensor);
     }
+
     void add_hvac_sensor(HVACStatus status)
     {
         hvac_status = status;
     }
+
     void add_hvac_room(HVACRoom room)
     {
         hvac_rooms.push_back(room);
     }
+
     void add_light(Lights light)
     {
         lights.push_back(light);
@@ -67,18 +73,16 @@ public:
         return dashboard;
     }
 
-    
-
     void set_dashboard(json dashboard)
     {
-    temperature_sensors = dashboard["temperatureSensors"].get<std::vector<TemperatureSensor>>();
-    window_sensors = dashboard["windowSensors"].get<std::vector<WindowSensor>>();
-    window_blinds = dashboard["windowBlinds"].get<std::vector<WindowBlind>>();
-    rfid_sensors = dashboard["RFIDSensors"].get<std::vector<RFIDSensor>>();
-    smoke_sensors = dashboard["smokeSensors"].get<std::vector<SmokeSensor>>();
-    hvac_status = dashboard["HVACStatus"].get<HVACStatus>();
-    hvac_rooms = dashboard["HVACRooms"].get<std::vector<HVACRoom>>();
-    lights = dashboard["lights"].get<std::vector<Lights>>();
+        temperature_sensors = dashboard["temperatureSensors"].get<std::vector<TemperatureSensor>>();
+        window_sensors = dashboard["windowSensors"].get<std::vector<WindowSensor>>();
+        window_blinds = dashboard["windowBlinds"].get<std::vector<WindowBlind>>();
+        rfid_sensors = dashboard["RFIDSensors"].get<std::vector<RFIDSensor>>();
+        smoke_sensors = dashboard["smokeSensors"].get<std::vector<SmokeSensor>>();
+        hvac_status = dashboard["HVACStatus"].get<HVACStatus>();
+        hvac_rooms = dashboard["HVACRooms"].get<std::vector<HVACRoom>>();
+        lights = dashboard["lights"].get<std::vector<Lights>>();
     }
 
     int set_blind(json request)
@@ -130,6 +134,4 @@ public:
         }
         return 1;
     }
-    
-    
 };

@@ -12,20 +12,20 @@ enum type
     RFIDSENSOR
 };
 
-NLOHMANN_JSON_SERIALIZE_ENUM(type,{
-    {ALERT,"alert"},
-    {DOORBELL,"doorbell"},
-    {HVAC,"hvac"},
-    {WINDOWSENSOR,"windowSensor"},
-    {RFIDSENSOR,"windowSensor"},
+NLOHMANN_JSON_SERIALIZE_ENUM(type,
+{
+    {ALERT, "alert"},
+    {DOORBELL, "doorbell"},
+    {HVAC, "hvac"},
+    {WINDOWSENSOR, "windowSensor"},
+    {RFIDSENSOR, "windowSensor"},
 });
 
 class Notifications
 {
     json notifications;
 
-    public:
-
+public:
     Notifications(std::string filepath)
     {
         std::ifstream i(filepath);
