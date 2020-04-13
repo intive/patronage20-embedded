@@ -14,12 +14,12 @@ static int currentVal = 0;     /* innitial val for position of blinds (stepper) 
 static void stepper_run(bool dir, int *stepper_pin, int d) 
 {    
     static int _step = 0;
-    const int step_sequence[] = {0, 1, 3, 2};
+    const int gray = _step ^ (_step >> 1);
     
-    digitalWrite(stepper_pin[0], step_sequence[_step] >> 1);
-    digitalWrite(stepper_pin[1], step_sequence[_step] & 0x1);
-    digitalWrite(stepper_pin[2], (3 - step_sequence[_step]) >> 1);
-    digitalWrite(stepper_pin[3], (3 - step_sequence[_step]) & 0x1);
+    digitalWrite(stepper_pin[0], gray >> 1);
+    digitalWrite(stepper_pin[1], gray & 0x1);
+    digitalWrite(stepper_pin[2], (gray ^ 3) >> 1);
+    digitalWrite(stepper_pin[3], (gray ^ 3) & 0x1);
   
     if (dir)  
         _step--;
