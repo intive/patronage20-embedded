@@ -19,7 +19,7 @@ int read_digital_temperature(int in_pin)
   
     if (!ds.search(addr)) {
         ds.reset_search();
-        /*didn't find any sensor, return value under absolute zero */
+        /*Didn't find any sensor, return value under absolute zero */
         return -300;
     }
  
@@ -39,10 +39,10 @@ int read_digital_temperature(int in_pin)
     low_byte = data[0];
     high_byte = data[1];
     t_reading = (high_byte << 8) + low_byte;
-    
-    temperature_in_celsius = t_reading >> 4;
+
+    temperature_in_celsius = (t_reading * 10) >> 4;
 
     /* Return temperature in tens of degrees of Celsius */
-    return temperature_in_celsius * 10;
+    return temperature_in_celsius;
 }
 #endif /* READDIGITALTEMPERATURE_H */
