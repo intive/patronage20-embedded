@@ -40,7 +40,7 @@ struct DashboardMiddleware
 
     DashboardMiddleware()
     {
-        std::ifstream i("dashboard.json");
+        std::ifstream i("jsons/dashboard.json");
         json dashboard_response;
         i >> dashboard_response;
         i.close();
@@ -53,7 +53,7 @@ struct DashboardMiddleware
     void before_handle(crow::request &req, crow::response &res, context &ctx)
     {
         auto &cookiectx = lamGetCookieCtx(req);
-        cookiectx.set_cookie(COOKIE_NAME, "ad21");
+        cookiectx.set_cookie(COOKIE_NAME, COOKIE_VALUE);
     }
 
     void after_handle(crow::request &req, crow::response &res, context &ctx)
@@ -127,7 +127,7 @@ int main()
         return crow::response(notifications.get_notifications().dump());
     });
     CROW_ROUTE(gateway, "/notifications/<int>").methods(crow::HTTPMethod::DELETE)([](int id) {
-        Notifications notifications("notifications.json");
+        Notifications notifications("jsons/notifications.json");
         if (notifications.delete_notification(id))
             return crow::response(400);
         std::ofstream o("notifications.json");
