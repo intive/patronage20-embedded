@@ -1,0 +1,100 @@
+{
+    "temperatureSensors": [
+        {
+            "id": 0,
+            "type": "temperatureSensor",
+            "value": 22
+        },
+        {
+            "id": 1,
+            "type": "temperatureSensor",
+            "value": 21.4
+        }
+    ],
+    "windowSensors": [
+        {
+            "id": 2,
+            "type": "windowSensor",
+            "status": "open"
+        },
+        {
+            "id": 3,
+            "type": "windowSensor",
+            "status": "open"
+        },
+        {
+            "id": 4,
+            "type": "windowSensor",
+            "status": "open"
+        }
+    ],
+    "windowBlinds": [
+        {
+            "id": 5,
+            "type": "windowBlind",
+            "position": 40
+        },
+        {
+            "id": 6,
+            "type": "windowBlind",
+            "position": 90
+        }
+    ],
+    "RFIDSensors": [
+        {
+            "id": 7,
+            "type": "RFIDSensor",
+            "lastTag": {
+                "id": 8,
+                "type": "RFIDTag",
+                "timestamp": 1584643127408
+            }
+        }
+    ],
+    "smokeSensors": [
+        {
+            "id": 9,
+            "type": "smokeSensor",
+            "isSmokeDetected": false
+        }
+    ],
+    "HVACStatus": {
+        "type": "HVACStatus",
+        "heating": false,
+        "cooling": false
+    },
+    "HVACRooms": [
+        {
+            "id": 10,
+            "type": "HVACRoom",
+            "heating-temperature": 400,
+            "cooling-temperature": 70,
+            "hysteresis": 5,
+            "temperatureSensorId": 0,
+            "windowSensorIds": [
+                2,
+                3
+            ]
+        },
+        {
+            "id": 11,
+            "type": "HVACRoom",
+            "heating-temperature": 300,
+            "cooling-temperature": 100,
+            "hysteresis": 10,
+            "temperatureSensorId": 1,
+            "windowSensorIds": [
+                4
+            ]
+        }
+    ],
+    "lights": [
+        {
+            "id": 12,
+            "type": "RGBLight",
+            "hue": 0,
+            "saturation": 100,
+            "value": 90
+        }
+    ]
+}
