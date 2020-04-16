@@ -1,9 +1,7 @@
 output/
 .vscode/
 *.py
-<<<<<<< HEAD
 libraries/Network/network.ino
 libraries/Network/Config.h
 build
-Network.h
 init_config.h
