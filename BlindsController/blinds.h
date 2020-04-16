@@ -14,31 +14,22 @@ static int currentVal = 0;     /* innitial val for position of blinds (stepper) 
 static void stepper_run(bool dir, int *stepper_pin, int d) 
 {    
     static int _step = 0;
-    bool stepPinVal[8][4] {
-        {0, 0, 0, 1},
-        {0, 0, 1, 1},
-        {0, 0, 1, 0},
-        {0, 1, 1, 0},
-        {0, 1, 0, 0},
-        {1, 1, 0, 0},
-        {1, 0, 0, 0},
-        {1, 0, 0, 1}
-    };
+    const int gray = _step ^ (_step >> 1);
     
-    digitalWrite(stepper_pin[0], stepPinVal[_step][0]);  
-    digitalWrite(stepper_pin[1], stepPinVal[_step][1]); 
-    digitalWrite(stepper_pin[2], stepPinVal[_step][2]); 
-    digitalWrite(stepper_pin[3], stepPinVal[_step][3]);
-        
+    digitalWrite(stepper_pin[0], gray >> 1);
+    digitalWrite(stepper_pin[1], gray & 0x1);
+    digitalWrite(stepper_pin[2], (gray ^ 3) >> 1);
+    digitalWrite(stepper_pin[3], (gray ^ 3) & 0x1);
+  
     if (dir)  
         _step--;
     else  
         _step++;
 
-    _step &= 0x7;
+    _step &= 0x3;
 
-    if (d < 1) 
-        delay(1); 
+    if (d < 2) 
+        delay(2); 
     else 
         delay(d);
 }
@@ -46,7 +37,7 @@ static void stepper_run(bool dir, int *stepper_pin, int d)
 /* Convert currentVal to prc (0-100) due to range */
 static int convert_to_percent(int a) 
 {
-    return (a * 100) / range;
+    return ((a * 100) + (range / 2)) / range;
 }
 
 /* Fnc responsible for moving blinds up to setted val until switch 1 or 2 pushed or achieve min range - 0 */
@@ -128,7 +119,7 @@ static void blinds_move_targetValue(int targetValue)
     if (targetValue < 0) {
         targetValue = 0;
     }
-    targetValue = (targetValue * range) / 100;
+    targetValue = ((targetValue * range) + 50) / 100;
     if (targetValue != currentVal) {
         if (targetValue > currentVal) {
             blinds_move_down(targetValue, switches_pin);
