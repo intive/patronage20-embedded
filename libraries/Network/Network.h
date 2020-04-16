@@ -1,9 +1,6 @@
 #ifndef NETWORK_H
 #define NETWORK_H
 
-/*  TODO: change it to ssid and pass from config file*/
-#define STASSID "FIND ME"
-#define STAPASS "87654321"
 
 #ifdef ESP32
 #include <WiFi.h>
@@ -14,11 +11,12 @@
 #include <Arduino.h>
 #include <stdio.h>      /* printf, scanf, NULL */
 #include <stdlib.h>     /* malloc, free, rand */
+#include <init_config.h>
 
 class Network{
 private:
-    String ssid = STASSID;
-    String password = STAPASS;
+    String ssid_o = ssid;
+    String password = passwd;
 
     WiFiClient wifiClient;
 
@@ -68,8 +66,8 @@ private:
 
 public:
     Network(){};
-    Network(String _ssid, String _pass) : ssid(_ssid), password(_pass){};
-    Network(String _ssid, String _pass, const char *mac) : ssid(_ssid), password(_pass){
+    Network(String _ssid, String _pass) : ssid_o(_ssid), password(_pass){};
+    Network(String _ssid, String _pass, const char *mac) : ssid_o(_ssid), password(_pass){
         this->change_mac_address(mac);
     };
 
@@ -106,7 +104,7 @@ public:
         Force ESP to reconnect wifi connection
     */
     void reconnect(){
-        WiFi.begin(ssid, password);
+        WiFi.begin(ssid_o, password);
         WiFi.mode(WIFI_STA);
         while (WiFi.status() != WL_CONNECTED)
             delay(1000);
