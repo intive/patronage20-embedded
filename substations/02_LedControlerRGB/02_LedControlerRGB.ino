@@ -19,6 +19,21 @@ MQTT mqtt;
 /* Network connecion library - ssid and password got from init_config.h */
 Network network(ssid, passwd);
 
+void raport_hsv_color()
+{
+    DynamicJsonDocument root(200);
+    String json_output = "";
+    /* Preparing JSON object to send to the broker */
+    root["id"] = ID;
+    root["type"] = TYPE;
+    root["hue"] = hue;
+    root["saturation"] = saturation;
+    root["value"] = value;
+    serializeJson(root, json_output);
+    /* Send JSON object over the MQTT */
+    mqtt.send(json_output);
+}
+
 /* Callback function for MQTT library */
 void get_hsv_color(String json_input)
 {
@@ -72,6 +87,7 @@ void loop()
     network.loop();
     /* Keep MQTT alive */
     mqtt.loop();
-
+    /* Report HSV color to the broker */
+    raport_hsv_color();
     delay(1000);
 }
