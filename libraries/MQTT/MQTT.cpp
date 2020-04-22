@@ -50,7 +50,8 @@ void MQTT::loop(){
     if(WiFi.isConnected())
         if (!client.connected()) {
             /* Load a certificate before connection, the ESP clock is set */
-            load_certificate();
+            if(enabled_tls)
+                load_certificate();
             reconnect();
         }
 
@@ -61,7 +62,7 @@ void MQTT::loop(){
 MQTT::MQTT(){
     client.setClient(wifiClient);
     client.setServer(broker, port);
-
+    enabled_tls = true;
     std::function<void(char*, uint8_t*, unsigned int)> WhereCatsDoMEWMEW = std::bind(&MQTT::callback, this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3);
     client.setCallback(WhereCatsDoMEWMEW);
 }

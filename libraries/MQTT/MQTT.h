@@ -21,6 +21,7 @@ class MQTT{
         WiFiClientSecure wifiClient;
         PubSubClient client;
         callback_function returnFunct = nullptr; /* variable to store function pointer type */
+        bool enabled_tls; /* Enable secure connection by default */
 
         /*  Gets whole traffic from MQTT and interprets it */
         void callback(char* topic, byte* payload, unsigned int length);
@@ -40,7 +41,8 @@ class MQTT{
         void set_return_function(callback_function _returnFunct){
             this->returnFunct = _returnFunct;
         }
-
+        bool is_tls() {return enabled_tls;};
+        void enable_tls(bool status) {enabled_tls = status;};
         /*   Send a message to a specific topic. It's overloaded for a lot of scenarios  */
         void send(const char* s){client.publish(outTopic, s);};
         void send(String s){client.publish(outTopic,s.c_str());};
