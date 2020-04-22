@@ -19,10 +19,8 @@ void setup()
     Serial.begin(9600);
     while (!Serial) {
     }
-
     pinMode(digital_pin, INPUT);
     pinMode(D8, INPUT);
-
     network.init();
 }
 
@@ -34,6 +32,5 @@ void loop()
     mqtt.send(get_temperature(true, digital_pin));
     /* Report temperature from analog sensor to the broker */
     mqtt.send(get_temperature(false, analog_pin));
-
     delay(1000);
 }
