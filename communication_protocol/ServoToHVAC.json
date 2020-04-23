@@ -1,0 +1,6 @@
+{
+    "servoId" : 1,
+    "HVACId" : 2,
+    "type" : "ServoPosition",
+    "position" : 10
+}
