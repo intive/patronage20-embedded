@@ -5,3 +5,5 @@ libraries/Network/network.ino
 libraries/Network/Config.h
 build
 init_config.h
+main.cpp
+buildandrun.sh

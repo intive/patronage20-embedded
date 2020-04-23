@@ -1,4 +1,4 @@
-# MQTT Brocker install
+# MQTT Broker install
 
 ## Instalation
 
