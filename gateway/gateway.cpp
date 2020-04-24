@@ -53,18 +53,19 @@ struct DashboardMiddleware
     void before_handle(crow::request &req, crow::response &res, context &ctx)
     {
         auto &cookiectx = lamGetCookieCtx(req);
-        cookiectx.set_cookie(COOKIE_NAME, COOKIE_VALUE);
-    }
-
-    void after_handle(crow::request &req, crow::response &res, context &ctx)
-    {
-        auto &cookiectx = lamGetCookieCtx(req);
-        if (cookiectx.get_cookie(COOKIE_NAME) != COOKIE_VALUE)
+        if (cookiectx.get_cookie(COOKIE_NAME) != COOKIE_VALUE) {
             res = crow::response(403);
+            res.end();
+        }
         else
         {
             CROW_LOG_INFO << "COOKIE OK";
         }
+    }
+
+    void after_handle(crow::request &req, crow::response &res, context &ctx)
+    {
+        
     }
 };
 
@@ -122,7 +123,7 @@ int main()
 
     /*NOTIFICATIONS*/
     CROW_ROUTE(gateway, "/notifications").methods(crow::HTTPMethod::GET)([&]() {
-        Notifications notifications("notifications.json");
+        Notifications notifications("jsons/notifications.json");
 
         return crow::response(notifications.get_notifications().dump());
     });
@@ -130,7 +131,7 @@ int main()
         Notifications notifications("jsons/notifications.json");
         if (notifications.delete_notification(id))
             return crow::response(400);
-        std::ofstream o("notifications.json");
+        std::ofstream o("jsons/notifications.json");
         o << std::setw(4) << notifications.get_notifications() << std::endl;
         o.close();
 
