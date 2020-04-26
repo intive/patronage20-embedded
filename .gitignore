@@ -7,3 +7,7 @@ build
 init_config.h
 main.cpp
 buildandrun.sh
+mqtt
+DST.*
+example.txt
+server

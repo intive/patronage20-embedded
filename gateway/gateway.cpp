@@ -68,9 +68,13 @@ struct DashboardMiddleware
     }
 };
 
+char s = 0;
+void print(const char* c){
+    printf("%s\n",c);
+}
+
 int main()
 {
-
     crow::App<crow::CookieParser, DashboardMiddleware> gateway;
     gateway.get_middleware<DashboardMiddleware>().init(gateway);
 

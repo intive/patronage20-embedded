@@ -510,7 +510,8 @@ typedef struct
  * ::MQTTAsync_responseOptions, which contains any application-specific context.
  * @param response Any success data associated with the API completion.
  */
-typedef void MQTTAsync_onSuccess(void* context, MQTTAsync_successData* response);
+// typedef void MQTTAsync_onSuccess(void* context, MQTTAsync_successData* response);
+typedef void MQTTAsync_onSuccess(void* context, MQTTAsync_successData* response,int& rr);
 
 typedef void MQTTAsync_onSuccess5(void* context, MQTTAsync_successData5* response);
 

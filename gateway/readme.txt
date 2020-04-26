@@ -7,8 +7,13 @@ g++ -O3 -std=c++11 gateway.cpp -Wall -g - -pthread -lssl -lcrypto -lboost_system
 And static (will yield some warnings but that's OK):
 g++ -O3 -std=c++11 gateway.cpp -Wall -g --static -pthread -lssl -lcrypto -lboost_system -ldl -o server
 
+And with MQTT lib:
+g++ -O3 -std=c++11 gateway.cpp  -I ./dependencies/include/ -L ./dependencies/lib/ -B ./dependencies/lib/ -lpaho-mqtt3cs -o server
+
 Dependencies:
 sudo apt-get install libboost-all-dev
+
+sudo ln -s ./dependencies/lib/libpaho-mqtt3cs.so.1 /usr/local/lib/libpaho-mqtt3cs.so.1
 
 //this ones i'm not sure because program wouln't compile before i installed these, but whatever :D
 sudo apt-get install libasio-dev
