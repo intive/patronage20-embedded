@@ -10,7 +10,7 @@
 #define CLIENTID "gateway"
 #define TOPIC_I "intive/embedded"
 #define TOPIC_O "intive/embedded_o"
-#define CAFILE "DST.pem"
+#define CAFILE "/etc/letsencrypt/live/gate.patronage2020-iot.intive-projects.com/fullchain.pem"
 #define QOS 1
 #define TIMEOUT 10000L
 
@@ -27,16 +27,23 @@ void delivered(void *context, MQTTClient_deliveryToken dt) {
 }
 int msgarrvd(void *context, char *topicName, int topicLen, MQTTClient_message *message) {
     int i;
-    char payloadptr_r[message->payloadlen];
+    char payloadptr_r[message->payloadlen+1];
+    // const char* payloadptr_r= (const char *)malloc(message->payloadlen);
     char *payloadptr = (char *)message->payload;
-
-    for (i = 0; i < message->payloadlen; i++)
+    // payloadptr_r = payloadptr;
+    printf("%d\n",message->payloadlen);
+    for (i = 0; i < message->payloadlen; i++){
         payloadptr_r[i] = *payloadptr++;
+    //     // print(payloadptr_r[i]);
+    //     // printf("\n");
+    }
+    payloadptr_r[message->payloadlen] = '\0';
 
     MQTTClient_freeMessage(&message);
     MQTTClient_free(topicName);
     if (returnFunct != nullptr)
-        returnFunct((const char *)payloadptr_r);
+        returnFunct((const char*)payloadptr_r);
+        // returnFunct((const char*) payloadptr);
 
     return 1;
 }
