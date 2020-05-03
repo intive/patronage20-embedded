@@ -7,8 +7,8 @@ g++ -O3 -std=c++11 gateway.cpp -Wall -g - -pthread -lssl -lcrypto -lboost_system
 And static (will yield some warnings but that's OK):
 g++ -O3 -std=c++11 gateway.cpp -Wall -g --static -pthread -lssl -lcrypto -lboost_system -ldl -o server
 
-And with MQTT lib:
-g++ -O3 -std=c++11 gateway.cpp  -I ./dependencies/include -L /usr/lib -B /usr/lib -Bstatic -Wall -g -pthread -lssl -lcrypto -lboost_system -ldl -lpaho-mqtt3cs -o server
+And with MQTT lib (removed -O3, because with it that doesn't work. Don't know why at this moment):
+g++ -std=c++11 gateway.cpp  -I ./dependencies/include -L /usr/lib -B /usr/lib -Bstatic -Wall -g -pthread -lssl -lcrypto -lboost_system -ldl -lpaho-mqtt3cs -o server
 
 //Libs
 
