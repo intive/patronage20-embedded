@@ -1,4 +1,7 @@
 #include "MQTT.h"
+#include <TZ.h>
+
+#define MYTZ TZ_Europe_Warsaw
 
 void MQTT::reconnect() {
     /* Loop until we're reconnected */
@@ -50,9 +53,8 @@ void MQTT::loop(){
     if(WiFi.isConnected())
         if (!client.connected()) {
             /* Load a certificate before connection, the ESP clock is set */
-            if(enabled_tls)
-                load_certificate();
-            reconnect();
+            if(load_certificate()==0)
+                reconnect();
         }
 
     client.loop();
@@ -62,12 +64,11 @@ void MQTT::loop(){
 MQTT::MQTT(){
     client.setClient(wifiClient);
     client.setServer(broker, port);
-    enabled_tls = true;
     std::function<void(char*, uint8_t*, unsigned int)> WhereCatsDoMEWMEW = std::bind(&MQTT::callback, this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3);
     client.setCallback(WhereCatsDoMEWMEW);
 }
 
-void MQTT::load_certificate() {
+int MQTT::load_certificate() {
     /* Set the ESP clock time, needed for certificate authorization */
     set_clock();
 
@@ -76,7 +77,7 @@ void MQTT::load_certificate() {
         #if DEBUG==1
         Serial.println("Failed to mount file system");
         #endif
-        return;
+        return 1;
     }
 
     /* Try to load CA file from SPIFFS */
@@ -85,6 +86,7 @@ void MQTT::load_certificate() {
         #if DEBUG==1
         Serial.println("Failed to open certificate");
         #endif
+        return 2;
     }
     else {
         #if DEBUG==1
@@ -96,17 +98,19 @@ void MQTT::load_certificate() {
             #if DEBUG==1
             Serial.println("Certificate loaded");
             #endif
+            return 0;
         }
         else {
             #if DEBUG==1
             Serial.println("Load certificate failed");
             #endif
+            return 3;
         }
     }
 }
 void MQTT::set_clock() {
     /* Set timezone, day light offset and time servers */
-    configTime(2 * 3600, 0, "pool.ntp.org", "time.nist.gov");
+    configTime(MYTZ, "pool.ntp.org", "time.nist.gov");
 
     #if DEBUG==1
     Serial.print("Waiting for NTP time sync: ");
@@ -125,11 +129,8 @@ void MQTT::set_clock() {
     }
     #if DEBUG==1
     Serial.println("");
-
     /* Print time to serial */
-    struct tm timeinfo;
-    gmtime_r(&now, &timeinfo);
     Serial.print("Current time: ");
-    Serial.print(asctime(&timeinfo));
+    Serial.print(asctime(localtime(&now)));
     #endif
 }

@@ -21,7 +21,6 @@ class MQTT{
         WiFiClientSecure wifiClient;
         PubSubClient client;
         callback_function returnFunct = nullptr; /* variable to store function pointer type */
-        bool enabled_tls; /* Enable secure connection by default */
 
         /*  Gets whole traffic from MQTT and interprets it */
         void callback(char* topic, byte* payload, unsigned int length);
@@ -33,16 +32,17 @@ class MQTT{
 
         /*  This should be called in loop function in main device file  */
         void loop();
-        /* Function to load a certificate from SPIFFS filesystem placed into ESP */
-        void load_certificate();
+        /* Function to load a certificate from SPIFFS filesystem placed into ESP
+           Return 0 for OK, 1 for failed to mount file system,
+           2 for failed to open certificate, 3 for load certificate failed
+        */
+        int load_certificate();
         /* Function to set time and date in ESP */
         void set_clock();
         /*  Sets a pointer on the function that callback should be returned   */
         void set_return_function(callback_function _returnFunct){
             this->returnFunct = _returnFunct;
         }
-        bool is_tls() {return enabled_tls;};
-        void enable_tls(bool status) {enabled_tls = status;};
         /*   Send a message to a specific topic. It's overloaded for a lot of scenarios  */
         void send(const char* s){client.publish(outTopic, s);};
         void send(String s){client.publish(outTopic,s.c_str());};
