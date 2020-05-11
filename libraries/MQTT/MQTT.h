@@ -44,8 +44,8 @@ class MQTT{
             this->returnFunct = _returnFunct;
         }
         /*   Send a message to a specific topic. It's overloaded for a lot of scenarios  */
-        void send(const char* s){client.publish(outTopic, s);};
-        void send(String s){client.publish(outTopic,s.c_str());};
+        void send(const char* s){client.publish(mqttOutputTopic, s);};
+        void send(String s){client.publish(mqttOutputTopic,s.c_str());};
         void send(const char* t, const char* s){client.publish(t,s);};
         void send(const char* t, String s){client.publish(t,s.c_str());};
         void send(String t, String s){client.publish(t.c_str(),s.c_str());};
