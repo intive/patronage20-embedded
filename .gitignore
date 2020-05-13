@@ -5,3 +5,4 @@ libraries/Network/network.ino
 libraries/Network/Config.h
 build
 init_config.h
+substations/05_MotionSensor/data/CA.crt
