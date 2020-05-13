@@ -3,6 +3,7 @@
 
 #define MYTZ TZ_Europe_Warsaw
 
+
 void MQTT::reconnect() {
     /* Loop until we're reconnected */
     while (!client.connected()) {
