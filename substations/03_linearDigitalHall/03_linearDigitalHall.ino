@@ -23,5 +23,5 @@ void loop()
     network.loop();
     mqtt.loop();
     mqtt.send(linear_digital(digitalPin));
-    delay(1000);
+    delay(1);
 }
