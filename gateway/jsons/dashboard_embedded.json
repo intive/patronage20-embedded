@@ -1,0 +1,13 @@
+{
+    "servos": [
+        
+    ],
+    
+    "motionSensors": [
+        {  
+            "id": 111,
+            "type": "motionSensor",
+            "motion": false
+        }
+    ]
+}

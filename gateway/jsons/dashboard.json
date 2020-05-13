@@ -1,48 +1,48 @@
 {
     "temperatureSensors": [
         {
-            "id": 0,
-            "type": "temperatureSensor",
+            "id": 61,
+            "type": "TEMPERATURE_SENSOR",
             "value": 22
         },
         {
-            "id": 1,
-            "type": "temperatureSensor",
+            "id": 62,
+            "type": "TEMPERATURE_SENSOR",
             "value": 21.4
         }
     ],
     "windowSensors": [
         {
-            "id": 2,
+            "id": 81,
             "type": "windowSensor",
             "status": "open"
         },
         {
-            "id": 3,
+            "id": 82,
             "type": "windowSensor",
             "status": "open"
         },
         {
-            "id": 4,
+            "id": 83,
             "type": "windowSensor",
             "status": "open"
         }
     ],
     "windowBlinds": [
         {
-            "id": 5,
+            "id": 71,
             "type": "windowBlind",
             "position": 40
         },
         {
-            "id": 6,
+            "id": 72,
             "type": "windowBlind",
             "position": 90
         }
     ],
     "RFIDSensors": [
         {
-            "id": 7,
+            "id": 41,
             "type": "RFIDSensor",
             "lastTag": {
                 "id": 8,
@@ -53,20 +53,25 @@
     ],
     "smokeSensors": [
         {
-            "id": 9,
+            "id": 51,
             "type": "smokeSensor",
             "isSmokeDetected": false
         }
     ],
-    "HVACStatus": {
+    "HVACStatus": [
+        {
+        "id": 91,
         "type": "HVACStatus",
         "heating": false,
         "cooling": false
-    },
+        }
+    ],
     "HVACRooms": [
         {
-            "id": 10,
+            "id": 1,
             "type": "HVACRoom",
+            "heating": false,
+            "cooling": true,
             "heating-temperature": 400,
             "cooling-temperature": 70,
             "hysteresis": 5,
@@ -77,8 +82,10 @@
             ]
         },
         {
-            "id": 11,
+            "id": 2,
             "type": "HVACRoom",
+            "heating": true,
+            "cooling": true,
             "heating-temperature": 300,
             "cooling-temperature": 100,
             "hysteresis": 10,
@@ -90,8 +97,15 @@
     ],
     "lights": [
         {
-            "id": 12,
-            "type": "RGBLight",
+            "id": 21,
+            "type": "LED_CONTROLLER",
+            "hue": 0,
+            "saturation": 100,
+            "value": 90
+        },
+        {
+            "id": 22,
+            "type": "LED_CONTROLLER",
             "hue": 0,
             "saturation": 100,
             "value": 90

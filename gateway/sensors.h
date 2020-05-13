@@ -18,7 +18,7 @@ struct TemperatureSensor
 {
     /*Properties*/
     int id;
-    std::string type = "temperatureSensor";
+    std::string type = "TEMPERATURE_SENSOR";
     int value;
 };
 
@@ -59,6 +59,7 @@ struct SmokeSensor
 
 struct HVACStatus
 {
+    int id;
     std::string type = "HVACStatus";
     bool heating;
     bool cooling;
@@ -68,6 +69,8 @@ struct HVACRoom
 {
     int id;
     std::string type = "HVACRoom";
+    bool heating;
+    bool cooling;
     int heating_temperature;
     int cooling_temperature;
     int hysteresis;
@@ -78,7 +81,7 @@ struct HVACRoom
 struct Lights
 {
     int id;
-    std::string type = "RGBLight";
+    std::string type = "LED_CONTROLLER";
     int hue;
     int saturation;
     int value;
@@ -103,6 +106,13 @@ struct Keyboard
     int id;
     std::string type = "keyboard";
     std::string message;
+};
+
+struct MotionSensor
+{
+    int id;
+    std::string type = "motionSensor";
+    bool motion;
 };
 
 void to_json(json &j, const TemperatureSensor &sensor)
@@ -156,6 +166,7 @@ void to_json(json &j, const SmokeSensor &sensor)
 void to_json(json &j, const HVACStatus &status)
 {
     j = json{
+        {"id", status.id},
         {"type", status.type},
         {"heating", status.heating},
         {"cooling", status.cooling}};
@@ -170,6 +181,8 @@ void to_json(json &j, const HVACRoom &room)
         {"coolingTemperature", room.cooling_temperature},
         {"hysteresis", room.hysteresis},
         {"temperatureSensorId", room.temperature_sensor_id},
+        {"heating", room.heating},
+        {"cooling", room.cooling},
         {"windowSensorIds", room.window_sensor_ids}};
 }
 
@@ -205,6 +218,14 @@ void to_json(json &j, const Keyboard &keyboard)
         {"id", keyboard.id},
         {"type", keyboard.type},
         {"message", keyboard.message}};
+}
+
+void to_json(json &j, const MotionSensor &motion)
+{
+    j = json{
+        {"id", motion.id},
+        {"type", motion.type},
+        {"motion", motion.motion}};
 }
 
 void from_json(const json &j, TemperatureSensor &sensor)
@@ -251,6 +272,7 @@ void from_json(const json &j, SmokeSensor &sensor)
 
 void from_json(const json &j, HVACStatus &status)
 {
+    j.at("id").get_to(status.id);
     j.at("type").get_to(status.type);
     //j.at ("heating").get_to( status.heating);
     j.at("cooling").get_to(status.cooling);
@@ -265,6 +287,8 @@ void from_json(const json &j, HVACRoom &room)
     j.at("hysteresis").get_to(room.hysteresis);
     j.at("temperatureSensorId").get_to(room.temperature_sensor_id);
     j.at("windowSensorIds").get_to(room.window_sensor_ids);
+    j.at("cooling").get_to(room.cooling);
+    j.at("heating").get_to(room.heating);
 }
 
 void from_json(const json &j, Lights &sensor)
@@ -295,4 +319,11 @@ void from_json(const json &j, Keyboard &keyboard)
     j.at("id").get_to(keyboard.id);
     //j.at("type").get_to(keyboard.type);
     j.at("message").get_to(keyboard.message);
+}
+
+void from_json(const json &j, MotionSensor &motion)
+{
+    j.at("id").get_to(motion.id);
+    j.at("type").get_to(motion.type);
+    j.at("motion").get_to(motion.motion);
 }
