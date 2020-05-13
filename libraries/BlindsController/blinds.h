@@ -139,10 +139,10 @@ static String return_JSON(int id, int pos)
     StaticJsonDocument<100> doc;
     
     doc["id"] = id;
-    doc["type"] = "BlindsController";
+    doc["type"] = "windowBlind";
     doc["position"] = pos;
     
-    serializeJsonPretty(doc, output);
+    serializeJson(doc, output);
     return output;
 }
   
