@@ -5,6 +5,7 @@
 #include "Network.h"
 
 #define PIN 13
+unsigned int notifCaller = 0;
 
 MQTT mqtt;
 Network network(ssid, passwd);
@@ -19,6 +20,9 @@ void setup()
 void loop()
 {
     mqtt.loop();
-    mqtt.send(motion_sensor(PIN));
-    delay(1000);
+    if (++notifCaller >= 1000) {
+        mqtt.send(motion_sensor(PIN));
+        notifCaller = 0;
+    }
+    delay(1);
 }
