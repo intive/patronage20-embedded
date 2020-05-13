@@ -14,7 +14,7 @@ void MQTT::reconnect() {
             #if DEBUG==1
             Serial.println("connected");
             #endif
-            client.subscribe(topic);
+            client.subscribe(mqttInputTopic);
         } else {
             #if DEBUG==1
             Serial.print("failed, rc=");
@@ -28,11 +28,11 @@ void MQTT::reconnect() {
   }
 
 /*  Gets whole traffic from MQTT and interprets it */
-void MQTT::callback(char* topic, byte* payload, unsigned int length) {
+void MQTT::callback(char* mqttInputTopic, byte* payload, unsigned int length) {
   /* DEBUG */
     #if DEBUG==1
     Serial.print("\nMessage arrived [");
-    Serial.print(topic);
+    Serial.print(mqttInputTopic);
     Serial.print("] ");
     #endif
     /*End of debug*/
