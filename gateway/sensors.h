@@ -170,7 +170,7 @@ void to_json(json &j, const HVACRoom &room)
         {"coolingTemperature", room.cooling_temperature},
         {"hysteresis", room.hysteresis},
         {"temperatureSensorId", room.temperature_sensor_id},
-        {"coolingTemperature", room.cooling_temperature}};
+        {"windowSensorIds", room.window_sensor_ids}};
 }
 
 void to_json(json &j, const Lights &sensor)
