@@ -11,7 +11,6 @@ static bool detect_motion(int pin)
   
     if (state == HIGH)
         return true;
-
     else
         return false;
 }
@@ -23,7 +22,7 @@ static String motion_sensor(int pin)
     StaticJsonDocument<100> root;
     
     root["type"] = "motionSensor";
-	root["id"] = MotionSensor_1_ID;
+    root["id"] = MotionSensor_1_ID;
     root["motion"] = detect_motion(pin);
 
     serializeJson(root, output);
