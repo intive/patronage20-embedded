@@ -164,7 +164,10 @@ int main(void)
             pthread_rwlock_unlock(&q_rwlock);
             return crow::response(400);
         }
-        pthread_rwlock_unlock(&q_rwlock);    
+        pthread_rwlock_unlock(&q_rwlock);  
+
+        mqtt_send(mosq, blind.dump().c_str());
+            
         return crow::response(200);
     });
 
