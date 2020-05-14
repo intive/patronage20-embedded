@@ -5,7 +5,7 @@
 #include "Network.h"
 
 #define digitalPin 15
-int notif_counter = 0;
+unsigned int notif_counter = 0;
 
 MQTT mqtt;
 Network network(ssid, passwd);
@@ -22,7 +22,7 @@ void setup()
 void loop()
 {
     mqtt.loop();
-    if (++notif_counter == 1000){
+    if (++notif_counter >= 1000) {
         mqtt.send(magnetic_digital(digitalPin));
         notif_counter = 0;
     }
