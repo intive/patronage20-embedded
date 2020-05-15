@@ -46,6 +46,10 @@ void MQTT_blinds_move(String s)
     if(doc["id"].as<int>() == id_servo)
         if(doc["type"].as<String>().equals("Servo")) {
             servoAng = doc["angle"].as<int>();
+            if(servoAng < 0)
+                servoAng = 0;
+            if(servoAng > 180)
+                servoAng = 180; 
             servo.write(servoAng);
         }
 }
