@@ -2,6 +2,7 @@
 #include "dependencies/crow_all.h"
 #include <mosquitto.h>
 #include <pthread.h>
+#include "request_validation.h"
 
 #include "dependencies/json.hpp"
 #include "dashboard.h"
@@ -22,18 +23,18 @@
 
 struct CookieProtection {
     /** our lambda function **/
-    std::function<crow::CookieParser::context& (crow::request& req)> lamGetCookieCtx;  
+    std::function<crow::CookieParser::context& (crow::request& req)> lamGetCookieCtx;
 
     /** stores an enviroment that allows us to access the cookies context **/
-    template<typename ... Middlewares>   
+    template<typename ... Middlewares>
     void init(crow::Crow<Middlewares...>& app)
     {
         lamGetCookieCtx = [&](crow::request& req) -> crow::CookieParser::context& {
-            
+
             return app.template  get_context<crow::CookieParser>(req);
         };
     }
-    
+
     Dashboard dashboard;
     Dashboard dashboard_embedded;
 
@@ -69,7 +70,7 @@ struct CookieProtection {
             CROW_LOG_INFO << "COOKIE OK";
         }
     }
-    
+
     void after_handle(crow::request&, crow::response& res, context& ctx)
     {
 
@@ -85,9 +86,9 @@ void mqtt_recv(struct mosquitto *mosq, void *userdata, const struct mosquitto_me
 {
     pthread_rwlock_init(&q_rwlock, NULL);
     char* incoming_msg = (char*)message->payload;
-    
+
     json update = json::parse(incoming_msg);
-    
+
     pthread_rwlock_wrlock(&q_rwlock);
     app.get_middleware<CookieProtection>().dashboard_embedded.update_dashboard_embedded(update);
     app.get_middleware<CookieProtection>().dashboard.update_dashboard(update);
@@ -95,16 +96,16 @@ void mqtt_recv(struct mosquitto *mosq, void *userdata, const struct mosquitto_me
 }
 
 int mqtt_send(struct mosquitto *mosq, const char *msg) {
-    
+
     return mosquitto_publish(mosq, NULL, TOPIC_I, strlen(msg), msg, QOS, 0);
-    
+
 }
 
 
 
 int main(void)
 {
-    
+
     app.get_middleware<CookieProtection>().init(app);
 
     mosquitto_lib_init();
@@ -112,7 +113,7 @@ int main(void)
 
 
     pthread_rwlock_init(&q_rwlock, NULL);
-       
+
     if (!mosq)
         return 1;
 
@@ -134,7 +135,7 @@ int main(void)
         CROW_LOG_INFO << "HELLO WORLD";
         return std::string("Hello world\n");
     });
-    
+
     /* DASHBOARD */
     CROW_ROUTE(app, "/dashboard").methods(crow::HTTPMethod::Get)([&]() {
         pthread_rwlock_rdlock(&q_rwlock);
@@ -143,7 +144,7 @@ int main(void)
         crow::json::wvalue temp = crow::json::load(dashboard.dump());
         return crow::response(temp);
     });
-    
+
     /* DASHBOARD Embedded */
     CROW_ROUTE(app, "/embedded").methods(crow::HTTPMethod::Get)([&]() {
         pthread_rwlock_rdlock(&q_rwlock);
@@ -152,29 +153,33 @@ int main(void)
         crow::json::wvalue temp = crow::json::load(dashboard.dump());
         return crow::response(temp);
     });
-    
+
     /*CONFIGURATION*/
     CROW_ROUTE(app, "/blinds").methods(crow::HTTPMethod::PUT)([&](const crow::request &req) {
         json blind = json::parse(req.body);
-        if (blind.empty())
+
+        if (!validate_blind_request(blind))
             return crow::response(400);
+
         pthread_rwlock_rdlock(&q_rwlock);
-        if (app.get_middleware<CookieProtection>().dashboard.set_blind(blind)) 
+        if (app.get_middleware<CookieProtection>().dashboard.set_blind(blind))
         {
             pthread_rwlock_unlock(&q_rwlock);
             return crow::response(400);
         }
-        pthread_rwlock_unlock(&q_rwlock);  
+        pthread_rwlock_unlock(&q_rwlock);
 
         mqtt_send(mosq, blind.dump().c_str());
-            
+
         return crow::response(200);
     });
 
     CROW_ROUTE(app, "/hvac").methods(crow::HTTPMethod::PUT)([&](const crow::request &req) {
         json hvac = json::parse(req.body);
-        if (hvac.empty())
+
+        if (!validate_hvac_request(hvac))
             return crow::response(400);
+
         pthread_rwlock_rdlock(&q_rwlock);
         if (app.get_middleware<CookieProtection>().dashboard.set_hvac_room(hvac))
         {
@@ -186,11 +191,12 @@ int main(void)
     });
 
     CROW_ROUTE(app, "/lights").methods(crow::HTTPMethod::PUT)([&](const crow::request &req) {
-        
+
         json light = json::parse(req.body);
-        
-        if (light.empty())
+
+        if (!validate_light_request(light))
             return crow::response(400);
+
         pthread_rwlock_rdlock(&q_rwlock);
         if (app.get_middleware<CookieProtection>().dashboard.set_light(light))
         {
@@ -198,13 +204,13 @@ int main(void)
             return crow::response(400);
         }
         pthread_rwlock_unlock(&q_rwlock);
-        
+
         mqtt_send(mosq, light.dump().c_str());
-        
+
         return crow::response(200);
-        
+
     });
-    
+
     /*NOTIFICATIONS*/
 
     CROW_ROUTE(app, "/notifications").methods(crow::HTTPMethod::GET)([&]() {
@@ -227,7 +233,7 @@ int main(void)
     app.port(443)
     .ssl_file(CERT_FILE, KEY_FILE)
     .multithreaded().run();
-    
+
     pthread_rwlock_destroy(&q_rwlock);
     return 0;
 }

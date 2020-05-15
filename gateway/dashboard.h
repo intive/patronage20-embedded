@@ -57,21 +57,40 @@ public:
     {
         lights.push_back(light);
     }
-    
+
     void add_servo(Servo servo)
     {
         servos.push_back(servo);
     }
-    
+
     void add_motion_sensor(MotionSensor motion)
     {
         motion_sensors.push_back(motion);
     }
-    
-    
+
+    bool temperature_sensor_exists(int id)
+    {
+        for(int i=0; i < temperature_sensors.size(); i++)
+            if(temperature_sensors.at(i).id==id)
+              return true;
+        return false;
+    }
+
+    bool windows_sensors_exists(std::vector<int> sensors_ids)
+    {
+        uint sensors_count = 0;
+        for(int j=0; j < sensors_ids.size(); j++)
+            for(int i=0; i < window_sensors.size(); i++)
+                if(window_sensors.at(i).id == sensors_ids.at(j))
+                    sensors_count++;
+        if(sensors_count == sensors_ids.size())
+            return true;
+        return false;
+    }
+
     json get_dashboard()
     {
-        json dashboard = 
+        json dashboard =
         {
             {"temperatureSensors", temperature_sensors},
             {"windowSensors",window_sensors},
@@ -85,10 +104,10 @@ public:
         };
         return dashboard;
     }
-    
+
     json get_dashboard_embedded()
     {
-        json dashboard = 
+        json dashboard =
         {
             {"servos",servos},
             {"motionSensors",motion_sensors}
@@ -108,7 +127,7 @@ public:
         hvac_rooms = dashboard["HVACRooms"].get<std::vector<HVACRoom>>();
         lights = dashboard["lights"].get<std::vector<Lights>>();
     }
-    
+
     void set_dashboard_embedded(json dashboard)
     {
         servos = dashboard["servos"].get<std::vector<Servo>>();
@@ -127,21 +146,39 @@ public:
     {
         if(request["type"] != "HVACRoom")
             return 1;
+
+        if(request.contains("temperatureSensorId"))
+            if(!temperature_sensor_exists(request["temperatureSensorId"].get<int>()))
+                return 1;
+
+        if(request.contains("windowSensorIds"))
+            if(!windows_sensors_exists(request["windowSensorIds"].get<std::vector<int>>()))
+                return 1;
+
         for(uint i = 0;i<hvac_rooms.size();i++)
         {
             if  (hvac_rooms[i].id==(request["id"].get<int>()))
             {
+                if(hvac_rooms[i].temperature_sensor_id==0)
+                    if(!(request.contains("temperatureSensorId")))
+                        return 1;
+                    else
+                        hvac_rooms[i].temperature_sensor_id = request["temperatureSensorId"].get<int>();
+                        if(hvac_json["heatingTemperature"].get<int>()>hvac_json["coolingTemperature"].get<int>()-hvac_json["hysteresis"].get<int>())
+                            return false;
+                        if(hvac_json["coolingTemperature"].get<int>()<hvac_json["heatingTemperature"].get<int>()+hvac_json["hysteresis"].get<int>())
+                          return false;
                 hvac_rooms[i].heating_temperature = request["heatingTemperature"].get<int>();
                 hvac_rooms[i].cooling_temperature = request["coolingTemperature"].get<int>();
                 hvac_rooms[i].hysteresis = request["hysteresis"].get<int>();
-                hvac_rooms[i].temperature_sensor_id = request["temperatureSensorId"].get<int>();
-                hvac_rooms[i].window_sensor_ids = request["windowSensorIds"].get<std::vector<int>>();
+                if(request.contains("windowSensorIds"))
+                    hvac_rooms[i].window_sensor_ids = request["windowSensorIds"].get<std::vector<int>>();
                 return 0;
             }
         }
         return 1;
     }
-    
+
     int set_light(json request)
     {
         if(request["type"] != "LED_CONTROLLER")
@@ -149,13 +186,13 @@ public:
         else
             return 0;
     }
-    
+
     int update_dashboard_embedded(json request)
     {
         int sensorExist = 0;
-        
+
         /* Servos  */
-        if(request["type"] == "Servo") 
+        if(request["type"] == "Servo")
         {
             for(uint i = 0;i<servos.size();i++)
             {
@@ -164,17 +201,17 @@ public:
                     servos[i].angle = request["angle"].get<int>();
                     sensorExist = 1;
                     return 0;
-                } 
+                }
             }
             if (sensorExist == 0)
                 {
                     add_servo(request);
                     return 0;
                 }
- 
+
         }
         /* motionSensors  */
-        if(request["type"] == "motionSensor") 
+        if(request["type"] == "motionSensor")
         {
             for(uint i = 0;i<motion_sensors.size();i++)
             {
@@ -183,7 +220,7 @@ public:
                     motion_sensors[i].motion = request["motion"].get<bool>();
                     sensorExist = 1;
                     return 0;
-                } 
+                }
             }
             if (sensorExist == 0)
                 {
@@ -192,13 +229,13 @@ public:
                 }
         }
     }
-    
+
     int update_dashboard(json request)
     {
         int sensorExist = 0;
-        
+
         /* WindowBlind  */
-        if(request["type"] == "windowBlind") 
+        if(request["type"] == "windowBlind")
         {
             for(uint i = 0;i<window_blinds.size();i++)
             {
@@ -209,13 +246,13 @@ public:
                     return 0;
                 }
             }
-            if (sensorExist == 0) 
+            if (sensorExist == 0)
             {
                     add_window_blind(request);
                     return 0;
             }
         }
-        
+
         /* Lights */
         if(request["type"] == "LED_CONTROLLER")
         {
@@ -230,13 +267,13 @@ public:
                     return 0;
                 }
             }
-            if (sensorExist == 0) 
+            if (sensorExist == 0)
             {
                 add_light(request);
                 return 0;
             }
         }
-        
+
         /* WindowSensor */
         if(request["type"] == "windowSensor")
         {
@@ -249,14 +286,14 @@ public:
                     return 0;
                 }
             }
-            if (sensorExist == 0) 
+            if (sensorExist == 0)
             {
                 add_window_sensor(request);
                 return 0;
             }
-            
+
         }
-        
+
         /* temperatureSensors */
         if(request["type"] == "TEMPERATURE_SENSOR")
         {
@@ -269,15 +306,15 @@ public:
                     return 0;
                 }
             }
-            if (sensorExist == 0) 
+            if (sensorExist == 0)
             {
                 add_temperature_sensor(request);
                 return 0;
             }
-            
-            
+
+
         }
-        
+
         /* HVAC Status */
         if(request["type"] == "HVACStatus")
         {
@@ -288,15 +325,15 @@ public:
                 sensorExist = 1;
                 return 0;
             }
-        
-            if (sensorExist == 0) 
+
+            if (sensorExist == 0)
             {
                 add_hvac_sensor(request);
                 return 0;
             }
         }
-        
-        
+
+
         /* smokeSensors */
         if(request["type"] == "smokeSensor")
         {
@@ -309,7 +346,7 @@ public:
                     return 0;
                 }
             }
-            if (sensorExist == 0) 
+            if (sensorExist == 0)
             {
                 add_smoke_sensor(request);
                 return 0;
