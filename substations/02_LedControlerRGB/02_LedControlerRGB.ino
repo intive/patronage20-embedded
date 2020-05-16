@@ -14,6 +14,8 @@ MQTT mqtt;
 /* ssid and password got from init_config.h */
 Network network(ssid, passwd);
 
+unsigned int notifCaller = 0;
+
 /* Callback function for MQTT library */
 void get_hsv_color(String json_input)
 {
@@ -35,7 +37,7 @@ void get_hsv_color(String json_input)
 void set_led_rgb_value(int red_pin, int green_pin, int blue_pin)
 {
     int rgb[3];
-    hsv_to_rgb(hue, saturation, value, rgb);
+    hsv_to_rgb(&hue, &saturation, &value, rgb);
     analogWrite(red_pin,rgb[0]);
     analogWrite(green_pin, rgb[1]);
     analogWrite(blue_pin, rgb[2]);
@@ -53,8 +55,10 @@ void setup()
 
 void loop()
 {
-    network.loop();
-    mqtt.loop();
-    mqtt.send(report_hsv_color(hue, saturation, value, id_led_controller_1, type_led_controller));
-    delay(1000);
+    mqtt.loop(); 
+    if (++notifCaller >= 1000) { 
+        mqtt.send(report_hsv_color(hue, saturation, value, id_led_controller_1, type_led_controller));
+        notifCaller = 0;
+    }
+    delay(1);
 }
