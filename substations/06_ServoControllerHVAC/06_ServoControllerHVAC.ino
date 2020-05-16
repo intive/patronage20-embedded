@@ -33,10 +33,11 @@ void incoming_JSON(String json_input)
         return;
     }
     if(json_doc["id"].as<int>() == id)
-        if(json_doc["type"].as<String>().equals(type)) {
-            servoAng = json_doc["angle"].as<int>();
-            servo.write(servoAng);
-        }
+        if(json_doc["type"].as<String>().equals(type)) 
+            if(json_doc["angle"].as<int>() >= 0 && json_doc["angle"].as<int>()<=180) {
+                servoAng = json_doc["angle"].as<int>();
+                servo.write(servoAng);
+            }
 }
 
 void setup() 
