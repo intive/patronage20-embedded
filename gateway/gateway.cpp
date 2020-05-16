@@ -1,8 +1,9 @@
 #define CROW_ENABLE_SSL
 #include "dependencies/crow_all.h"
+#include "request_validation.h"
 #include <mosquitto.h>
 #include <pthread.h>
-#include "request_validation.h"
+
 
 #include "dependencies/json.hpp"
 #include "dashboard.h"

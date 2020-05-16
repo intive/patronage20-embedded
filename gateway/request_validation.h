@@ -67,10 +67,6 @@ bool validate_hvac_request(json hvac_json){
         if(hvac_json["hysteresis"].get<int>()>20)
             return false;
     }
-    if(hvac_json["heatingTemperature"].get<int>()>hvac_json["coolingTemperature"].get<int>()-hvac_json["hysteresis"].get<int>())
-        return false;
-    if(hvac_json["coolingTemperature"].get<int>()<hvac_json["heatingTemperature"].get<int>()+hvac_json["hysteresis"].get<int>())
-      return false;
     return true;
 }
 #endif /* REQUEST_VALIDATION_H */
