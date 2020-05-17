@@ -32,15 +32,13 @@ void incoming_JSON(String json_input)
     if (error) {
         return;
     }
-    if(json_doc["id"].as<int>() == id)
-        if(json_doc["type"].as<String>().equals(type)) 
-            if(json_doc["angle"].as<int>() >= 0 && json_doc["angle"].as<int>()<=180) {
-                servoAng = json_doc["angle"].as<int>();
-                servo.write(servoAng);
-            }
+    if(json_doc["id"].as<int>() == id && json_doc["type"].as<String>().equals(type) && json_doc["angle"].as<int>() >= 0 && json_doc["angle"].as<int>()<=180) {
+        servoAng = json_doc["angle"].as<int>();
+        servo.write(servoAng);
+    }
 }
 
-void setup() 
+void setup()
 {
     servo.attach(PIN);
     servo.write(10);
@@ -49,8 +47,8 @@ void setup()
     mqtt.set_return_function(incoming_JSON);
 }
 
-void loop() 
-{ 
+void loop()
+{
     network.loop();
     mqtt.loop();
     mqtt.send(output_JSON(servoAng, id, type));
@@ -59,7 +57,7 @@ void loop()
         mqtt.send(output_JSON(servoAng, id, type));
         notifCaller = 0;
     }
-    
+
     delay(1);
-    
-} 
+
+}
