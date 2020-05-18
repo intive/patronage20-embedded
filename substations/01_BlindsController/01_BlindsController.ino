@@ -63,7 +63,7 @@ void setup()
     network.init();
     
     /* Calibrating and setting the range of blind */
-    range = blinds_calibrate(SW2);
+    range = 1500;
 
     mqtt.set_return_function(MQTT_blinds_move);
 
