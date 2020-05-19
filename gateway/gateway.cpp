@@ -93,7 +93,7 @@ void mqtt_recv(struct mosquitto *mosq, void *userdata, const struct mosquitto_me
   
     pthread_rwlock_unlock(&q_rwlock);
     
-    fflush(stdout);
+ 
 }
 
 int mqtt_send(struct mosquitto *mosq, const char *msg) {
