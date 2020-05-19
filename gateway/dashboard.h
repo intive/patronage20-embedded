@@ -1,5 +1,6 @@
 #include "dependencies/json.hpp"
 #include "sensors.h"
+#include "id_veryfication.h"
 
 using json = nlohmann::json;
 
@@ -57,21 +58,21 @@ public:
     {
         lights.push_back(light);
     }
-    
+
     void add_servo(Servo servo)
     {
         servos.push_back(servo);
     }
-    
+
     void add_motion_sensor(MotionSensor motion)
     {
         motion_sensors.push_back(motion);
     }
-    
-    
+
+
     json get_dashboard()
     {
-        json dashboard = 
+        json dashboard =
         {
             {"temperatureSensors", temperature_sensors},
             {"windowSensors",window_sensors},
@@ -85,10 +86,10 @@ public:
         };
         return dashboard;
     }
-    
+
     json get_dashboard_embedded()
     {
-        json dashboard = 
+        json dashboard =
         {
             {"servos",servos},
             {"motionSensors",motion_sensors}
@@ -108,7 +109,7 @@ public:
         hvac_rooms = dashboard["HVACRooms"].get<std::vector<HVACRoom>>();
         lights = dashboard["lights"].get<std::vector<Lights>>();
     }
-    
+
     void set_dashboard_embedded(json dashboard)
     {
         servos = dashboard["servos"].get<std::vector<Servo>>();
@@ -141,7 +142,7 @@ public:
         }
         return 1;
     }
-    
+
     int set_light(json request)
     {
         if(request["type"] != "LED_CONTROLLER")
@@ -149,13 +150,13 @@ public:
         else
             return 0;
     }
-    
+
     int update_dashboard_embedded(json request)
     {
         int sensorExist = 0;
-        
+
         /* Servos  */
-        if(request["type"] == "Servo") 
+        if(request["type"] == "Servo")
         {
             for(uint i = 0;i<servos.size();i++)
             {
@@ -164,17 +165,17 @@ public:
                     servos[i].angle = request["angle"].get<int>();
                     sensorExist = 1;
                     return 0;
-                } 
+                }
             }
             if (sensorExist == 0)
                 {
                     add_servo(request);
                     return 0;
                 }
- 
+
         }
         /* motionSensors  */
-        if(request["type"] == "motionSensor") 
+        if(request["type"] == "motionSensor")
         {
             for(uint i = 0;i<motion_sensors.size();i++)
             {
@@ -183,7 +184,7 @@ public:
                     motion_sensors[i].motion = request["motion"].get<bool>();
                     sensorExist = 1;
                     return 0;
-                } 
+                }
             }
             if (sensorExist == 0)
                 {
@@ -192,13 +193,13 @@ public:
                 }
         }
     }
-    
+
     int update_dashboard(json request)
     {
         int sensorExist = 0;
-        
+
         /* WindowBlind  */
-        if(request["type"] == "windowBlind") 
+        if(request["type"] == "windowBlind" && validate_blind_id(request))
         {
             for(uint i = 0;i<window_blinds.size();i++)
             {
@@ -209,15 +210,15 @@ public:
                     return 0;
                 }
             }
-            if (sensorExist == 0) 
+            if (sensorExist == 0)
             {
                     add_window_blind(request);
                     return 0;
             }
         }
-        
+
         /* Lights */
-        if(request["type"] == "LED_CONTROLLER")
+        if(request["type"] == "LED_CONTROLLER" && validate_light_id(request))
         {
             for(uint i = 0;i<lights.size();i++)
             {
@@ -230,15 +231,15 @@ public:
                     return 0;
                 }
             }
-            if (sensorExist == 0) 
+            if (sensorExist == 0)
             {
                 add_light(request);
                 return 0;
             }
         }
-        
+
         /* WindowSensor */
-        if(request["type"] == "windowSensor")
+        if(request["type"] == "windowSensor" && validate_window_sensors_id(request))
         {
             for(uint i = 0;i<window_sensors.size();i++)
             {
@@ -249,16 +250,16 @@ public:
                     return 0;
                 }
             }
-            if (sensorExist == 0) 
+            if (sensorExist == 0)
             {
                 add_window_sensor(request);
                 return 0;
             }
-            
+
         }
-        
+
         /* temperatureSensors */
-        if(request["type"] == "TEMPERATURE_SENSOR")
+        if(request["type"] == "TEMPERATURE_SENSOR" && validate_temperature_sensor_id(request))
         {
             for(uint i = 0;i<temperature_sensors.size();i++)
             {
@@ -269,17 +270,17 @@ public:
                     return 0;
                 }
             }
-            if (sensorExist == 0) 
+            if (sensorExist == 0)
             {
                 add_temperature_sensor(request);
                 return 0;
             }
-            
-            
+
+
         }
-        
+
         /* HVAC Status */
-        if(request["type"] == "HVACStatus")
+        if(request["type"] == "HVACStatus" && validate_hvac_id(request))
         {
             for(uint i = 0;i<hvac_status.size();i++)
             {
@@ -288,17 +289,17 @@ public:
                 sensorExist = 1;
                 return 0;
             }
-        
-            if (sensorExist == 0) 
+
+            if (sensorExist == 0)
             {
                 add_hvac_sensor(request);
                 return 0;
             }
         }
-        
-        
+
+
         /* smokeSensors */
-        if(request["type"] == "smokeSensor")
+        if(request["type"] == "smokeSensor" && validate_smoke_sensor_id(request))
         {
             for(uint i = 0;i<smoke_sensors.size();i++)
             {
@@ -309,7 +310,7 @@ public:
                     return 0;
                 }
             }
-            if (sensorExist == 0) 
+            if (sensorExist == 0)
             {
                 add_smoke_sensor(request);
                 return 0;
