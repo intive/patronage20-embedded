@@ -3,15 +3,16 @@
 #include <fstream>
 #include <ctime>
 
-#define MAX_ID 10
 #define HVAC_ID -1
+#define MAX_NOTIFICATION_COUNT 1024
+
 using json = nlohmann::json;
 
 struct Notification
 {
     int64_t id;
     int64_t timestamp;
-    std::string type = "alert";
+    std::string type;
     int sensorId;
 };
 
@@ -19,65 +20,74 @@ long int unix_timestamp();
 void to_json(json &j, const Notification &notification);
 void from_json(const json &j, Notification &notification);
 
-
 class Notifications
 {
 private:
-    json notifications;
+    std::vector<Notification> notifications;
     Dashboard dashboard_previous;
     int64_t last_id;
 
 public:
     void init(std::string filepath, const Dashboard &dashboard)
     {
+        json j;
         std::ifstream i(filepath);
-        i >> notifications;
-        i.close();
+        if (i)
+        {
+            i >> j;
+            i.close();
+            for (json::iterator it = j.begin(); it != j.end(); it++)
+            {
+                notifications.push_back(it.value());
+            }
+            if (notifications.empty())
+                last_id = 0;
+            else
+                last_id = notifications.back().id++;
+        }
+        else
+        {
+            i.close();
+            std::ofstream o(filepath);
+            o.close();
+            last_id = 0;
+        }
+        
         dashboard_previous = dashboard;
     }
 
     json get_notifications()
     {
+
         return notifications;
     }
 
-    Notification create_notification(int64_t id, int sensor_id)
+    void add_notification(int sensor_id, const std::string notification_type)
     {
-        Notification note;
-        note.id = id;
-        note.timestamp = unix_timestamp();
-        note.sensorId = sensor_id;
-        return note;
-    }
-
-    void add_notification(Notification notification)
-    {
-        json j = notification;
-        for (json::iterator it = notifications.begin(); it != notifications.end(); it++)
+        if (notifications.size() > MAX_NOTIFICATION_COUNT)
         {
-            json temp = it.value();
-            if (temp["id"] == notification.id)
-            {
-                notifications.erase(it);
-                break;
-            }
+            notifications.erase(notifications.begin());
         }
-        notifications.push_back(j);
-        std:: ofstream o("jsons/notification.json");
-        o.open("jsons/notification.json");
-        o<<notifications;
-        o.close();
+        Notification note;
+        note.id = last_id++;
+        note.timestamp = unix_timestamp();
+        note.type = notification_type;
+        note.sensorId = sensor_id;
+        notifications.push_back(note);
 
+        std::ofstream o("jsons/notifications.json");
+        o.open("jsons/notifications.json");
+        o << get_notifications();
+        o.close();
     }
 
     int delete_notification(int64_t id)
     {
-        for (json::iterator it = notifications.begin(); it != notifications.end(); it++)
+        for (auto i = notifications.begin(); i != notifications.end(); i++)
         {
-            json j = it.value();
-            if (j["id"] == id)
+            if (i->id == id)
             {
-                notifications.erase(it);
+                notifications.erase(i);
                 return 0;
             }
         }
@@ -96,7 +106,7 @@ public:
                 {
                     if (dashboard_previous.window_blinds[i].position != request["position"].get<int>())
                     {
-                        add_notification(create_notification(set_new_id(), dashboard.window_blinds[i].id));
+                        add_notification(dashboard.window_blinds[i].id, "windowBlind");
                         dashboard_previous.window_blinds[i].position = request["position"].get<int>();
                         return 0;
                     }
@@ -113,7 +123,7 @@ public:
                 {
                     if (dashboard_previous.lights[i].hue != request["hue"].get<int>() || dashboard_previous.lights[i].saturation != request["saturation"].get<int>() || dashboard_previous.lights[i].value != request["value"].get<int>())
                     {
-                        add_notification(create_notification(set_new_id(), dashboard.lights[i].id));
+                        add_notification(dashboard.lights[i].id, "led");
                         dashboard_previous.lights[i].hue = request["hue"].get<int>();
                         dashboard_previous.lights[i].saturation = request["saturation"].get<int>();
                         dashboard_previous.lights[i].value = request["value"].get<int>();
@@ -132,7 +142,7 @@ public:
                 {
                     if (dashboard_previous.window_sensors[i].status != request["status"].get<int>())
                     {
-                        add_notification(create_notification(set_new_id(), dashboard.window_sensors[i].id));
+                        add_notification(dashboard.window_sensors[i].id, "windowSensor");
                         dashboard_previous.window_sensors[i].status = request["status"].get<window_status>();
                         return 0;
                     }
@@ -149,7 +159,7 @@ public:
                 {
                     if (dashboard_previous.smoke_sensors[i].is_smoke_detected != request["isSmokeDetected"].get<bool>())
                     {
-                        add_notification(create_notification(set_new_id(), dashboard.smoke_sensors[i].id));
+                        add_notification(dashboard.smoke_sensors[i].id, "smokeSensor");
                         dashboard_previous.smoke_sensors[i].is_smoke_detected = request["isSmokeDetected"].get<bool>();
                         return 0;
                     }
@@ -158,15 +168,15 @@ public:
         }
 
         /*HVAC status*/
-        if (request["type"] == "smokeSensor")
+        if (request["type"] == "HVACStatus")
         {
-            for (uint i = 0; i < dashboard.smoke_sensors.size(); i++)
+            for (uint i = 0; i < dashboard.hvac_status.size(); i++)
             {
                 if (dashboard.hvac_status[i].id == (request["id"].get<int>()))
                 {
                     if (dashboard_previous.hvac_status[i].cooling != request["cooling"].get<bool>() || dashboard_previous.hvac_status[i].heating != request["heating"].get<bool>())
                     {
-                        add_notification(create_notification(set_new_id(), HVAC_ID));
+                        add_notification(HVAC_ID, "hvacStatus");
                         dashboard_previous.hvac_status[i].cooling = request["cooling"].get<bool>();
                         dashboard_previous.hvac_status[i].heating = request["heating"].get<bool>();
                         return 0;
@@ -175,18 +185,28 @@ public:
             }
         }
 
-        return 1;
-    }
-
-    int64_t set_new_id()
-    {
-        if(last_id<MAX_ID)
+        /*HVAC rooms*/
+        if (request["type"] == "HVACRooms")
         {
-            last_id++;
+            for (uint i = 0; i < dashboard.hvac_rooms.size(); i++)
+            {
+                if (dashboard.hvac_rooms[i].id == (request["id"].get<int>()))
+                {
+                    if (dashboard_previous.hvac_rooms[i].heating_temperature != request["heatingTemperature"].get<int>() ||
+                        dashboard_previous.hvac_rooms[i].cooling_temperature != request["coolingTemperature"].get<int>() ||
+                        dashboard_previous.hvac_rooms[i].hysteresis != request["hysteresis"].get<int>())
+                    {
+                        add_notification(dashboard.hvac_rooms[i].id, "hvacRoom");
+                        dashboard_previous.hvac_rooms[i].heating_temperature = request["heatingTemperature"].get<int>();
+                        dashboard_previous.hvac_rooms[i].cooling_temperature = request["coolingTemperature"].get<int>();
+                        dashboard_previous.hvac_rooms[i].hysteresis = request["hysteresis"].get<int>();
+                        return 0;
+                    }
+                }
+            }
         }
-        else
-            last_id = 0;
-        return last_id;
+
+        return 1;
     }
 };
 
@@ -204,8 +224,7 @@ void to_json(json &j, const Notification &notification)
         {"id", notification.id},
         {"timestamp", notification.timestamp},
         {"type", notification.type},
-        {"sensorId", notification.sensorId}
-    };
+        {"sensorId", notification.sensorId}};
 }
 
 void from_json(const json &j, Notification &notification)
