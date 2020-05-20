@@ -165,36 +165,34 @@ public:
                     else
                         hvac_rooms[i].temperature_sensor_id = request["temperatureSensorId"].get<int>();
 
-                    if(request.contains("heatingTemperature") && request.contains("coolingTemperature") && request.contains("hysteresis")){
-                        if(request["heatingTemperature"].get<int>()>request["coolingTemperature"].get<int>()-request["hysteresis"].get<int>())
-                            return 1;
-                        if(request["coolingTemperature"].get<int>()<request["heatingTemperature"].get<int>()+request["hysteresis"].get<int>())
-                            return 1;
-                        hvac_rooms[i].heating_temperature = request["heatingTemperature"].get<int>();
-                        hvac_rooms[i].cooling_temperature = request["coolingTemperature"].get<int>();
-                        hvac_rooms[i].hysteresis = request["hysteresis"].get<int>();
+                    int tmp_heating, tmp_cooling, hysteresis;
+
+                    if(request.contains("heatingTemperature")) {
+                        tmp_heating = request["heatingTemperature"].get<int>();
                     }
-                    else if(request.contains("heatingTemperature")){
-                        if(request["heatingTemperature"].get<int>()>hvac_rooms[i].cooling_temperature-hvac_rooms[i].hysteresis)
-                            return 1;
-                        if(hvac_rooms[i].cooling_temperature<request["heatingTemperature"].get<int>()+hvac_rooms[i].hysteresis)
-                            return 1;
-                        hvac_rooms[i].heating_temperature = request["heatingTemperature"].get<int>();
+                    else {
+                        tmp_heating =  hvac_rooms[i].heating_temperature;
                     }
-                    else if(request.contains("coolingTemperature")){
-                         if(hvac_rooms[i].heating_temperature>request["coolingTemperature"].get<int>()-hvac_rooms[i].hysteresis)
-                             return 1;
-                         if(request["coolingTemperature"].get<int>()<hvac_rooms[i].heating_temperature+hvac_rooms[i].hysteresis)
-                             return 1;
-                         hvac_rooms[i].cooling_temperature = request["coolingTemperature"].get<int>();
+                    if(request.contains("coolingTemperature")) {
+                        tmp_cooling= request["coolingTemperature"].get<int>();
                     }
-                    else if(request.contains("hysteresis")){
-                        if(hvac_rooms[i].heating_temperature>hvac_rooms[i].cooling_temperature-request["hysteresis"].get<int>())
-                            return 1;
-                        if(hvac_rooms[i].cooling_temperature<hvac_rooms[i].heating_temperature+request["hysteresis"].get<int>())
-                            return 1;
-                        hvac_rooms[i].hysteresis = request["hysteresis"].get<int>();
+                    else {
+                        tmp_cooling =  hvac_rooms[i].cooling_temperature;
                     }
+                    if(request.contains("hysteresis")) {
+                        hysteresis = request["hysteresis"].get<int>();
+                    }
+                    else {
+                        hysteresis =  hvac_rooms[i].hysteresis;
+                    }
+
+                    if(tmp_heating>tmp_cooling-hysteresis)
+                        return 1;
+                    if(tmp_cooling<tmp_heating+hysteresis)
+                        return 1;
+                    hvac_rooms[i].heating_temperature = tmp_heating;
+                    hvac_rooms[i].cooling_temperature = tmp_cooling;
+                    hvac_rooms[i].hysteresis = hysteresis;
                 return 0;
             }
         }
