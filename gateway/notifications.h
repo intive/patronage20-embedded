@@ -43,7 +43,8 @@ public:
             if (notifications.empty())
                 last_id = 0;
             else
-                last_id = notifications.back().id++;
+                last_id = notifications.back().id;
+                last_id++;
         }
         else
         {
@@ -77,8 +78,7 @@ public:
         notifications.push_back(note);
 
         std::ofstream o("jsons/notifications.json");
-        o.open("jsons/notifications.json");
-        o << get_notifications();
+        o << std::setw(4) << get_notifications();
         o.close();
     }
 
@@ -141,7 +141,7 @@ public:
             {
                 if (dashboard.window_sensors[i].id == (request["id"].get<int>()))
                 {
-                    if (dashboard_previous.window_sensors[i].status != request["status"].get<int>())
+                    if (dashboard_previous.window_sensors[i].status != request["status"].get<window_status>())
                     {
                         add_notification(dashboard.window_sensors[i].id, "windowSensor");
                         dashboard_previous.window_sensors[i].status = request["status"].get<window_status>();
