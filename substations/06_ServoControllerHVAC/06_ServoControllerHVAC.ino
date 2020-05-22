@@ -50,9 +50,7 @@ void setup()
 
 void loop() 
 { 
-    network.loop();
     mqtt.loop();
-    mqtt.send(output_JSON(servoAng, id, type));
 
     if (++notifCaller == 1000) {
         mqtt.send(output_JSON(servoAng, id, type));

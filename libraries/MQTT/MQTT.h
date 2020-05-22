@@ -9,7 +9,7 @@
 #include <WiFiClientSecure.h>
 #include <time.h>
 
-#define DEBUG 1
+#define DEBUG 0
 
 
 /* Function with string parameters only */
