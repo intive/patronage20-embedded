@@ -127,19 +127,8 @@ public:
     {
         if(request["type"] != "HVACRoom")
             return 1;
-        for(uint i = 0;i<hvac_rooms.size();i++)
-        {
-            if  (hvac_rooms[i].id==(request["id"].get<int>()))
-            {
-                hvac_rooms[i].heating_temperature = request["heatingTemperature"].get<int>();
-                hvac_rooms[i].cooling_temperature = request["coolingTemperature"].get<int>();
-                hvac_rooms[i].hysteresis = request["hysteresis"].get<int>();
-                hvac_rooms[i].temperature_sensor_id = request["temperatureSensorId"].get<int>();
-                hvac_rooms[i].window_sensor_ids = request["windowSensorIds"].get<std::vector<int>>();
-                return 0;
-            }
-        }
-        return 1;
+        else
+            return 0;
     }
     
     int set_light(json request)
@@ -296,6 +285,30 @@ public:
             }
         }
         
+        /* HVAC Rooms */
+        if(request["type"] == "HVACRooms")
+        {
+            for(uint i = 0;i<hvac_rooms.size();i++)
+            {
+                if  (hvac_rooms[i].id==request["id"].get<int>())
+                    
+                {
+                    hvac_rooms[i].hysteresis = request["hysteresis"].get<int>();
+                    hvac_rooms[i].heating_temperature = request["heatingTemperature"].get<int>();
+                    hvac_rooms[i].cooling_temperature = request["coolingTemperature"].get<int>();
+                    hvac_rooms[i].temperature_sensor_id = request["temperatureSensorId"].get<int>();
+                    hvac_rooms[i].heating = request["heating"].get<int>();
+                    hvac_rooms[i].cooling = request["cooling"].get<int>();
+                    hvac_rooms[i].window_sensor_ids.clear();
+                    for (uint j = 0; j < request["windowSensorIds"].size(); j++)
+                    {
+                        hvac_rooms[i].window_sensor_ids.push_back(request["windowSensorIds"][j].get<int>()); 
+                    }
+                return 0;
+                }
+                
+            }
+        }
         
         /* smokeSensors */
         if(request["type"] == "smokeSensor")
