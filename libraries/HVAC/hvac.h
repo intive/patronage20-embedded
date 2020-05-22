@@ -53,10 +53,10 @@ static struct Room
     std::vector<int> winSenID;
     
     int tempReal;
-    int ValveHeating_id;
-    int ValveCooling_id;
-    bool ValveHeating_isOpen;
-    bool ValveCooling_isOpen;
+    int valveHeating_id;
+    int valveCooling_id;
+    bool valveHeating_isOpen;
+    bool valveCooling_isOpen;
     bool isTermometerActive = false;
     
 }room[NO_OF_ROOMS];
@@ -156,7 +156,7 @@ static String output_JSON_HVACRooms(Room* room, int i)
     DynamicJsonDocument root(2000);
     String json_output = "";
     root["id"] = room[i].id;
-    root["type"] = "HVACRooms";
+    root["type"] = "HVACRoom";
     root["coolingTemperature"] = room[i].coolingTemp;
     root["heatingTemperature"] = room[i].heatingTemp;
     root["hysteresis"] = room[i].hyst;

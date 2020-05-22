@@ -68,21 +68,21 @@ void incoming_JSON(String json_input)
     if(json_doc["type"].as<String>().equals("Servo")) {
         for (i = 0; i < NO_OF_ROOMS; i++) {
             /* check if servo is responsible for heating valve */
-            if(json_doc["id"].as<int>() == room[i].ValveHeating_id) {
+            if(json_doc["id"].as<int>() == room[i].valveHeating_id) {
                 if (json_doc["angle"].as<int>() == angle_fromServoID(json_doc["id"].as<int>(), true)) {
-                    room[i].ValveHeating_isOpen = true;
+                    room[i].valveHeating_isOpen = true;
                 }
                 else if (json_doc["angle"].as<int>() == angle_fromServoID(json_doc["id"].as<int>(), false)) {
-                    room[i].ValveHeating_isOpen = false;
+                    room[i].valveHeating_isOpen = false;
                 }  
             }
             /* check if servo is responsible for cooling valve */
-            else if(json_doc["id"].as<int>() == room[i].ValveCooling_id) {
+            else if(json_doc["id"].as<int>() == room[i].valveCooling_id) {
                 if (json_doc["angle"].as<int>() == angle_fromServoID(json_doc["id"].as<int>(), true)){
-                    room[i].ValveCooling_isOpen = true;
+                    room[i].valveCooling_isOpen = true;
                 }
                 else if (json_doc["angle"].as<int>() == angle_fromServoID(json_doc["id"].as<int>(), false)){
-                    room[i].ValveCooling_isOpen = false;  
+                    room[i].valveCooling_isOpen = false;  
                 }
             }
         }
@@ -106,11 +106,11 @@ void setup() {
 
     /* set innitial values */
     room[0].id = hvacRooms_R1_ID;
-    room[0].ValveHeating_id = SERVO_1H_ID;
-    room[0].ValveCooling_id = SERVO_1C_ID;
+    room[0].valveHeating_id = SERVO_1H_ID;
+    room[0].valveCooling_id = SERVO_1C_ID;
     room[1].id = hvacRooms_R2_ID;
-    room[1].ValveHeating_id = SERVO_2H_ID;
-    room[1].ValveCooling_id = SERVO_2C_ID;
+    room[1].valveHeating_id = SERVO_2H_ID;
+    room[1].valveCooling_id = SERVO_2C_ID;
     
     pinMode(16, OUTPUT);
     pinMode(5, OUTPUT);
@@ -150,12 +150,12 @@ void loop() {
             }
       
             /* set the Valve (servo) due to heating/cooling condition */
-            set_valve(room[i].ValveHeating_id, room[i].heating);
-            set_valve(room[i].ValveCooling_id, room[i].cooling);
+            set_valve(room[i].valveHeating_id, room[i].heating);
+            set_valve(room[i].valveCooling_id, room[i].cooling);
        
             /* set LED indicator for Valve (servo) */
-            digitalWrite(ledPIN_fromServoID(room[i].ValveHeating_id), room[i].ValveHeating_isOpen);
-            digitalWrite(ledPIN_fromServoID(room[i].ValveCooling_id), room[i].ValveCooling_isOpen);
+            digitalWrite(ledPIN_fromServoID(room[i].valveHeating_id), room[i].valveHeating_isOpen);
+            digitalWrite(ledPIN_fromServoID(room[i].valveCooling_id), room[i].valveCooling_isOpen);
 
             /* establish Peltier status */
             if(room[i].heating)
