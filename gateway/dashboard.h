@@ -286,7 +286,7 @@ public:
         }
         
         /* HVAC Rooms */
-        if(request["type"] == "HVACRooms")
+        if(request["type"] == "HVACRoom")
         {
             for(uint i = 0;i<hvac_rooms.size();i++)
             {
