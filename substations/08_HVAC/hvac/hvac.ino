@@ -76,7 +76,7 @@ void loop() {
     /* make establish, set and notify proper issues -  every 1 sec */
     if (++notifCaller >= 1000) {
         for (i = 0; i < NO_OF_ROOMS; i++) {
-
+            
             /* establish if room suppose to be heated or cooled */
             if(!isWindowsOpen(room, i) == true && room[i].termometer_isActive == true) {
                 if (room[i].heating == false && room[i].tempReal <= (room[i].heatingTemp - room[i].hyst)) 
@@ -95,25 +95,33 @@ void loop() {
             /* set the Valve (servo) due to heating/cooling condition */
             set_valve(room[i].valveHeating_id, room[i].heating);
             set_valve(room[i].valveCooling_id, room[i].cooling);
-       
-            /* set LED indicator for Valve (servo) */
-            digitalWrite(ledPIN_fromServoID(room[i].valveHeating_id), room[i].valveHeating_isOpen);
-            digitalWrite(ledPIN_fromServoID(room[i].valveCooling_id), room[i].valveCooling_isOpen);
-
+  
             /* establish Peltier status */
             if(room[i].heating)
                 p_heating = true;
             if(room[i].cooling)
                 p_cooling = true;
-
+            
             /* notify HVAC Room status by MQTT */
             mqtt.send(output_JSON_HVACRooms(room, i));
         }
 
-        /* set Peltier */
-        digitalWrite(PELTIER_COOLING, p_cooling);
-        digitalWrite(PELTIER_HEATING, p_heating);
-    
+        /* set Peltier - with closed valves protection */
+            /* heating */
+        if (!peltierProtect(room, HEATING))
+            digitalWrite(PELTIER_HEATING, p_heating);
+        else {
+            digitalWrite(PELTIER_HEATING, LOW);
+            Serial.println("HEATING Peltier protected due to all heating valves closed");
+        }
+            /* cooling */
+        if (!peltierProtect(room, COOLING))
+            digitalWrite(PELTIER_COOLING, p_cooling);
+        else {
+            digitalWrite(PELTIER_COOLING, LOW);
+            Serial.println("COOLING Peltier protected due to all cooling valves closed");
+        }
+        
         /* notify HVAC Status */
         mqtt.send(output_JSON_HVACStatus(p_cooling, p_heating));
 

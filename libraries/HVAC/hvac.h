@@ -12,7 +12,7 @@
 #define SERVO_2C_LED 0
 
 /* defining ID's for Servos */
-#define SERVO_1H_ID 105 /* Servo for room 1, heating valve etc. */
+#define SERVO_1H_ID 101 /* Servo for room 1, heating valve etc. */
 #define SERVO_1C_ID 102
 #define SERVO_2H_ID 103
 #define SERVO_2C_ID 104
@@ -21,11 +21,11 @@
 /* defining angle for valve fully open and closed */
 #define SERVO_1H_OPEN 120 /* Servo for room 1, heating valve etc. */
 #define SERVO_1H_CLOSED 30
-#define SERVO_1C_OPEN 90
+#define SERVO_1C_OPEN 95
 #define SERVO_1C_CLOSED 5
-#define SERVO_2H_OPEN 80
+#define SERVO_2H_OPEN 98
 #define SERVO_2H_CLOSED 8
-#define SERVO_2C_OPEN 70
+#define SERVO_2C_OPEN 99
 #define SERVO_2C_CLOSED 9
 
 
@@ -68,7 +68,7 @@ static void show_data_SP(Room* room, int i)
     Serial.print("ID: ");
     Serial.println(room[i].id);
 
-    Serial.print("hysterezis: ");
+    Serial.print("hysteresis: ");
     Serial.println(room[i].hyst);
     
     Serial.print("heatingTemp: ");
@@ -97,6 +97,9 @@ static void show_data_SP(Room* room, int i)
     
     Serial.print("Real Room Temperature: ");
     Serial.println(room[i].tempReal);
+    
+    Serial.print("isTermometerActive: ");
+    Serial.println(room[i].termometer_isActive);
 
     Serial.println(" --- ");
     
@@ -242,7 +245,6 @@ static void updateRooms(Room* room, DynamicJsonDocument& json_doc)
             }
         }
     }
-    Serial.println("Updated Rooms");
 }
 
 static void updateTermometer(Room* room, DynamicJsonDocument& json_doc) 
@@ -270,7 +272,9 @@ static void updateValve(Room* room, DynamicJsonDocument& json_doc)
             }
             else if (json_doc["angle"].as<int>() == angle_fromServoID(json_doc["id"].as<int>(), false)) {
                 room[i].valveHeating_isOpen = false;
-            }  
+            }
+        /* set LED indicator for heating Valve (servo) */
+        digitalWrite(ledPIN_fromServoID(room[i].valveHeating_id), room[i].valveHeating_isOpen);    
         }
         /* check if servo is responsible for cooling valve */
         else if(json_doc["id"].as<int>() == room[i].valveCooling_id) {
@@ -280,21 +284,41 @@ static void updateValve(Room* room, DynamicJsonDocument& json_doc)
             else if (json_doc["angle"].as<int>() == angle_fromServoID(json_doc["id"].as<int>(), false)){
                 room[i].valveCooling_isOpen = false;  
             }
+        /* set LED indicator for cooling Valve (servo) */
+        digitalWrite(ledPIN_fromServoID(room[i].valveCooling_id), room[i].valveCooling_isOpen);
         }
     }
-    Serial.println("Updated valve");
 }
 
 static void updateWindowsSens(DynamicJsonDocument& json_doc) 
 {
     if(json_doc["status"].as<String>().equals("open")) {
+        /* put window ID into container with open windows (if not exist) */
         if(!idle_exist(openWindows, json_doc["id"].as<int>())){
             openWindows.push_back(json_doc["id"].as<int>());
         }
     }
     else if(json_doc["status"].as<String>().equals("closed")) {
+        /* erase closed window ID from container wit oped windows */
         openWindows.erase(std::remove(openWindows.begin(), openWindows.end(), json_doc["id"].as<int>()), openWindows.end());
     }
-    Serial.println("Updated Windows Sens.");
+}
+
+enum pltrStatus {COOLING = 0, HEATING = 1};
+
+/* Peltier overheating or overcooling protection */
+static bool peltierProtect(Room* room, int status)
+{
+    int i;
+    bool protect = true;
+
+    for(i = 0; i < NO_OF_ROOMS; i++) {
+        if (status == 0 && room[i].valveCooling_isOpen == true)
+            protect = false;
+        else if (status == 1 && room[i].valveHeating_isOpen == true)
+            protect = false;
+    }
+    
+    return protect;
 }
 #endif HVAC_H
