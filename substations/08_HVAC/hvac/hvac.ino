@@ -1,7 +1,7 @@
 /*
  * WARNING! At "init_config.h" - set the value:
- * #define EMBEDDED_OUTPUT_SUBSCR 1
- * to provide topic "embedded_input" subscription, that is required for HVACRooms.
+ * #define HVAC_SUBST 1
+ *
  */
 
 #include "init_config.h"
