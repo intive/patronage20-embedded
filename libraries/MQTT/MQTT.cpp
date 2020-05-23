@@ -16,7 +16,7 @@ void MQTT::reconnect() {
             #if DEBUG==1
             Serial.println("connected");
             #endif
-            #if EMBEDDED_OUTPUT_SUBSCR==1
+            #if HVAC_SUBST==1
             client.subscribe(mqttOutputTopic);
             #endif
             client.subscribe(mqttInputTopic);
@@ -49,7 +49,11 @@ void MQTT::callback(char* mqttInputTopic, byte* payload, unsigned int length) {
     Serial.print(payload_string);
     #endif
     if(returnFunct!=nullptr)
+    #if HVAC_SUBST==1   
+        returnFunct(payload_string, mqttInputTopic);
+    #else   
         returnFunct(payload_string);
+    #endif
 }
 
 /*  This should be called in loop function in main device file  */

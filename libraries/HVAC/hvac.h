@@ -44,9 +44,9 @@ static std::vector<int> openWindows;
 static struct Room 
 {
     int id;
-    int hyst = 0;
-    int heatingTemp = 0;
-    int coolingTemp = 0;
+    int hyst = 5;
+    int heatingTemp = 50;
+    int coolingTemp = 400;
     bool cooling = false;
     bool heating = false; 
     int temSenID = 0;
@@ -57,12 +57,11 @@ static struct Room
     int valveCooling_id;
     bool valveHeating_isOpen;
     bool valveCooling_isOpen;
-    bool isTermometerActive = false;
+    bool termometer_isActive = false;
     
 }room[NO_OF_ROOMS];
 
 MQTT mqtt;
-
 
 static void show_data_SP(Room* room, int i) 
 {

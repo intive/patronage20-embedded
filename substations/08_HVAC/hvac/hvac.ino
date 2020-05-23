@@ -16,20 +16,20 @@ unsigned int notifCaller = 0;
 Network network(ssid, passwd);
 
 
-void incoming_JSON(String json_input)
+void incoming_JSON(String json_input, char* topic)
 {
     int i;
     int j;
     int k;
-    
+ 
     DynamicJsonDocument json_doc(2048);
     DeserializationError error = deserializeJson(json_doc, json_input);
     if (error) {
         return;
     }
 
-    /* Gathering Room info from request */
-    if(json_doc["type"].as<String>().equals("HVACRoom")) {
+    /* gathering Room info from request */
+    if(json_doc["type"].as<String>().equals("HVACRoom") && strcmp(topic, mqttInputTopic) == 0) {
         for (i = 0; i < NO_OF_ROOMS; i++) {
             if(json_doc["id"].as<int>() == (i + 1)) {
                 if (json_doc.containsKey("hysteresis"))
@@ -40,32 +40,37 @@ void incoming_JSON(String json_input)
                     room[i].coolingTemp = json_doc["coolingTemperature"].as<int>();
                 if (json_doc.containsKey("temperatureSensorId")) {
                     room[i].temSenID = json_doc["temperatureSensorId"].as<int>();
-                    room[i].isTermometerActive = false;
+                    room[i].termometer_isActive = false;
                 }
-                    
                 if (json_doc.containsKey("windowSensorIds")) {
                     room[i].winSenID.clear();
-                    for(j = 0; j < json_doc["windowSensorIds"].size(); j++) 
+                    for(j = 0; j < json_doc["windowSensorIds"].size(); j++) {
                         room[i].winSenID.push_back(json_doc["windowSensorIds"][j]);
+                        /* when new windowIds is added - assume is open
+                            - put in openWindows container, if not already there before */
+                        if(!idle_exist(openWindows, json_doc["windowSensorIds"][j])){
+                            openWindows.push_back(json_doc["windowSensorIds"][j]);
+                        }
+                    }
                 }
             }
         }
         return;
     }
     
-    /* Gathering information from termometer */
-    if(json_doc["type"].as<String>().equals("TEMPERATURE_SENSOR")) {
+    /* gathering information from termometer */
+    if(json_doc["type"].as<String>().equals("TEMPERATURE_SENSOR") && strcmp(topic, mqttOutputTopic) == 0) {
         for (i = 0; i < NO_OF_ROOMS; i++) {
             if(json_doc["id"].as<int>() == room[i].temSenID) {
                 room[i].tempReal = json_doc["value"].as<int>();
-                room[i].isTermometerActive = true;
+                room[i].termometer_isActive = true;
             }
         }
         return;
     }
 
-    /* Gathering information from Servo */
-    if(json_doc["type"].as<String>().equals("Servo")) {
+    /* gathering information from Servo */
+    if(json_doc["type"].as<String>().equals("Servo") && strcmp(topic, mqttOutputTopic) == 0) {
         for (i = 0; i < NO_OF_ROOMS; i++) {
             /* check if servo is responsible for heating valve */
             if(json_doc["id"].as<int>() == room[i].valveHeating_id) {
@@ -90,7 +95,7 @@ void incoming_JSON(String json_input)
     }
 
     /* gathering information about windowSensor status */
-    if(json_doc["type"].as<String>().equals("windowSensor")) {
+    if(json_doc["type"].as<String>().equals("windowSensor") && strcmp(topic, mqttOutputTopic) == 0) {
         if(json_doc["status"].as<String>().equals("open")) {
             if(!idle_exist(openWindows, json_doc["id"].as<int>())){
                 openWindows.push_back(json_doc["id"].as<int>());
@@ -99,12 +104,13 @@ void incoming_JSON(String json_input)
         if(json_doc["status"].as<String>().equals("closed")) {
             openWindows.erase(std::remove(openWindows.begin(), openWindows.end(), json_doc["id"].as<int>()), openWindows.end());
         }
+        return;
     }
 }
 
 void setup() {
 
-    /* set innitial values */
+    /* set innitial values - different for Rooms */
     room[0].id = hvacRooms_R1_ID;
     room[0].valveHeating_id = SERVO_1H_ID;
     room[0].valveCooling_id = SERVO_1C_ID;
@@ -125,17 +131,21 @@ void setup() {
 }
 
 void loop() {
-    mqtt.loop();
+
+
+        
     int i;
     bool p_cooling = false;
     bool p_heating = false;
+    
+    mqtt.loop();
 
-    /* notify the HVAC and servo value every 1 sec */
+    /* make establish, set and notify proper issues -  every 1 sec */
     if (++notifCaller >= 1000) {
         for (i = 0; i < NO_OF_ROOMS; i++) {
 
             /* establish if room suppose to be heated or cooled */
-            if(!isWindowsOpen(room, i) == true && room[i].isTermometerActive == true) {
+            if(!isWindowsOpen(room, i) == true && room[i].termometer_isActive == true) {
                 if (room[i].heating == false && room[i].tempReal <= (room[i].heatingTemp - room[i].hyst)) 
                     room[i].heating = true;
                 if (room[i].heating == true && room[i].tempReal >= (room[i].heatingTemp + room[i].hyst))
@@ -163,7 +173,7 @@ void loop() {
             if(room[i].cooling)
                 p_cooling = true;
 
-            /* notify HVAC Rooms status by MQTT */
+            /* notify HVAC Room status by MQTT */
             mqtt.send(output_JSON_HVACRooms(room, i));
         }
 
@@ -171,6 +181,7 @@ void loop() {
         digitalWrite(PELTIER_COOLING, p_cooling);
         digitalWrite(PELTIER_HEATING, p_heating);
     
+        /* notify HVAC Status */
         mqtt.send(output_JSON_HVACStatus(p_cooling, p_heating));
 
         /* optional preview in Serial monitor */
