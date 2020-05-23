@@ -212,4 +212,89 @@ static void set_valve(int id, bool position)
     
 }
 
+static void updateRooms(Room* room, DynamicJsonDocument& json_doc) 
+{
+    int i;
+    int j;
+
+    for (i = 0; i < NO_OF_ROOMS; i++) {
+        if(json_doc["id"].as<int>() == (i + 1)) {
+            if (json_doc.containsKey("hysteresis"))
+                room[i].hyst = json_doc["hysteresis"].as<int>();
+            if (json_doc.containsKey("heatingTemperature"))
+                room[i].heatingTemp = json_doc["heatingTemperature"].as<int>();
+            if (json_doc.containsKey("coolingTemperature"))
+                room[i].coolingTemp = json_doc["coolingTemperature"].as<int>();
+            if (json_doc.containsKey("temperatureSensorId")) {
+                room[i].temSenID = json_doc["temperatureSensorId"].as<int>();
+                room[i].termometer_isActive = false;
+            }
+            if (json_doc.containsKey("windowSensorIds")) {
+                room[i].winSenID.clear();
+                for(j = 0; j < json_doc["windowSensorIds"].size(); j++) {
+                    room[i].winSenID.push_back(json_doc["windowSensorIds"][j]);
+                    /* when new windowIds is added - assume is open
+                        - put in openWindows container, if not already there before */
+                    if(!idle_exist(openWindows, json_doc["windowSensorIds"][j])){
+                        openWindows.push_back(json_doc["windowSensorIds"][j]);
+                    }
+                }
+            }
+        }
+    }
+    Serial.println("Updated Rooms");
+}
+
+static void updateTermometer(Room* room, DynamicJsonDocument& json_doc) 
+{
+    int i;
+
+    for (i = 0; i < NO_OF_ROOMS; i++) {
+        if(json_doc["id"].as<int>() == room[i].temSenID) {
+            room[i].tempReal = json_doc["value"].as<int>();
+            room[i].termometer_isActive = true;
+            Serial.println("Updated temp.");
+        }
+    }
+}
+
+static void updateValve(Room* room, DynamicJsonDocument& json_doc) 
+{
+    int i;
+    
+    for (i = 0; i < NO_OF_ROOMS; i++) {
+        /* check if servo is responsible for heating valve */
+        if(json_doc["id"].as<int>() == room[i].valveHeating_id) {
+            if (json_doc["angle"].as<int>() == angle_fromServoID(json_doc["id"].as<int>(), true)) {
+                room[i].valveHeating_isOpen = true;
+            }
+            else if (json_doc["angle"].as<int>() == angle_fromServoID(json_doc["id"].as<int>(), false)) {
+                room[i].valveHeating_isOpen = false;
+            }  
+        }
+        /* check if servo is responsible for cooling valve */
+        else if(json_doc["id"].as<int>() == room[i].valveCooling_id) {
+            if (json_doc["angle"].as<int>() == angle_fromServoID(json_doc["id"].as<int>(), true)){
+                room[i].valveCooling_isOpen = true;
+            }
+            else if (json_doc["angle"].as<int>() == angle_fromServoID(json_doc["id"].as<int>(), false)){
+                room[i].valveCooling_isOpen = false;  
+            }
+        }
+    }
+    Serial.println("Updated valve");
+}
+
+static void updateWindowsSens(DynamicJsonDocument& json_doc) 
+{
+    if(json_doc["status"].as<String>().equals("open")) {
+        if(!idle_exist(openWindows, json_doc["id"].as<int>())){
+            openWindows.push_back(json_doc["id"].as<int>());
+        }
+    }
+    else if(json_doc["status"].as<String>().equals("closed")) {
+        openWindows.erase(std::remove(openWindows.begin(), openWindows.end(), json_doc["id"].as<int>()), openWindows.end());
+    }
+    Serial.println("Updated Windows Sens.");
+}
 #endif HVAC_H
