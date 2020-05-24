@@ -223,13 +223,13 @@ static void updateRooms(Room* room, DynamicJsonDocument& json_doc)
     for (i = 0; i < NO_OF_ROOMS; i++) {
         if(json_doc["id"].as<int>() == (i + 1)) {
             if (json_doc.containsKey("hysteresis"))
-                room[i].hyst = json_doc["hysteresis"].as<int>();
+                room[i].hyst = json_doc["hysteresis"];
             if (json_doc.containsKey("heatingTemperature"))
-                room[i].heatingTemp = json_doc["heatingTemperature"].as<int>();
+                room[i].heatingTemp = json_doc["heatingTemperature"];
             if (json_doc.containsKey("coolingTemperature"))
-                room[i].coolingTemp = json_doc["coolingTemperature"].as<int>();
+                room[i].coolingTemp = json_doc["coolingTemperature"];
             if (json_doc.containsKey("temperatureSensorId")) {
-                room[i].temSenID = json_doc["temperatureSensorId"].as<int>();
+                room[i].temSenID = json_doc["temperatureSensorId"];
                 room[i].termometer_isActive = false;
             }
             if (json_doc.containsKey("windowSensorIds")) {
@@ -253,7 +253,7 @@ static void updateTermometer(Room* room, DynamicJsonDocument& json_doc)
 
     for (i = 0; i < NO_OF_ROOMS; i++) {
         if(json_doc["id"].as<int>() == room[i].temSenID) {
-            room[i].tempReal = json_doc["value"].as<int>();
+            room[i].tempReal = json_doc["value"];
             room[i].termometer_isActive = true;
             Serial.println("Updated temp.");
         }
@@ -267,10 +267,10 @@ static void updateValve(Room* room, DynamicJsonDocument& json_doc)
     for (i = 0; i < NO_OF_ROOMS; i++) {
         /* check if servo is responsible for heating valve */
         if(json_doc["id"].as<int>() == room[i].valveHeating_id) {
-            if (json_doc["angle"].as<int>() == angle_fromServoID(json_doc["id"].as<int>(), true)) {
+            if (json_doc["angle"] == angle_fromServoID(json_doc["id"].as<int>(), true)) {
                 room[i].valveHeating_isOpen = true;
             }
-            else if (json_doc["angle"].as<int>() == angle_fromServoID(json_doc["id"].as<int>(), false)) {
+            else if (json_doc["angle"] == angle_fromServoID(json_doc["id"].as<int>(), false)) {
                 room[i].valveHeating_isOpen = false;
             }
         /* set LED indicator for heating Valve (servo) */
@@ -278,10 +278,10 @@ static void updateValve(Room* room, DynamicJsonDocument& json_doc)
         }
         /* check if servo is responsible for cooling valve */
         else if(json_doc["id"].as<int>() == room[i].valveCooling_id) {
-            if (json_doc["angle"].as<int>() == angle_fromServoID(json_doc["id"].as<int>(), true)){
+            if (json_doc["angle"] == angle_fromServoID(json_doc["id"].as<int>(), true)){
                 room[i].valveCooling_isOpen = true;
             }
-            else if (json_doc["angle"].as<int>() == angle_fromServoID(json_doc["id"].as<int>(), false)){
+            else if (json_doc["angle"] == angle_fromServoID(json_doc["id"].as<int>(), false)){
                 room[i].valveCooling_isOpen = false;  
             }
         /* set LED indicator for cooling Valve (servo) */
