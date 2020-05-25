@@ -9,11 +9,16 @@
 #include <WiFiClientSecure.h>
 #include <time.h>
 
-#define DEBUG 1
+#define DEBUG 0
+
 
 
 /* Function with string parameters only */
-typedef void (*callback_function)(String); /* type for conciseness */
+#if HVAC_SUBST==1
+typedef void (*callback_function)(String, char*); /* type for conciseness */
+#else
+typedef void (*callback_function)(String);  
+#endif
 
 class MQTT{
     private:

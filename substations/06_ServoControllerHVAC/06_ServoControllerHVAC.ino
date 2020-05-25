@@ -47,11 +47,11 @@ void setup()
     mqtt.set_return_function(incoming_JSON);
 }
 
-void loop()
-{
-    network.loop();
+
+void loop() 
+{ 
+
     mqtt.loop();
-    mqtt.send(output_JSON(servoAng, id, type));
 
     if (++notifCaller == 1000) {
         mqtt.send(output_JSON(servoAng, id, type));
