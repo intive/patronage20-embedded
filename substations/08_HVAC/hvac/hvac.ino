@@ -34,7 +34,7 @@ void incoming_JSON(String json_input, char* topic)
     /* gather message from output channel */
     if (strcmp(topic, mqttOutputTopic) == 0) {
         if (json_doc["type"].as<String>().equals("TEMPERATURE_SENSOR"))
-            updateTermometer(room, json_doc);
+            updateThermometer(room, json_doc);
         else if (json_doc["type"].as<String>().equals("Servo"))
             updateValve(room, json_doc);
         else if (json_doc["type"].as<String>().equals("windowSensor"))

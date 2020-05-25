@@ -247,7 +247,7 @@ static void updateRooms(Room* room, DynamicJsonDocument& json_doc)
     }
 }
 
-static void updateTermometer(Room* room, DynamicJsonDocument& json_doc) 
+static void updateThermometer(Room* room, DynamicJsonDocument& json_doc) 
 {
     int i;
 
@@ -273,8 +273,8 @@ static void updateValve(Room* room, DynamicJsonDocument& json_doc)
             else if (json_doc["angle"] == angle_fromServoID(json_doc["id"].as<int>(), false)) {
                 room[i].valveHeating_isOpen = false;
             }
-        /* set LED indicator for heating Valve (servo) */
-        digitalWrite(ledPIN_fromServoID(room[i].valveHeating_id), room[i].valveHeating_isOpen);    
+            /* set LED indicator for heating Valve (servo) */
+            digitalWrite(ledPIN_fromServoID(room[i].valveHeating_id), room[i].valveHeating_isOpen);    
         }
         /* check if servo is responsible for cooling valve */
         else if(json_doc["id"].as<int>() == room[i].valveCooling_id) {
@@ -284,8 +284,8 @@ static void updateValve(Room* room, DynamicJsonDocument& json_doc)
             else if (json_doc["angle"] == angle_fromServoID(json_doc["id"].as<int>(), false)){
                 room[i].valveCooling_isOpen = false;  
             }
-        /* set LED indicator for cooling Valve (servo) */
-        digitalWrite(ledPIN_fromServoID(room[i].valveCooling_id), room[i].valveCooling_isOpen);
+            /* set LED indicator for cooling Valve (servo) */
+            digitalWrite(ledPIN_fromServoID(room[i].valveCooling_id), room[i].valveCooling_isOpen);
         }
     }
 }
