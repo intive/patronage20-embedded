@@ -3,6 +3,8 @@
 #include <fstream>
 #include <ctime>
 
+#define JSON_NOTIFICATIONS "/home/patronage/jsons/notifications.json"
+
 #define HVAC_ID -1
 #define MAX_NOTIFICATION_COUNT 1024
 
@@ -44,17 +46,17 @@ public:
                 last_id = 0;
             else
                 last_id = notifications.back().id;
-                last_id++;
+            last_id++;
         }
         else
         {
             i.close();
             std::ofstream o(filepath);
-            o <<"[]";
+            o << "[]";
             o.close();
             last_id = 0;
         }
-        
+
         dashboard_previous = dashboard;
     }
 
@@ -77,7 +79,7 @@ public:
         note.sensorId = sensor_id;
         notifications.push_back(note);
 
-        std::ofstream o("jsons/notifications.json");
+        std::ofstream o(JSON_NOTIFICATIONS);
         o << std::setw(4) << get_notifications();
         o.close();
     }

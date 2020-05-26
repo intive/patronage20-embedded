@@ -1,7 +1,7 @@
 #define CROW_ENABLE_SSL
 #include "dependencies/crow_all.h"
 #include "notifications.h"
-
+#include <signal.h>
 #include <mosquitto.h>
 #include <pthread.h>
 
@@ -9,6 +9,10 @@
 #define KEY_FILE "/etc/letsencrypt/live/gate.patronage2020-iot.intive-projects.com/privkey.pem"
 #define COOKIE_NAME "SuperToken"
 #define COOKIE_VALUE "59c5f5b2cb7ca698b5b9dd199a10914dc6047ef1afe07d2879c89637fef05ae2"
+
+#define JSON_DASHBOARD "/home/patronage/jsons/dashboard.json"
+#define JSON_DASHBOARD_EMBEDDED "/home/patronage/jsons/dashboard_embedded.json"
+#define JSON_NOTIFICATIONS "/home/patronage/jsons/notifications.json"
 
 #define CA_FILE "/etc/ssl/certs/ca-certificates.crt"
 #define MQTT_HOST "gate.patronage2020-iot.intive-projects.com"
@@ -39,17 +43,17 @@ struct CookieProtection
     /* load default data from file */
     CookieProtection()
     {
-        std::ifstream i("jsons/dashboard.json");
+        std::ifstream i(JSON_DASHBOARD);
         json dashboard_response;
         i >> dashboard_response;
         i.close();
         dashboard.set_dashboard(dashboard_response);
-        std::ifstream j("jsons/dashboard_embedded.json");
+        std::ifstream j(JSON_DASHBOARD_EMBEDDED);
         json dashboard_embedded_response;
         j >> dashboard_embedded_response;
         j.close();
         dashboard_embedded.set_dashboard_embedded(dashboard_embedded_response);
-        notifications.init("jsons/notifications.json", dashboard);
+        notifications.init(JSON_NOTIFICATIONS, dashboard);
     };
 
     struct context
@@ -134,6 +138,14 @@ int main(void)
         return std::string("Hello world\n");
     });
 
+    /* Crashes server for testing purposes ;d */
+    CROW_ROUTE(app, "/crash")
+    ([&](const crow::request &req) -> crow::response {
+        pthread_rwlock_rdlock(&q_rwlock);
+        raise(SIGSEGV);
+        pthread_rwlock_unlock(&q_rwlock);
+        return std::string("Hello world\n");
+    });
     /* DASHBOARD */
     CROW_ROUTE(app, "/dashboard").methods(crow::HTTPMethod::Get)([&]() {
         pthread_rwlock_rdlock(&q_rwlock);
@@ -181,9 +193,9 @@ int main(void)
             return crow::response(400);
         }
         pthread_rwlock_unlock(&q_rwlock);
-        
+
         mqtt_send(mosq, hvac.dump().c_str());
-        
+
         return crow::response(200);
     });
 
@@ -219,7 +231,7 @@ int main(void)
             pthread_rwlock_unlock(&q_rwlock);
             return crow::response(404);
         }
-        std::ofstream o("jsons/notifications.json");
+        std::ofstream o(JSON_NOTIFICATIONS);
         o << std::setw(4) << app.get_middleware<CookieProtection>().notifications.get_notifications() << std::endl;
         o.close();
         pthread_rwlock_unlock(&q_rwlock);
