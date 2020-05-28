@@ -1,7 +1,6 @@
 #define CROW_ENABLE_SSL
 #include "dependencies/crow_all.h"
 #include "notifications.h"
-#include <signal.h>
 #include <mosquitto.h>
 #include <pthread.h>
 
@@ -138,14 +137,6 @@ int main(void)
         return std::string("Hello world\n");
     });
 
-    /* Crashes server for testing purposes ;d */
-    CROW_ROUTE(app, "/crash")
-    ([&](const crow::request &req) -> crow::response {
-        pthread_rwlock_rdlock(&q_rwlock);
-        raise(SIGSEGV);
-        pthread_rwlock_unlock(&q_rwlock);
-        return std::string("Hello world\n");
-    });
     /* DASHBOARD */
     CROW_ROUTE(app, "/dashboard").methods(crow::HTTPMethod::Get)([&]() {
         pthread_rwlock_rdlock(&q_rwlock);
