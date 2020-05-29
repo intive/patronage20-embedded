@@ -94,10 +94,12 @@ void setup()
     mqtt.set_return_function(incoming_JSON);
 }
 
+
 void loop()
 {
     int i;
     
+
     mqtt.loop();
 
     servo_1H.write(servo_ANGLE[0]);
