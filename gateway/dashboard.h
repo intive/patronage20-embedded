@@ -144,56 +144,61 @@ public:
 
     int set_hvac_room(json request)
     {
-        if(request["type"] != "HVACRoom")
+        if(request["type"] != "HVACRoom"){
             return 1;
+        }
 
-        if(request.contains("temperatureSensorId"))
-            if(!temperature_sensor_exists(request["temperatureSensorId"].get<int>()))
-                return 1;
+        if(request.contains("temperatureSensorId") && !temperature_sensor_exists(request["temperatureSensorId"].get<int>())) {
+            return 1;
+        }
 
-        if(request.contains("windowSensorIds"))
-            if(!windows_sensors_exists(request["windowSensorIds"].get<std::vector<int>>()))
-                return 1;
+        if(request.contains("windowSensorIds") && !windows_sensors_exists(request["windowSensorIds"].get<std::vector<int>>())) {
+            return 1;
+        }
 
         for(uint i = 0;i<hvac_rooms.size();i++)
         {
-            if  (hvac_rooms[i].id==(request["id"].get<int>()))
-            {
-                if(hvac_rooms[i].temperature_sensor_id==0)
-                    if(!(request.contains("temperatureSensorId")))
+            if (hvac_rooms[i].id==(request["id"].get<int>())){
+                if(hvac_rooms[i].temperature_sensor_id==0){
+                    if(!(request.contains("temperatureSensorId"))){
                         return 1;
-                    else
+                    }
+                    else {
                         hvac_rooms[i].temperature_sensor_id = request["temperatureSensorId"].get<int>();
+                    }
+                }
+            int tmp_heating, tmp_cooling, hysteresis;
 
-                    int tmp_heating, tmp_cooling, hysteresis;
+            if(request.contains("heatingTemperature")) {
+                tmp_heating = request["heatingTemperature"].get<int>();
+            }
+            else {
+                tmp_heating =  hvac_rooms[i].heating_temperature;
+            }
+            if(request.contains("coolingTemperature")) {
+                tmp_cooling= request["coolingTemperature"].get<int>();
+            }
+            else {
+                tmp_cooling =  hvac_rooms[i].cooling_temperature;
+            }
+            if(request.contains("hysteresis")) {
+                hysteresis = request["hysteresis"].get<int>();
+            }
+            else {
+                hysteresis =  hvac_rooms[i].hysteresis;
+            }
 
-                    if(request.contains("heatingTemperature")) {
-                        tmp_heating = request["heatingTemperature"].get<int>();
-                    }
-                    else {
-                        tmp_heating =  hvac_rooms[i].heating_temperature;
-                    }
-                    if(request.contains("coolingTemperature")) {
-                        tmp_cooling= request["coolingTemperature"].get<int>();
-                    }
-                    else {
-                        tmp_cooling =  hvac_rooms[i].cooling_temperature;
-                    }
-                    if(request.contains("hysteresis")) {
-                        hysteresis = request["hysteresis"].get<int>();
-                    }
-                    else {
-                        hysteresis =  hvac_rooms[i].hysteresis;
-                    }
+            if(tmp_heating>tmp_cooling-hysteresis){
+                return 1;
+            }
+            if(tmp_cooling<tmp_heating+hysteresis){
+                return 1;
+            }
+            hvac_rooms[i].heating_temperature = tmp_heating;
+            hvac_rooms[i].cooling_temperature = tmp_cooling;
+            hvac_rooms[i].hysteresis = hysteresis;
 
-                    if(tmp_heating>tmp_cooling-hysteresis)
-                        return 1;
-                    if(tmp_cooling<tmp_heating+hysteresis)
-                        return 1;
-                    hvac_rooms[i].heating_temperature = tmp_heating;
-                    hvac_rooms[i].cooling_temperature = tmp_cooling;
-                    hvac_rooms[i].hysteresis = hysteresis;
-                return 0;
+            return 0;
             }
         }
         return 1;
