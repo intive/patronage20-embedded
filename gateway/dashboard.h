@@ -1,4 +1,5 @@
 #include "sensors.h"
+#include "id_verification.h"
 
 
 using json = nlohmann::json;
@@ -184,7 +185,7 @@ public:
         int sensorExist = 0;
 
         /* WindowBlind  */
-        if (request["type"] == "windowBlind")
+        if(request["type"] == "windowBlind" && validate_blind_id(request))
         {
             for (uint i = 0; i < window_blinds.size(); i++)
             {
@@ -195,10 +196,15 @@ public:
                     return 0;
                 }
             }
+            if (sensorExist == 0)
+            {
+                    add_window_blind(request);
+                    return 0;
+            }
         }
 
         /* Lights */
-        if (request["type"] == "LED_CONTROLLER")
+        if(request["type"] == "LED_CONTROLLER" && validate_light_id(request))
         {
             for (uint i = 0; i < lights.size(); i++)
             {
@@ -219,7 +225,7 @@ public:
         }
 
         /* WindowSensor */
-        if (request["type"] == "windowSensor")
+        if(request["type"] == "windowSensor" && validate_window_sensors_id(request))
         {
             for (uint i = 0; i < window_sensors.size(); i++)
             {
@@ -235,10 +241,11 @@ public:
                 add_window_sensor(request);
                 return 0;
             }
+
         }
 
         /* temperatureSensors */
-        if (request["type"] == "TEMPERATURE_SENSOR")
+        if(request["type"] == "TEMPERATURE_SENSOR" && validate_temperature_sensor_id(request))
         {
             for (uint i = 0; i < temperature_sensors.size(); i++)
             {
@@ -254,10 +261,12 @@ public:
                 add_temperature_sensor(request);
                 return 0;
             }
+
+
         }
 
         /* HVAC Status */
-        if (request["type"] == "HVACStatus")
+        if(request["type"] == "HVACStatus" && validate_hvac_id(request))
         {
             for (uint i = 0; i < hvac_status.size(); i++)
             {
@@ -273,14 +282,14 @@ public:
                 return 0;
             }
         }
-        
+
         /* HVAC Rooms */
         if(request["type"] == "HVACRoom")
         {
             for(uint i = 0;i<hvac_rooms.size();i++)
             {
                 if  (hvac_rooms[i].id==request["id"].get<int>())
-                    
+
                 {
                     hvac_rooms[i].hysteresis = request["hysteresis"].get<int>();
                     hvac_rooms[i].heating_temperature = request["heatingTemperature"].get<int>();
@@ -291,16 +300,16 @@ public:
                     hvac_rooms[i].window_sensor_ids.clear();
                     for (uint j = 0; j < request["windowSensorIds"].size(); j++)
                     {
-                        hvac_rooms[i].window_sensor_ids.push_back(request["windowSensorIds"][j].get<int>()); 
+                        hvac_rooms[i].window_sensor_ids.push_back(request["windowSensorIds"][j].get<int>());
                     }
                 return 0;
                 }
-                
+
             }
         }
-        
+
         /* smokeSensors */
-        if (request["type"] == "smokeSensor")
+        if(request["type"] == "smokeSensor" && validate_smoke_sensor_id(request))
         {
             for (uint i = 0; i < smoke_sensors.size(); i++)
             {

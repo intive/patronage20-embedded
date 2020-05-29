@@ -157,6 +157,8 @@ int main(void)
         json blind = json::parse(req.body);
         if (blind.empty())
             return crow::response(400);
+        if(!validate_blind_id(blind))
+            return crow::response(400);
         pthread_rwlock_rdlock(&q_rwlock);
         if (app.get_middleware<CookieProtection>().dashboard.set_blind(blind))
         {
@@ -174,6 +176,8 @@ int main(void)
         json hvac = json::parse(req.body);
         if (hvac.empty())
             return crow::response(400);
+        if(!validate_hvac_id(hvac))
+            return crow::response(400);
         pthread_rwlock_rdlock(&q_rwlock);
         if (app.get_middleware<CookieProtection>().dashboard.set_hvac_room(hvac))
         {
@@ -181,9 +185,9 @@ int main(void)
             return crow::response(400);
         }
         pthread_rwlock_unlock(&q_rwlock);
-        
+
         mqtt_send(mosq, hvac.dump().c_str());
-        
+
         return crow::response(200);
     });
 
@@ -191,6 +195,8 @@ int main(void)
         json light = json::parse(req.body);
 
         if (light.empty())
+            return crow::response(400);
+        if(!validate_light_id(light))
             return crow::response(400);
         pthread_rwlock_rdlock(&q_rwlock);
         if (app.get_middleware<CookieProtection>().dashboard.set_light(light))
