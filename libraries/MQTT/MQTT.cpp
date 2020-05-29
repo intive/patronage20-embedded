@@ -4,6 +4,7 @@
 #define MYTZ TZ_Europe_Warsaw
 
 
+
 void MQTT::reconnect() {
     /* Loop until we're reconnected */
     while (!client.connected()) {
@@ -14,6 +15,9 @@ void MQTT::reconnect() {
         if (client.connect(serialnumber)) {
             #if DEBUG==1
             Serial.println("connected");
+            #endif
+            #if HVAC_SUBST==1
+            client.subscribe(mqttOutputTopic);
             #endif
             client.subscribe(mqttInputTopic);
         } else {
@@ -37,7 +41,6 @@ void MQTT::callback(char* mqttInputTopic, byte* payload, unsigned int length) {
     Serial.print("] ");
     #endif
     /*End of debug*/
-
     String payload_string = "";
     for (int i=0;i<length;i++) {
         payload_string+=(char)payload[i];
@@ -46,7 +49,11 @@ void MQTT::callback(char* mqttInputTopic, byte* payload, unsigned int length) {
     Serial.print(payload_string);
     #endif
     if(returnFunct!=nullptr)
+    #if HVAC_SUBST==1   
+        returnFunct(payload_string, mqttInputTopic);
+    #else   
         returnFunct(payload_string);
+    #endif
 }
 
 /*  This should be called in loop function in main device file  */

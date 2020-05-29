@@ -10,9 +10,14 @@
 /* Varibles to store a color */
 int hue = 0, saturation = 0, value = 0;
 
+const int ID_LED = 62;
+const String TYPE_LED = "LED_CONTROLLER";
+
 MQTT mqtt;
 /* ssid and password got from init_config.h */
 Network network(ssid, passwd);
+
+unsigned int notifCaller = 0;
 
 /* Callback function for MQTT library */
 void get_hsv_color(String json_input)
@@ -21,9 +26,9 @@ void get_hsv_color(String json_input)
     DeserializationError error = deserializeJson(json_doc, json_input);
     if (error)
         return;
-    /* id_led_controller_1, type_led_controller from init_config.h */
-    if(json_doc["id"].as<int>() == id_led_controller_1)
-        if(json_doc["type"].as<String>().equals(type_led_controller))
+    /* ID_LED, TYPE_LED from init_config.h */
+    if(json_doc["id"].as<int>() == ID_LED)
+        if(json_doc["type"].as<String>().equals(TYPE_LED))
         {
             hue = json_doc["hue"].as<int>();
             saturation = json_doc["saturation"].as<int>();
@@ -35,7 +40,7 @@ void get_hsv_color(String json_input)
 void set_led_rgb_value(int red_pin, int green_pin, int blue_pin)
 {
     int rgb[3];
-    hsv_to_rgb(hue, saturation, value, rgb);
+    hsv_to_rgb(&hue, &saturation, &value, rgb);
     analogWrite(red_pin,rgb[0]);
     analogWrite(green_pin, rgb[1]);
     analogWrite(blue_pin, rgb[2]);
@@ -53,8 +58,10 @@ void setup()
 
 void loop()
 {
-    network.loop();
     mqtt.loop();
-    mqtt.send(report_hsv_color(hue, saturation, value, id_led_controller_1, type_led_controller));
-    delay(1000);
+    if (++notifCaller >= 1000) {
+        mqtt.send(report_hsv_color(hue, saturation, value, ID_LED, TYPE_LED));
+        notifCaller = 0;
+    }
+    delay(1);
 }
