@@ -3,7 +3,7 @@
 #include <fstream>
 #include <ctime>
 
-#define JSON_NOTIFICATIONS "/home/patronage/jsons/notifications.json"
+#define JSON_NOTIFICATIONS "jsons/notifications.json"
 
 #define HVAC_ID -1
 #define MAX_NOTIFICATION_COUNT 1024

@@ -9,9 +9,9 @@
 #define COOKIE_NAME "SuperToken"
 #define COOKIE_VALUE "59c5f5b2cb7ca698b5b9dd199a10914dc6047ef1afe07d2879c89637fef05ae2"
 
-#define JSON_DASHBOARD "/home/patronage/jsons/dashboard.json"
-#define JSON_DASHBOARD_EMBEDDED "/home/patronage/jsons/dashboard_embedded.json"
-#define JSON_NOTIFICATIONS "/home/patronage/jsons/notifications.json"
+#define JSON_DASHBOARD "jsons/dashboard.json"
+#define JSON_DASHBOARD_EMBEDDED "jsons/dashboard_embedded.json"
+#define JSON_NOTIFICATIONS "jsons/notifications.json"
 
 #define CA_FILE "/etc/ssl/certs/ca-certificates.crt"
 #define MQTT_HOST "gate.patronage2020-iot.intive-projects.com"
