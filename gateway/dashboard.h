@@ -68,40 +68,20 @@ public:
         motion_sensors.push_back(motion);
     }
 
-    bool temperature_sensor_exists(int id)
-    {
-        for(int i=0; i < temperature_sensors.size(); i++)
-            if(temperature_sensors.at(i).id==id)
-              return true;
-        return false;
-    }
-
-    bool windows_sensors_exists(std::vector<int> sensors_ids)
-    {
-        uint sensors_count = 0;
-        for(int j=0; j < sensors_ids.size(); j++)
-            for(int i=0; i < window_sensors.size(); i++)
-                if(window_sensors.at(i).id == sensors_ids.at(j))
-                    sensors_count++;
-        if(sensors_count == sensors_ids.size())
-            return true;
-        return false;
-    }
-
     json get_dashboard()
     {
         json dashboard =
-        {
-            {"temperatureSensors", temperature_sensors},
-            {"windowSensors",window_sensors},
-            {"windowBlinds",window_blinds},
-            {"RFIDSensors", rfid_sensors},
-            {"smokeSensors",smoke_sensors},
-            {"HVACStatus",hvac_status},
-            {"HVACRooms",hvac_rooms},
-            {"lights",lights}
+            {
+                {"temperatureSensors", temperature_sensors},
+                {"windowSensors", window_sensors},
+                {"windowBlinds", window_blinds},
+                {"RFIDSensors", rfid_sensors},
+                {"smokeSensors", smoke_sensors},
+                {"HVACStatus", hvac_status},
+                {"HVACRooms", hvac_rooms},
+                {"lights", lights}
 
-        };
+            };
         return dashboard;
     }
 
@@ -144,64 +124,10 @@ public:
 
     int set_hvac_room(json request)
     {
-        if(request["type"] != "HVACRoom"){
+        if (request["type"] != "HVACRoom")
             return 1;
-        }
-
-        if(request.contains("temperatureSensorId") && !temperature_sensor_exists(request["temperatureSensorId"].get<int>())) {
-            return 1;
-        }
-
-        if(request.contains("windowSensorIds") && !windows_sensors_exists(request["windowSensorIds"].get<std::vector<int>>())) {
-            return 1;
-        }
-
-        for(uint i = 0;i<hvac_rooms.size();i++)
-        {
-            if (hvac_rooms[i].id==(request["id"].get<int>())){
-                if(hvac_rooms[i].temperature_sensor_id==0){
-                    if(!(request.contains("temperatureSensorId"))){
-                        return 1;
-                    }
-                    else {
-                        hvac_rooms[i].temperature_sensor_id = request["temperatureSensorId"].get<int>();
-                    }
-                }
-            int tmp_heating, tmp_cooling, hysteresis;
-
-            if(request.contains("heatingTemperature")) {
-                tmp_heating = request["heatingTemperature"].get<int>();
-            }
-            else {
-                tmp_heating =  hvac_rooms[i].heating_temperature;
-            }
-            if(request.contains("coolingTemperature")) {
-                tmp_cooling= request["coolingTemperature"].get<int>();
-            }
-            else {
-                tmp_cooling =  hvac_rooms[i].cooling_temperature;
-            }
-            if(request.contains("hysteresis")) {
-                hysteresis = request["hysteresis"].get<int>();
-            }
-            else {
-                hysteresis =  hvac_rooms[i].hysteresis;
-            }
-
-            if(tmp_heating>tmp_cooling-hysteresis){
-                return 1;
-            }
-            if(tmp_cooling<tmp_heating+hysteresis){
-                return 1;
-            }
-            hvac_rooms[i].heating_temperature = tmp_heating;
-            hvac_rooms[i].cooling_temperature = tmp_cooling;
-            hvac_rooms[i].hysteresis = hysteresis;
-
+        else
             return 0;
-            }
-        }
-        return 1;
     }
 
     int set_light(json request)
@@ -358,7 +284,7 @@ public:
         }
 
         /* HVAC Rooms */
-        if(request["type"] == "HVACRoom" && validate_hvac_id(request))
+        if(request["type"] == "HVACRoom")
         {
             for(uint i = 0;i<hvac_rooms.size();i++)
             {
