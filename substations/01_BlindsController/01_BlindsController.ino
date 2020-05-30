@@ -16,7 +16,7 @@
 #define SW2 12
 
 /* Defining substation ID number */
-int id = windowBlinds_ID;
+int id = windowBlinds_ID_2;
 unsigned int notifCaller = 0;
 
 MQTT mqtt;

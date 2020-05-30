@@ -2,7 +2,7 @@
 
 #ifndef ID_VALIDATION_H
 #define ID_VALIDATION_H
-#define ID_HVAC 10
+
 #define ID_LIGHTS 20
 #define ID_MOTION_SENSOR 30
 #define ID_RFID_SENSOR 40
@@ -28,7 +28,7 @@ bool validate_blind_id(json blinds_json){
   return true;
 }
 bool validate_hvac_id(json hvac_json){
-  if(hvac_json.empty() || !hvac_json.contains("id") || hvac_json["id"].get<int>()-ID_HVAC < 1 || hvac_json["id"].get<int>()-ID_HVAC > NUMBER_OF_SENSORS)
+  if(hvac_json.empty() || !hvac_json.contains("id"))
       return false;
   return true;
 }
