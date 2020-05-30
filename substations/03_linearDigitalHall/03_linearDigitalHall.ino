@@ -1,30 +1,34 @@
 /* Author: Szymon Wojtach */
 
-#include "linearDigitalHall.h"
+#include <Arduino.h>
+#include <ESP8266WiFi.h>
 #include "MQTT.h"
-#include "Network.h"
+#include "linearDigitalHall.h"
+#include "init_config.h"
 
 #define digitalPin 15
-unsigned int notif_counter = 0;
 
 MQTT mqtt;
-Network network(ssid, passwd);
 
 void setup()
 {
-    Serial.begin(9600);
-    while (!Serial) {
-    }
+    Serial.begin(115200);
     pinMode(digitalPin, INPUT);
-    network.init();
+    while (!Serial) {
+        delay(100);
+    }
+    Serial.print("Trying to connect to: ");
+    Serial.println(ssid);
+    WiFi.begin(ssid, passwd);
+    while (WiFi.status() != WL_CONNECTED) {
+        Serial.print(".");
+        delay(1000);
+    }
 }
 
 void loop()
 {
     mqtt.loop();
-    if (++notif_counter >= 1000) {
-        mqtt.send(linear_digital(digitalPin));
-        notif_counter = 0;
-	}
-    delay(1);
+    mqtt.send(linear_digital(digitalPin));
+    delay(100);
 }

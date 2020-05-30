@@ -1,12 +1,10 @@
+#include "dependencies/json.hpp"
 #include "sensors.h"
-#include "id_verification.h"
-
 
 using json = nlohmann::json;
 
 class Dashboard
 {
-public:
     std::vector<TemperatureSensor> temperature_sensors;
     std::vector<WindowSensor> window_sensors;
     std::vector<WindowBlind> window_blinds;
@@ -17,6 +15,8 @@ public:
     std::vector<Lights> lights;
     std::vector<Servo> servos;
     std::vector<MotionSensor> motion_sensors;
+
+public:
 
     void add_temperature_sensor(TemperatureSensor sensor)
     {
@@ -108,11 +108,11 @@ public:
     json get_dashboard_embedded()
     {
         json dashboard =
-            {
-                {"servos", servos},
-                {"motionSensors", motion_sensors}
+        {
+            {"servos",servos},
+            {"motionSensors",motion_sensors}
 
-            };
+        };
         return dashboard;
     }
 
@@ -136,7 +136,7 @@ public:
 
     int set_blind(json request)
     {
-        if (request["type"] != "windowBlind")
+        if(request["type"] != "windowBlind")
             return 1;
         else
             return 0;
@@ -206,7 +206,7 @@ public:
 
     int set_light(json request)
     {
-        if (request["type"] != "LED_CONTROLLER")
+        if(request["type"] != "LED_CONTROLLER")
             return 1;
         else
             return 0;
@@ -217,11 +217,11 @@ public:
         int sensorExist = 0;
 
         /* Servos  */
-        if (request["type"] == "Servo")
+        if(request["type"] == "Servo")
         {
-            for (uint i = 0; i < servos.size(); i++)
+            for(uint i = 0;i<servos.size();i++)
             {
-                if (servos[i].id == (request["id"].get<int>()))
+                if  (servos[i].id==(request["id"].get<int>()))
                 {
                     servos[i].angle = request["angle"].get<int>();
                     sensorExist = 1;
@@ -229,17 +229,18 @@ public:
                 }
             }
             if (sensorExist == 0)
-            {
-                add_servo(request);
-                return 0;
-            }
+                {
+                    add_servo(request);
+                    return 0;
+                }
+
         }
         /* motionSensors  */
-        if (request["type"] == "motionSensor")
+        if(request["type"] == "motionSensor")
         {
-            for (uint i = 0; i < motion_sensors.size(); i++)
+            for(uint i = 0;i<motion_sensors.size();i++)
             {
-                if (motion_sensors[i].id == (request["id"].get<int>()))
+                if  (motion_sensors[i].id==(request["id"].get<int>()))
                 {
                     motion_sensors[i].motion = request["motion"].get<bool>();
                     sensorExist = 1;
@@ -247,10 +248,10 @@ public:
                 }
             }
             if (sensorExist == 0)
-            {
-                add_motion_sensor(request);
-                return 0;
-            }
+                {
+                    add_motion_sensor(request);
+                    return 0;
+                }
         }
     }
 
@@ -259,11 +260,11 @@ public:
         int sensorExist = 0;
 
         /* WindowBlind  */
-        if(request["type"] == "windowBlind" && validate_blind_id(request))
+        if(request["type"] == "windowBlind")
         {
-            for (uint i = 0; i < window_blinds.size(); i++)
+            for(uint i = 0;i<window_blinds.size();i++)
             {
-                if (window_blinds[i].id == (request["id"].get<int>()))
+                if  (window_blinds[i].id==(request["id"].get<int>()))
                 {
                     window_blinds[i].position = request["position"].get<int>();
                     sensorExist = 1;
@@ -278,11 +279,11 @@ public:
         }
 
         /* Lights */
-        if(request["type"] == "LED_CONTROLLER" && validate_light_id(request))
+        if(request["type"] == "LED_CONTROLLER")
         {
-            for (uint i = 0; i < lights.size(); i++)
+            for(uint i = 0;i<lights.size();i++)
             {
-                if (lights[i].id == (request["id"].get<int>()))
+                if  (lights[i].id==(request["id"].get<int>()))
                 {
                     lights[i].hue = request["hue"].get<int>();
                     lights[i].saturation = request["saturation"].get<int>();
@@ -299,11 +300,11 @@ public:
         }
 
         /* WindowSensor */
-        if(request["type"] == "windowSensor" && validate_window_sensors_id(request))
+        if(request["type"] == "windowSensor")
         {
-            for (uint i = 0; i < window_sensors.size(); i++)
+            for(uint i = 0;i<window_sensors.size();i++)
             {
-                if (window_sensors[i].id == (request["id"].get<int>()))
+                if  (window_sensors[i].id==(request["id"].get<int>()))
                 {
                     window_sensors[i].status = request["status"].get<window_status>();
                     sensorExist = 1;
@@ -319,11 +320,11 @@ public:
         }
 
         /* temperatureSensors */
-        if(request["type"] == "TEMPERATURE_SENSOR" && validate_temperature_sensor_id(request))
+        if(request["type"] == "TEMPERATURE_SENSOR")
         {
-            for (uint i = 0; i < temperature_sensors.size(); i++)
+            for(uint i = 0;i<temperature_sensors.size();i++)
             {
-                if (temperature_sensors[i].id == (request["id"].get<int>()))
+                if  (temperature_sensors[i].id==(request["id"].get<int>()))
                 {
                     temperature_sensors[i].value = request["value"].get<int>();
                     sensorExist = 1;
@@ -340,9 +341,9 @@ public:
         }
 
         /* HVAC Status */
-        if(request["type"] == "HVACStatus" && validate_hvac_id(request))
+        if(request["type"] == "HVACStatus")
         {
-            for (uint i = 0; i < hvac_status.size(); i++)
+            for(uint i = 0;i<hvac_status.size();i++)
             {
                 hvac_status[i].heating = request["heating"].get<bool>();
                 hvac_status[i].cooling = request["cooling"].get<bool>();
@@ -352,42 +353,18 @@ public:
 
             if (sensorExist == 0)
             {
-                add_smoke_sensor(request);
+                add_hvac_sensor(request);
                 return 0;
             }
         }
 
-        /* HVAC Rooms */
-        if(request["type"] == "HVACRoom" && validate_hvac_id(request))
-        {
-            for(uint i = 0;i<hvac_rooms.size();i++)
-            {
-                if  (hvac_rooms[i].id==request["id"].get<int>())
-
-                {
-                    hvac_rooms[i].hysteresis = request["hysteresis"].get<int>();
-                    hvac_rooms[i].heating_temperature = request["heatingTemperature"].get<int>();
-                    hvac_rooms[i].cooling_temperature = request["coolingTemperature"].get<int>();
-                    hvac_rooms[i].temperature_sensor_id = request["temperatureSensorId"].get<int>();
-                    hvac_rooms[i].heating = request["heating"].get<int>();
-                    hvac_rooms[i].cooling = request["cooling"].get<int>();
-                    hvac_rooms[i].window_sensor_ids.clear();
-                    for (uint j = 0; j < request["windowSensorIds"].size(); j++)
-                    {
-                        hvac_rooms[i].window_sensor_ids.push_back(request["windowSensorIds"][j].get<int>());
-                    }
-                return 0;
-                }
-
-            }
-        }
 
         /* smokeSensors */
-        if(request["type"] == "smokeSensor" && validate_smoke_sensor_id(request))
+        if(request["type"] == "smokeSensor")
         {
-            for (uint i = 0; i < smoke_sensors.size(); i++)
+            for(uint i = 0;i<smoke_sensors.size();i++)
             {
-                if (smoke_sensors[i].id == (request["id"].get<int>()))
+                if  (smoke_sensors[i].id==(request["id"].get<int>()))
                 {
                     smoke_sensors[i].is_smoke_detected = request["isSmokeDetected"].get<bool>();
                     sensorExist = 1;

@@ -1,7 +1,6 @@
 #ifndef MOTION_SENSOR_H
 #define MOTION_SENSOR_H
 #include <ArduinoJson.h>
-#include "init_config.h"
 
 /* returns true when motion is detected */
 /* and false when there is no motion */
@@ -11,6 +10,7 @@ static bool detect_motion(int pin)
   
     if (state == HIGH)
         return true;
+
     else
         return false;
 }
@@ -20,10 +20,10 @@ static String motion_sensor(int pin)
 {
     String output = "";
     StaticJsonDocument<100> root;
-    
-    root["type"] = "motionSensor";
-    root["id"] = MotionSensor_1_ID;
-    root["motion"] = detect_motion(pin);
+
+    root["id"] = 1;
+    root["type"] = "MotionSensor";
+    root["value"] = detect_motion(pin);
 
     serializeJson(root, output);
     return output;

@@ -81,36 +81,36 @@ void apply_rgb_to_array(int red_component, int green_component, int blue_compone
  *
  * rgb_array[3]: Output, array size 3, int
  */
-void hsv_to_rgb(int *hue, int *saturation, int *value, int rgb_array[3])
+void hsv_to_rgb(int hue, int saturation, int value, int rgb_array[3])
 {
-    check_input_varibles(hue, saturation, value);
+    check_input_varibles(&hue, &saturation, &value);
 
-    int chroma = (255 * (*saturation) * (*value))/(10000);
-    int intermediate = chroma * (60 - abs((*hue % 120) - 60)) / 60;
-    int rgb_component  = *value * 255 / 100 - chroma;
+    int chroma = (255 * saturation * value)/(10000);
+    int intermediate = chroma * (60 - abs((hue % 120) - 60)) / 60;
+    int rgb_component  = value * 255 / 100 - chroma;
     int red_component, green_component, blue_component;
 
-    if (*hue >= 0 && *hue < 60) {
+    if (hue >= 0 && hue < 60) {
         red_component = chroma;
         green_component = intermediate;
         blue_component = 0;
     }
-    else if (*hue >= 60 && *hue < 120) {
+    else if (hue >= 60 && hue < 120) {
         red_component = intermediate;
         green_component = chroma;
         blue_component = 0;
     }
-    else if (*hue >= 120 && *hue < 180) {
+    else if (hue >= 120 && hue < 180) {
         red_component = 0;
         green_component = chroma;
         blue_component = intermediate;
     }
-    else if (*hue >= 180 && *hue < 240) {
+    else if (hue >= 180 && hue < 240) {
         red_component = 0;
         green_component = intermediate;
         blue_component = chroma;
     }
-    else if (*hue >= 240 && *hue < 300) {
+    else if (hue >= 240 && hue < 300) {
         red_component = intermediate;
         green_component = 0;
         blue_component = chroma;
