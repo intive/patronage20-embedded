@@ -1,8 +1,14 @@
 #define CROW_ENABLE_SSL
 #include "dependencies/crow_all.h"
 #include "notifications.h"
+#include "request_validation.h"
 #include <mosquitto.h>
 #include <pthread.h>
+
+
+#include "dependencies/json.hpp"
+#include "dashboard.h"
+#include "notifications.h"
 
 #define CERT_FILE "/etc/letsencrypt/live/gate.patronage2020-iot.intive-projects.com/fullchain.pem"
 #define KEY_FILE "/etc/letsencrypt/live/gate.patronage2020-iot.intive-projects.com/privkey.pem"
@@ -158,7 +164,8 @@ int main(void)
     /*CONFIGURATION*/
     CROW_ROUTE(app, "/blinds").methods(crow::HTTPMethod::PUT)([&](const crow::request &req) {
         json blind = json::parse(req.body);
-        if (blind.empty())
+
+        if (!validate_blind_request(blind))
             return crow::response(400);
         if(!validate_blind_id(blind))
             return crow::response(400);
@@ -177,7 +184,8 @@ int main(void)
 
     CROW_ROUTE(app, "/hvac").methods(crow::HTTPMethod::PUT)([&](const crow::request &req) {
         json hvac = json::parse(req.body);
-        if (hvac.empty())
+
+        if (!validate_hvac_request(hvac))
             return crow::response(400);
         if(!validate_hvac_id(hvac))
             return crow::response(400);
