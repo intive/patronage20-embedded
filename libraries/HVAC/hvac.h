@@ -19,14 +19,14 @@
 
 
 /* defining angle for valve fully open and closed */
-#define SERVO_1H_OPEN 120 /* Servo for room 1, heating valve etc. */
-#define SERVO_1H_CLOSED 30
-#define SERVO_1C_OPEN 95
-#define SERVO_1C_CLOSED 5
-#define SERVO_2H_OPEN 98
-#define SERVO_2H_CLOSED 8
-#define SERVO_2C_OPEN 99
-#define SERVO_2C_CLOSED 9
+#define SERVO_1H_OPEN 160  /* Servo for room 1, heating valve etc. */
+#define SERVO_1H_CLOSED 50
+#define SERVO_1C_OPEN 160
+#define SERVO_1C_CLOSED 42
+#define SERVO_2H_OPEN 160
+#define SERVO_2H_CLOSED 50
+#define SERVO_2C_OPEN 160
+#define SERVO_2C_CLOSED 55
 
 
 /* defining pins for Peltier */
