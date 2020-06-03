@@ -81,11 +81,10 @@ struct CookieProtection
 };
 
 crow::App<crow::CookieParser, CookieProtection> app;
-pthread_rwlock_t q_rwlock;
+pthread_rwlock_t q_rwlock = PTHREAD_RWLOCK_INITIALIZER;
 
 void mqtt_recv(struct mosquitto *mosq, void *userdata, const struct mosquitto_message *message)
 {
-    pthread_rwlock_init(&q_rwlock, NULL);
     char *incoming_msg = (char *)message->payload;
 
     json update = json::parse(incoming_msg);
@@ -112,7 +111,6 @@ int main(void)
     mosquitto_lib_init();
     mosquitto *mosq = mosquitto_new(NULL, true, NULL);
 
-    pthread_rwlock_init(&q_rwlock, NULL);
 
     if (!mosq)
         return 1;
@@ -240,6 +238,5 @@ int main(void)
         .multithreaded()
         .run();
 
-    pthread_rwlock_destroy(&q_rwlock);
     return 0;
 }
