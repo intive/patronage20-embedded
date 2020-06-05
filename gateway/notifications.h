@@ -27,7 +27,6 @@ class Notifications
 private:
     std::vector<Notification> notifications;
     Dashboard dashboard_previous;
-    int64_t last_id;
 
 public:
     void init(std::string filepath, const Dashboard &dashboard)
@@ -38,15 +37,6 @@ public:
         {
             i >> j;
             i.close();
-            for (json::iterator it = j.begin(); it != j.end(); it++)
-            {
-                notifications.push_back(it.value());
-            }
-            if (notifications.empty())
-                last_id = 0;
-            else
-                last_id = notifications.back().id;
-            last_id++;
         }
         else
         {
@@ -54,7 +44,6 @@ public:
             std::ofstream o(filepath);
             o << "[]";
             o.close();
-            last_id = 0;
         }
 
         dashboard_previous = dashboard;
@@ -73,8 +62,8 @@ public:
             notifications.erase(notifications.begin());
         }
         Notification note;
-        note.id = last_id++;
-        note.timestamp = unix_timestamp();
+        note.id = std::chrono::system_clock::now().time_since_epoch().count();
+        note.timestamp = std::time(nullptr);
         note.type = notification_type;
         note.sensorId = sensor_id;
         notifications.push_back(note);
@@ -213,12 +202,7 @@ public:
     }
 };
 
-long int unix_timestamp()
-{
-    time_t t = std::time(0);
-    long int now = static_cast<long int>(t);
-    return now;
-}
+
 
 /*Nlohmann json's methods for convertion between types and jsons*/
 void to_json(json &j, const Notification &notification)
