@@ -1,0 +1,20 @@
+#!/bin/bash
+
+r1_win="81,82"
+r2_win="83"
+
+#r1_win=""
+#r2_win=""
+
+if [[ "$1" == 1 && "$2" == "h" ]]; then
+    mosquitto_pub -h gate.patronage2020-iot.intive-projects.com -p 8883 -m '{"windowSensorIds":['$r1_win'],"type":"HVACRoom","temperatureSensorId":61,"coolingTemperature":340,"heatingTemperature":320,"hysteresis":10,"id":1}' -t embedded_input --cafile /etc/ssl/certs/ca-certificates.crt    
+elif [[ "$1" == 1 && "$2" == "c" ]]; then
+    mosquitto_pub -h gate.patronage2020-iot.intive-projects.com -p 8883 -m '{"windowSensorIds":['$r1_win'],"type":"HVACRoom","temperatureSensorId":61,"coolingTemperature":165,"heatingTemperature":70,"hysteresis":10,"id":1}' -t embedded_input --cafile /etc/ssl/certs/ca-certificates.crt
+elif [[ "$1" == 2 && "$2" == "h" ]]; then
+    mosquitto_pub -h gate.patronage2020-iot.intive-projects.com -p 8883 -m '{"windowSensorIds":['$r2_win'],"type":"HVACRoom","temperatureSensorId":62,"coolingTemperature":340,"heatingTemperature":320,"hysteresis":10,"id":2}' -t embedded_input --cafile /etc/ssl/certs/ca-certificates.crt 
+elif [[ "$1" == 2 && "$2" == "c" ]]; then
+    mosquitto_pub -h gate.patronage2020-iot.intive-projects.com -p 8883 -m '{"windowSensorIds":['$r2_win'],"type":"HVACRoom","temperatureSensorId":62,"coolingTemperature":165,"heatingTemperature":70,"hysteresis":10,"id":2}' -t embedded_input --cafile /etc/ssl/certs/ca-certificates.crt 
+else
+    mosquitto_pub -h gate.patronage2020-iot.intive-projects.com -p 8883 -m '{"windowSensorIds":['$r1_win'],"type":"HVACRoom","temperatureSensorId":61,"coolingTemperature":400,"heatingTemperature":50,"hysteresis":10,"id":1}' -t embedded_input --cafile /etc/ssl/certs/ca-certificates.crt
+    mosquitto_pub -h gate.patronage2020-iot.intive-projects.com -p 8883 -m '{"windowSensorIds":['$r2_win'],"type":"HVACRoom","temperatureSensorId":62,"coolingTemperature":400,"heatingTemperature":50,"hysteresis":10,"id":2}' -t embedded_input --cafile /etc/ssl/certs/ca-certificates.crt
+fi
