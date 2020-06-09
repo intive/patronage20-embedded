@@ -4,7 +4,6 @@ let id=$1+20
 
 if [[ "$1" != "" && "$2" != "" ]]; then
     mosquitto_pub -h gate.patronage2020-iot.intive-projects.com -p 8883 -m '{"value":100,"type":"LED_CONTROLLER","saturation":100,"hue":'$2',"id":'$id'}' -t embedded_input --cafile /etc/ssl/certs/ca-certificates.crt  
-    watch -d -n 1 ./show_dashboard
 else
     echo "Error"
 fi
