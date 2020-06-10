@@ -86,7 +86,7 @@ public:
             return true;
         return false;
     }
-    
+
     json get_dashboard()
     {
         json dashboard =
@@ -159,13 +159,8 @@ public:
         {
             if  (hvac_rooms[i].id==(request["id"].get<int>()))
             {
-                if(hvac_rooms[i].temperature_sensor_id==0){
-                    if(!request.contains("temperatureSensorId")) {
-                        return 1;
-                    }
-                }
-                else {
-                    hvac_rooms[i].temperature_sensor_id = request["temperatureSensorId"].get<int>();
+                if(hvac_rooms[i].temperature_sensor_id==0 && !request.contains("temperatureSensorId")) {
+                    return 1;
                 }
 
                 int tmp_heating, tmp_cooling, hysteresis;
@@ -193,9 +188,7 @@ public:
                     return 1;
                 if(tmp_cooling<tmp_heating+hysteresis)
                     return 1;
-                hvac_rooms[i].heating_temperature = tmp_heating;
-                hvac_rooms[i].cooling_temperature = tmp_cooling;
-                hvac_rooms[i].hysteresis = hysteresis;
+
                 return 0;
             }
         }
