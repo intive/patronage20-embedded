@@ -62,7 +62,7 @@ public:
             notifications.erase(notifications.begin());
         }
         Notification note;
-        note.id = std::chrono::system_clock::now().time_since_epoch().count();
+        note.id = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
         note.timestamp = std::time(nullptr);
         note.type = notification_type;
         note.sensorId = sensor_id;
