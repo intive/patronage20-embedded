@@ -15,6 +15,9 @@
 #define SW1 14
 #define SW2 12
 
+/* define PWM value when stepper calm down (0-1023) */
+#define PWM_CALM_DOWN 100
+
 /* Defining substation ID number */
 int id = windowBlinds_ID_2;
 unsigned int notifCaller = 0;
@@ -29,10 +32,9 @@ void MQTT_blinds_move(String s)
     deserializeJson(doc, s);
     if (doc["id"].as<int>() == id) {
         blinds_move_targetValue(doc["position"]);
+        Serial.print("Current value: ");
+        Serial.println(convert_to_percent(currentVal));
     }
-    Serial.print("Current value: ");
-    Serial.println(convert_to_percent(currentVal));
-
 }
 
 
@@ -75,7 +77,6 @@ void loop()
     
     mqtt.loop();
        
-    
     /* Manually move (by switch) blinds up until fully open or stopped by user */
     if (digitalRead(SW1) == LOW) {
         delay(300);
@@ -102,6 +103,10 @@ void loop()
         mqtt.send(return_JSON(id, convert_to_percent(currentVal)));
     }
 
+    /* set stering pins to low level of PWM 
+    to avoid overheating when blinds not moving */
+    set_pins(PWM_CALM_DOWN);
+    
     /* notify the position value every 1 sec */
     if (++notifCaller >= 1000) {
         mqtt.send(return_JSON(id, convert_to_percent(currentVal)));
@@ -110,5 +115,4 @@ void loop()
     
     delay(1);
     
-
 }
