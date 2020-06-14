@@ -4,7 +4,7 @@
 
 #showDashboard
 - at folder showDashboard type 'make' to compile the programm
-- type './runDsh' or '$watch -d -n 1 ./show_dashboard' to run dashboard refreshed every 1 sec.
+- type './runDsh' or '$watch --color -d -n 1 ./show_dashboard' to run dashboard refreshed every 1 sec.
 
 #control scripts
 $./blinds <blind_id> <value>    /* where blind_no = 1 refer to blind id = 71 etc.

@@ -7,10 +7,9 @@
 #include <stdlib.h>
 #include "jsmn/jsmn.h"
 
-#define print_type(x) printf("%.*s\n", t[(x)].end - t[(x)].start, data + t[(x)].start);
+#define print_type(x) printf("\033[1;34m");printf("%.*s\n", t[(x)].end - t[(x)].start, data + t[(x)].start);printf("\033[0m");
 #define print_name(x) printf("%.*s: ", t[(x)].end - t[(x)].start, data + t[(x)].start);
-#define print_val(x) printf("%.*s, ", t[(x)].end - t[(x)].start, data + t[(x)].start);
-
+#define print_val(x) printf("\033[0;33m");printf("%.*s, ", t[(x)].end - t[(x)].start, data + t[(x)].start);printf("\033[0m");
 
 struct url_data
 {
@@ -103,8 +102,9 @@ static void print_dashboardEmbedded(char *data, jsmntok_t *t, int *r)
     for (i = 0; i < *r; i++)
     {
         /* Servos */
-        if (jsoneq(data, &t[i], "servos") == 0)
+        if (jsoneq(data, &t[i], "servos") == 0) {
             print_type(i);
+        }
         if (jsoneq(data, &t[i], "Servo") == 0)
         {
             printf("\t");
@@ -115,8 +115,9 @@ static void print_dashboardEmbedded(char *data, jsmntok_t *t, int *r)
             printf("\n");
         }
         /* motionSens */
-        if (jsoneq(data, &t[i], "motionSensors") == 0)
+        if (jsoneq(data, &t[i], "motionSensors") == 0) {
             print_type(i);
+        }
         if (jsoneq(data, &t[i], "motionSensor") == 0)
         {
             printf("\t");
@@ -136,8 +137,9 @@ static void print_dashboard(char *data, jsmntok_t *t, int *r, int winSenQty)
     for (i = 0; i < *r; i++)
     {
         /* blinds */
-        if (jsoneq(data, &t[i], "windowBlinds") == 0)
+        if (jsoneq(data, &t[i], "windowBlinds") == 0) {
             print_type(i);
+        }
         if (jsoneq(data, &t[i], "windowBlind") == 0)
         {
             printf("\t");
@@ -148,8 +150,9 @@ static void print_dashboard(char *data, jsmntok_t *t, int *r, int winSenQty)
             printf("\n");
         }
         /* windowSensors */
-        if (jsoneq(data, &t[i], "windowSensors") == 0)
+        if (jsoneq(data, &t[i], "windowSensors") == 0) {
             print_type(i);
+        }
         if (jsoneq(data, &t[i], "windowSensor") == 0)
         {
             printf("\t");
@@ -172,8 +175,9 @@ static void print_dashboard(char *data, jsmntok_t *t, int *r, int winSenQty)
             printf("\n");
         }
         /* tempSensors */
-        if (jsoneq(data, &t[i], "temperatureSensors") == 0)
+        if (jsoneq(data, &t[i], "temperatureSensors") == 0) {
             print_type(i);
+        }
         if (jsoneq(data, &t[i], "TEMPERATURE_SENSOR") == 0)
         {
             printf("\t");
@@ -184,8 +188,9 @@ static void print_dashboard(char *data, jsmntok_t *t, int *r, int winSenQty)
             printf("\n");
         }
         /* lights */
-        if (jsoneq(data, &t[i], "lights") == 0)
+        if (jsoneq(data, &t[i], "lights") == 0) {
             print_type(i);
+        }
         if (jsoneq(data, &t[i], "LED_CONTROLLER") == 0)
         {
             printf("\t");
@@ -199,8 +204,9 @@ static void print_dashboard(char *data, jsmntok_t *t, int *r, int winSenQty)
             print_val(i + 4);
             printf("\n");
         }
-        if (jsoneq(data, &t[i], "HVACRooms") == 0)
+        if (jsoneq(data, &t[i], "HVACRooms") == 0) {
             print_type(i);
+        }
         if (jsoneq(data, &t[i], "HVACRoom") == 0)
         {
             printf("\t");
