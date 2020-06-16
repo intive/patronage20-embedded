@@ -33,20 +33,21 @@ public:
     {
         json j;
         std::ifstream i(filepath);
-        if (i)
+        if (i.good())
         {
             i >> j;
             i.close();
         }
-        else
-        {
+        else{
             i.close();
             std::ofstream o(filepath);
             o << "[]";
             o.close();
         }
-
+        for(auto element : j)
+            notifications.push_back(element);
         dashboard_previous = dashboard;
+
     }
 
     json get_notifications()
