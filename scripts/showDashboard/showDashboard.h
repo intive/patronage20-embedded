@@ -17,7 +17,8 @@ struct url_data
     char *data;
 };
 
-static size_t write_data(void *ptr, size_t size, size_t nmemb, struct url_data *data)
+static size_t write_data(void *ptr, size_t size, size_t nmemb, 
+        struct url_data *data)
 {
     size_t index = data->size;
     size_t n = (size * nmemb);
@@ -88,7 +89,7 @@ static char *handle_url(char *url, const char* cookies)
 
 static int jsoneq(const char *json, jsmntok_t *tok, const char *s)
 {
-    if (tok->type == JSMN_STRING && (int)strlen(s) == tok->end - tok->start &&
+    if ((tok->type == JSMN_STRING || tok->type == JSMN_PRIMITIVE) && (int)strlen(s) == tok->end - tok->start &&
         strncmp(json + tok->start, s, tok->end - tok->start) == 0)
     {
         return 0;
@@ -112,6 +113,23 @@ static void print_dashboardEmbedded(char *data, jsmntok_t *t, int *r)
             print_val(i + 4);
             print_name(i + 1);
             print_val(i + 2);
+            if (jsoneq(data, &t[i + 4], "101") == 0) {
+                printf("\033[0;32m");
+                printf("// Room 1 - heating");
+            }
+            else if (jsoneq(data, &t[i + 4], "102") == 0) {
+                printf("\033[0;32m");
+                printf("// Room 1 - cooling");
+            }
+            else if (jsoneq(data, &t[i + 4], "103") == 0) {
+                printf("\033[0;32m");
+                printf("// Room 2 - heating");
+            }
+            else if (jsoneq(data, &t[i + 4], "104") == 0) {
+                printf("\033[0;32m");
+                printf("// Room 2 - cooling");
+            }
+            printf("\033[0m");
             printf("\n");
         }
         /* motionSens */
@@ -163,7 +181,8 @@ static void print_dashboard(char *data, jsmntok_t *t, int *r, int winSenQty)
             printf("\n");
         }
         /* HVACStatus */
-        if (jsoneq(data, &t[i], "HVACStatus") == 0 && jsoneq(data, &t[i - 1], "type") == 0)
+        if (jsoneq(data, &t[i], "HVACStatus") == 0 
+                && jsoneq(data, &t[i - 1], "type") == 0)
         {
             print_type(i)
                 printf("\t");
