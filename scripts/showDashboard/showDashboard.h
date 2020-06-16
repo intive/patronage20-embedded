@@ -113,6 +113,8 @@ static void print_dashboardEmbedded(char *data, jsmntok_t *t, int *r)
             print_val(i + 4);
             print_name(i + 1);
             print_val(i + 2);
+	    
+	    /* Room information for Servos */
             if (jsoneq(data, &t[i + 4], "101") == 0) {
                 printf("\033[0;32m");
                 printf("// Room 1 - heating");
@@ -130,7 +132,8 @@ static void print_dashboardEmbedded(char *data, jsmntok_t *t, int *r)
                 printf("// Room 2 - cooling");
             }
             printf("\033[0m");
-            printf("\n");
+            
+	    printf("\n");
         }
         /* motionSens */
         if (jsoneq(data, &t[i], "motionSensors") == 0) {
@@ -178,6 +181,18 @@ static void print_dashboard(char *data, jsmntok_t *t, int *r, int winSenQty)
             print_val(i + 2);
             print_name(i + 3);
             print_val(i + 4);
+
+	    /* Room information for windowSensors */
+	    printf("\033[0;32m");
+            if (jsoneq(data, &t[i + 2], "81") == 0 || 
+		jsoneq(data, &t[i + 2], "82") == 0) {
+	    	printf("// Room 1"); 
+	    }
+            if (jsoneq(data, &t[i + 2], "83") == 0) {
+	    	printf("// Room 2"); 
+	    }
+            printf("\033[0m");
+
             printf("\n");
         }
         /* HVACStatus */
@@ -204,7 +219,18 @@ static void print_dashboard(char *data, jsmntok_t *t, int *r, int winSenQty)
             print_val(i - 2);
             print_name(i - 5);
             print_val(i - 4);
-            printf("\n");
+	    printf("\033[0;32m");
+	    
+	    /* Room information for temperatureSensors */
+            if (jsoneq(data, &t[i - 2], "61") == 0) {
+	    	printf("// Room 1"); 
+	    }
+            else if (jsoneq(data, &t[i - 2], "62") == 0) {
+	   	printf("// Room 2"); 
+	    }
+            printf("\033[0m");
+            
+	    printf("\n");
         }
         /* lights */
         if (jsoneq(data, &t[i], "lights") == 0) {
