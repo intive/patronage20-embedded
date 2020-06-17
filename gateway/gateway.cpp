@@ -241,7 +241,7 @@ int main(void)
         MUTEX_UNLOCK;
         return response;
     });
-    CROW_ROUTE(app, "/notifications/<int>").methods(crow::HTTPMethod::DELETE)([&](int id) {
+    CROW_ROUTE(app, "/notifications/<int>").methods(crow::HTTPMethod::DELETE)([&](uint64_t id) {
         MUTEX_WRLOCK;
         if (app.get_middleware<CookieProtection>().notifications.delete_notification(id))
         {
