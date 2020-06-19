@@ -9,20 +9,25 @@
 static int stepper_pin[4];     /* keeping pins number where stepper are connected, from IN1 - IN4 */
 static int switches_pin[2];    /* keeping pins number where switches are connected */
 
-static int range = 0;          /* innitial Val for max range due to blinds dimension */
-static int currentVal = 0;     /* innitial val for position of blinds (stepper) */
+static int range = 0;          /* initial Val for max range due to blinds dimension */
+static int currentVal = 0;     /* initial Val for position of blinds (stepper) */
+static int _step = 0;
+
+static void set_pins(int pwm) 
+{
+    const int gray = _step ^ (_step >> 1);
+    
+    analogWrite(stepper_pin[0], (gray >> 1) * pwm);
+    analogWrite(stepper_pin[1], (gray & 0x1) * pwm);
+    analogWrite(stepper_pin[2], ((gray ^ 3) >> 1) * pwm);
+    analogWrite(stepper_pin[3], ((gray ^ 3) & 0x1) * pwm);
+}
 
 /* Fnc responsible for moving the stepper */
 static void stepper_run(bool dir, int *stepper_pin, int d) 
 {    
-    static int _step = 0;
-    const int gray = _step ^ (_step >> 1);
-    
-    digitalWrite(stepper_pin[0], gray >> 1);
-    digitalWrite(stepper_pin[1], gray & 0x1);
-    digitalWrite(stepper_pin[2], (gray ^ 3) >> 1);
-    digitalWrite(stepper_pin[3], (gray ^ 3) & 0x1);
-  
+    set_pins(1023);
+      
     if (dir)  
         _step--;
     else  
@@ -36,13 +41,15 @@ static void stepper_run(bool dir, int *stepper_pin, int d)
         delay(d);
 }
 
+
 /* Convert currentVal to prc (0-100) due to range */
 static int convert_to_percent(int a) 
 {
     return ((a * 100) + (range / 2)) / range;
 }
 
-/* Fnc responsible for moving blinds up to setted val until switch 1 or 2 pushed or achieve min range - 0 */
+/* Fnc responsible for moving blinds up to setted val until switch 
+1 or 2 pushed or achieve min range - 0 */
 static void blinds_move_up(int val, int *sw) 
 {
     int i;
@@ -145,5 +152,5 @@ static String return_JSON(int id, int pos)
     serializeJson(doc, output);
     return output;
 }
-  
+
 #endif /* BLINDS_CONTROLLER_H */
