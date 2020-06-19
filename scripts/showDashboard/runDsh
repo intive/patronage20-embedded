@@ -1,0 +1,2 @@
+#!/bin/bash
+watch --color -d -n 1 ./showDashboard
