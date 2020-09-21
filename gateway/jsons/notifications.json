@@ -1,0 +1,6152 @@
+[
+    {
+        "id": 1592437047442,
+        "sensorId": -1,
+        "timestamp": 1592437047,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437049137,
+        "sensorId": -1,
+        "timestamp": 1592437049,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437050860,
+        "sensorId": -1,
+        "timestamp": 1592437050,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437052642,
+        "sensorId": -1,
+        "timestamp": 1592437052,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437054397,
+        "sensorId": -1,
+        "timestamp": 1592437054,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437057895,
+        "sensorId": -1,
+        "timestamp": 1592437057,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437061347,
+        "sensorId": -1,
+        "timestamp": 1592437061,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437068234,
+        "sensorId": -1,
+        "timestamp": 1592437068,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437069974,
+        "sensorId": -1,
+        "timestamp": 1592437069,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437075275,
+        "sensorId": -1,
+        "timestamp": 1592437075,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437077023,
+        "sensorId": -1,
+        "timestamp": 1592437077,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437078723,
+        "sensorId": -1,
+        "timestamp": 1592437078,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437082161,
+        "sensorId": -1,
+        "timestamp": 1592437082,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437083862,
+        "sensorId": -1,
+        "timestamp": 1592437083,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437085579,
+        "sensorId": -1,
+        "timestamp": 1592437085,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437087296,
+        "sensorId": -1,
+        "timestamp": 1592437087,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437089044,
+        "sensorId": -1,
+        "timestamp": 1592437089,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437090760,
+        "sensorId": -1,
+        "timestamp": 1592437090,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437103059,
+        "sensorId": -1,
+        "timestamp": 1592437103,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437104834,
+        "sensorId": -1,
+        "timestamp": 1592437104,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437106528,
+        "sensorId": -1,
+        "timestamp": 1592437106,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437111744,
+        "sensorId": -1,
+        "timestamp": 1592437111,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437113420,
+        "sensorId": -1,
+        "timestamp": 1592437113,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437115186,
+        "sensorId": -1,
+        "timestamp": 1592437115,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437116872,
+        "sensorId": -1,
+        "timestamp": 1592437116,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437118634,
+        "sensorId": -1,
+        "timestamp": 1592437118,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437120310,
+        "sensorId": -1,
+        "timestamp": 1592437120,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437129151,
+        "sensorId": -1,
+        "timestamp": 1592437129,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437130878,
+        "sensorId": -1,
+        "timestamp": 1592437130,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437132619,
+        "sensorId": -1,
+        "timestamp": 1592437132,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437139780,
+        "sensorId": -1,
+        "timestamp": 1592437139,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437142916,
+        "sensorId": -1,
+        "timestamp": 1592437142,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437146498,
+        "sensorId": -1,
+        "timestamp": 1592437146,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437148223,
+        "sensorId": -1,
+        "timestamp": 1592437148,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437149997,
+        "sensorId": -1,
+        "timestamp": 1592437149,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437151682,
+        "sensorId": -1,
+        "timestamp": 1592437151,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437153450,
+        "sensorId": -1,
+        "timestamp": 1592437153,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437156910,
+        "sensorId": -1,
+        "timestamp": 1592437156,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437158710,
+        "sensorId": -1,
+        "timestamp": 1592437158,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437162153,
+        "sensorId": -1,
+        "timestamp": 1592437162,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437163923,
+        "sensorId": -1,
+        "timestamp": 1592437163,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437165595,
+        "sensorId": -1,
+        "timestamp": 1592437165,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437172645,
+        "sensorId": -1,
+        "timestamp": 1592437172,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437174446,
+        "sensorId": -1,
+        "timestamp": 1592437174,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437177960,
+        "sensorId": -1,
+        "timestamp": 1592437177,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437181474,
+        "sensorId": -1,
+        "timestamp": 1592437181,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437186633,
+        "sensorId": -1,
+        "timestamp": 1592437186,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437188418,
+        "sensorId": -1,
+        "timestamp": 1592437188,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437193665,
+        "sensorId": -1,
+        "timestamp": 1592437193,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437195415,
+        "sensorId": -1,
+        "timestamp": 1592437195,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437214861,
+        "sensorId": -1,
+        "timestamp": 1592437214,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437220088,
+        "sensorId": -1,
+        "timestamp": 1592437220,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437221780,
+        "sensorId": -1,
+        "timestamp": 1592437221,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437228792,
+        "sensorId": -1,
+        "timestamp": 1592437228,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437230522,
+        "sensorId": -1,
+        "timestamp": 1592437230,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437232222,
+        "sensorId": -1,
+        "timestamp": 1592437232,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437233975,
+        "sensorId": -1,
+        "timestamp": 1592437233,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437239227,
+        "sensorId": -1,
+        "timestamp": 1592437239,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437242660,
+        "sensorId": -1,
+        "timestamp": 1592437242,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437247889,
+        "sensorId": -1,
+        "timestamp": 1592437247,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437254817,
+        "sensorId": -1,
+        "timestamp": 1592437254,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437256500,
+        "sensorId": -1,
+        "timestamp": 1592437256,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437258262,
+        "sensorId": -1,
+        "timestamp": 1592437258,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437261732,
+        "sensorId": -1,
+        "timestamp": 1592437261,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437263508,
+        "sensorId": -1,
+        "timestamp": 1592437263,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437265205,
+        "sensorId": -1,
+        "timestamp": 1592437265,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437266918,
+        "sensorId": -1,
+        "timestamp": 1592437266,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437268694,
+        "sensorId": -1,
+        "timestamp": 1592437268,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437270419,
+        "sensorId": -1,
+        "timestamp": 1592437270,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437272195,
+        "sensorId": -1,
+        "timestamp": 1592437272,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437273892,
+        "sensorId": -1,
+        "timestamp": 1592437273,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437277470,
+        "sensorId": -1,
+        "timestamp": 1592437277,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437279212,
+        "sensorId": -1,
+        "timestamp": 1592437279,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437289599,
+        "sensorId": -1,
+        "timestamp": 1592437289,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437291349,
+        "sensorId": -1,
+        "timestamp": 1592437291,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437294817,
+        "sensorId": -1,
+        "timestamp": 1592437294,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437298337,
+        "sensorId": -1,
+        "timestamp": 1592437298,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437303502,
+        "sensorId": -1,
+        "timestamp": 1592437303,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437307000,
+        "sensorId": -1,
+        "timestamp": 1592437306,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437308674,
+        "sensorId": -1,
+        "timestamp": 1592437308,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437312139,
+        "sensorId": -1,
+        "timestamp": 1592437312,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437313824,
+        "sensorId": -1,
+        "timestamp": 1592437313,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437315621,
+        "sensorId": -1,
+        "timestamp": 1592437315,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437317309,
+        "sensorId": -1,
+        "timestamp": 1592437317,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437319063,
+        "sensorId": -1,
+        "timestamp": 1592437319,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437320745,
+        "sensorId": -1,
+        "timestamp": 1592437320,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437322558,
+        "sensorId": -1,
+        "timestamp": 1592437322,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437324255,
+        "sensorId": -1,
+        "timestamp": 1592437324,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437326008,
+        "sensorId": -1,
+        "timestamp": 1592437326,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437329523,
+        "sensorId": -1,
+        "timestamp": 1592437329,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437336450,
+        "sensorId": -1,
+        "timestamp": 1592437336,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437343458,
+        "sensorId": -1,
+        "timestamp": 1592437343,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437345233,
+        "sensorId": -1,
+        "timestamp": 1592437345,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437347005,
+        "sensorId": -1,
+        "timestamp": 1592437347,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437350354,
+        "sensorId": -1,
+        "timestamp": 1592437350,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437355572,
+        "sensorId": -1,
+        "timestamp": 1592437355,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437359024,
+        "sensorId": -1,
+        "timestamp": 1592437359,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437360713,
+        "sensorId": -1,
+        "timestamp": 1592437360,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437365860,
+        "sensorId": -1,
+        "timestamp": 1592437365,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437369354,
+        "sensorId": -1,
+        "timestamp": 1592437369,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437371107,
+        "sensorId": -1,
+        "timestamp": 1592437371,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437372851,
+        "sensorId": -1,
+        "timestamp": 1592437372,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437374567,
+        "sensorId": -1,
+        "timestamp": 1592437374,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437376295,
+        "sensorId": -1,
+        "timestamp": 1592437376,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437378030,
+        "sensorId": -1,
+        "timestamp": 1592437378,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437381408,
+        "sensorId": -1,
+        "timestamp": 1592437381,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437384921,
+        "sensorId": -1,
+        "timestamp": 1592437384,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437388417,
+        "sensorId": -1,
+        "timestamp": 1592437388,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437391891,
+        "sensorId": -1,
+        "timestamp": 1592437391,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437395398,
+        "sensorId": -1,
+        "timestamp": 1592437395,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437397146,
+        "sensorId": -1,
+        "timestamp": 1592437397,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437398870,
+        "sensorId": -1,
+        "timestamp": 1592437398,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437402271,
+        "sensorId": -1,
+        "timestamp": 1592437402,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437412799,
+        "sensorId": -1,
+        "timestamp": 1592437412,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437414555,
+        "sensorId": -1,
+        "timestamp": 1592437414,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437417972,
+        "sensorId": -1,
+        "timestamp": 1592437417,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437419699,
+        "sensorId": -1,
+        "timestamp": 1592437419,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437426544,
+        "sensorId": -1,
+        "timestamp": 1592437426,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437431789,
+        "sensorId": -1,
+        "timestamp": 1592437431,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437433535,
+        "sensorId": -1,
+        "timestamp": 1592437433,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437435293,
+        "sensorId": -1,
+        "timestamp": 1592437435,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437437026,
+        "sensorId": -1,
+        "timestamp": 1592437437,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437444084,
+        "sensorId": -1,
+        "timestamp": 1592437444,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437447577,
+        "sensorId": -1,
+        "timestamp": 1592437447,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437449273,
+        "sensorId": -1,
+        "timestamp": 1592437449,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437451004,
+        "sensorId": -1,
+        "timestamp": 1592437451,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437454487,
+        "sensorId": -1,
+        "timestamp": 1592437454,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437456274,
+        "sensorId": -1,
+        "timestamp": 1592437456,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437457957,
+        "sensorId": -1,
+        "timestamp": 1592437457,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437459719,
+        "sensorId": -1,
+        "timestamp": 1592437459,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437461426,
+        "sensorId": -1,
+        "timestamp": 1592437461,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437463187,
+        "sensorId": -1,
+        "timestamp": 1592437463,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437470193,
+        "sensorId": -1,
+        "timestamp": 1592437470,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437475354,
+        "sensorId": -1,
+        "timestamp": 1592437475,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437478830,
+        "sensorId": -1,
+        "timestamp": 1592437478,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437482276,
+        "sensorId": -1,
+        "timestamp": 1592437482,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437483964,
+        "sensorId": -1,
+        "timestamp": 1592437483,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437485738,
+        "sensorId": -1,
+        "timestamp": 1592437485,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437487565,
+        "sensorId": -1,
+        "timestamp": 1592437487,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437492616,
+        "sensorId": -1,
+        "timestamp": 1592437492,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437496103,
+        "sensorId": -1,
+        "timestamp": 1592437496,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437497800,
+        "sensorId": -1,
+        "timestamp": 1592437497,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437501338,
+        "sensorId": -1,
+        "timestamp": 1592437501,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437513677,
+        "sensorId": -1,
+        "timestamp": 1592437513,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437515515,
+        "sensorId": -1,
+        "timestamp": 1592437515,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437526026,
+        "sensorId": -1,
+        "timestamp": 1592437526,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437527738,
+        "sensorId": -1,
+        "timestamp": 1592437527,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437529477,
+        "sensorId": -1,
+        "timestamp": 1592437529,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437531239,
+        "sensorId": -1,
+        "timestamp": 1592437531,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437534649,
+        "sensorId": -1,
+        "timestamp": 1592437534,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437536400,
+        "sensorId": -1,
+        "timestamp": 1592437536,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437538123,
+        "sensorId": -1,
+        "timestamp": 1592437538,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437548494,
+        "sensorId": -1,
+        "timestamp": 1592437548,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437554110,
+        "sensorId": -1,
+        "timestamp": 1592437554,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437555861,
+        "sensorId": -1,
+        "timestamp": 1592437555,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437564562,
+        "sensorId": -1,
+        "timestamp": 1592437564,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437566352,
+        "sensorId": -1,
+        "timestamp": 1592437566,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437568045,
+        "sensorId": -1,
+        "timestamp": 1592437568,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437573203,
+        "sensorId": -1,
+        "timestamp": 1592437573,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437575016,
+        "sensorId": -1,
+        "timestamp": 1592437575,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437583743,
+        "sensorId": -1,
+        "timestamp": 1592437583,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437585525,
+        "sensorId": -1,
+        "timestamp": 1592437585,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437587201,
+        "sensorId": -1,
+        "timestamp": 1592437587,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437589034,
+        "sensorId": -1,
+        "timestamp": 1592437589,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437594256,
+        "sensorId": -1,
+        "timestamp": 1592437594,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437596054,
+        "sensorId": -1,
+        "timestamp": 1592437596,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437599509,
+        "sensorId": -1,
+        "timestamp": 1592437599,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437601262,
+        "sensorId": -1,
+        "timestamp": 1592437601,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437608246,
+        "sensorId": -1,
+        "timestamp": 1592437608,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437610057,
+        "sensorId": -1,
+        "timestamp": 1592437610,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437616966,
+        "sensorId": -1,
+        "timestamp": 1592437616,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437618891,
+        "sensorId": -1,
+        "timestamp": 1592437618,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437620450,
+        "sensorId": -1,
+        "timestamp": 1592437620,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437622214,
+        "sensorId": -1,
+        "timestamp": 1592437622,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437623913,
+        "sensorId": -1,
+        "timestamp": 1592437623,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437625647,
+        "sensorId": -1,
+        "timestamp": 1592437625,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437627414,
+        "sensorId": -1,
+        "timestamp": 1592437627,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437629152,
+        "sensorId": -1,
+        "timestamp": 1592437629,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437630911,
+        "sensorId": -1,
+        "timestamp": 1592437630,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437632680,
+        "sensorId": -1,
+        "timestamp": 1592437632,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437637973,
+        "sensorId": -1,
+        "timestamp": 1592437637,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437639783,
+        "sensorId": -1,
+        "timestamp": 1592437639,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437643168,
+        "sensorId": -1,
+        "timestamp": 1592437643,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437650417,
+        "sensorId": -1,
+        "timestamp": 1592437650,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437651963,
+        "sensorId": -1,
+        "timestamp": 1592437651,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437660700,
+        "sensorId": -1,
+        "timestamp": 1592437660,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437664154,
+        "sensorId": -1,
+        "timestamp": 1592437664,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437674735,
+        "sensorId": -1,
+        "timestamp": 1592437674,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437676476,
+        "sensorId": -1,
+        "timestamp": 1592437676,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437678164,
+        "sensorId": -1,
+        "timestamp": 1592437678,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437680094,
+        "sensorId": -1,
+        "timestamp": 1592437680,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437681621,
+        "sensorId": -1,
+        "timestamp": 1592437681,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437683310,
+        "sensorId": -1,
+        "timestamp": 1592437683,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437688482,
+        "sensorId": -1,
+        "timestamp": 1592437688,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437691946,
+        "sensorId": -1,
+        "timestamp": 1592437691,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437695416,
+        "sensorId": -1,
+        "timestamp": 1592437695,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437698851,
+        "sensorId": -1,
+        "timestamp": 1592437698,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437700594,
+        "sensorId": -1,
+        "timestamp": 1592437700,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437705830,
+        "sensorId": -1,
+        "timestamp": 1592437705,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437709311,
+        "sensorId": -1,
+        "timestamp": 1592437709,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437711068,
+        "sensorId": -1,
+        "timestamp": 1592437711,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437712845,
+        "sensorId": -1,
+        "timestamp": 1592437712,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437716299,
+        "sensorId": -1,
+        "timestamp": 1592437716,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437718053,
+        "sensorId": -1,
+        "timestamp": 1592437718,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437719806,
+        "sensorId": -1,
+        "timestamp": 1592437719,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437730412,
+        "sensorId": -1,
+        "timestamp": 1592437730,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437732177,
+        "sensorId": -1,
+        "timestamp": 1592437732,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437735733,
+        "sensorId": -1,
+        "timestamp": 1592437735,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437737473,
+        "sensorId": -1,
+        "timestamp": 1592437737,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437742791,
+        "sensorId": -1,
+        "timestamp": 1592437742,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437744537,
+        "sensorId": -1,
+        "timestamp": 1592437744,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437746334,
+        "sensorId": -1,
+        "timestamp": 1592437746,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437747992,
+        "sensorId": -1,
+        "timestamp": 1592437747,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437749727,
+        "sensorId": -1,
+        "timestamp": 1592437749,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437751595,
+        "sensorId": -1,
+        "timestamp": 1592437751,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437754974,
+        "sensorId": -1,
+        "timestamp": 1592437754,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437756666,
+        "sensorId": -1,
+        "timestamp": 1592437756,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437760192,
+        "sensorId": -1,
+        "timestamp": 1592437760,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437761896,
+        "sensorId": -1,
+        "timestamp": 1592437761,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437763588,
+        "sensorId": -1,
+        "timestamp": 1592437763,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437765367,
+        "sensorId": -1,
+        "timestamp": 1592437765,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437768721,
+        "sensorId": -1,
+        "timestamp": 1592437768,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437770434,
+        "sensorId": -1,
+        "timestamp": 1592437770,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437777254,
+        "sensorId": -1,
+        "timestamp": 1592437777,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437778941,
+        "sensorId": -1,
+        "timestamp": 1592437778,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437780760,
+        "sensorId": -1,
+        "timestamp": 1592437780,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437787835,
+        "sensorId": -1,
+        "timestamp": 1592437787,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437789777,
+        "sensorId": -1,
+        "timestamp": 1592437789,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437798352,
+        "sensorId": -1,
+        "timestamp": 1592437798,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437803573,
+        "sensorId": -1,
+        "timestamp": 1592437803,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437805251,
+        "sensorId": -1,
+        "timestamp": 1592437805,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437810441,
+        "sensorId": -1,
+        "timestamp": 1592437810,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437813901,
+        "sensorId": -1,
+        "timestamp": 1592437813,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437817314,
+        "sensorId": -1,
+        "timestamp": 1592437817,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437824307,
+        "sensorId": -1,
+        "timestamp": 1592437824,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437826091,
+        "sensorId": -1,
+        "timestamp": 1592437826,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437829511,
+        "sensorId": -1,
+        "timestamp": 1592437829,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437831275,
+        "sensorId": -1,
+        "timestamp": 1592437831,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437836501,
+        "sensorId": -1,
+        "timestamp": 1592437836,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437838262,
+        "sensorId": -1,
+        "timestamp": 1592437838,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437843314,
+        "sensorId": -1,
+        "timestamp": 1592437843,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437845048,
+        "sensorId": -1,
+        "timestamp": 1592437845,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437846824,
+        "sensorId": -1,
+        "timestamp": 1592437846,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437850407,
+        "sensorId": -1,
+        "timestamp": 1592437850,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437852186,
+        "sensorId": -1,
+        "timestamp": 1592437852,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437855694,
+        "sensorId": -1,
+        "timestamp": 1592437855,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437857453,
+        "sensorId": -1,
+        "timestamp": 1592437857,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437859176,
+        "sensorId": -1,
+        "timestamp": 1592437859,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437860907,
+        "sensorId": -1,
+        "timestamp": 1592437860,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437862658,
+        "sensorId": -1,
+        "timestamp": 1592437862,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437866128,
+        "sensorId": -1,
+        "timestamp": 1592437866,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437871312,
+        "sensorId": -1,
+        "timestamp": 1592437871,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437872993,
+        "sensorId": -1,
+        "timestamp": 1592437872,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437878089,
+        "sensorId": -1,
+        "timestamp": 1592437878,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437881552,
+        "sensorId": -1,
+        "timestamp": 1592437881,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437883369,
+        "sensorId": -1,
+        "timestamp": 1592437883,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437890397,
+        "sensorId": -1,
+        "timestamp": 1592437890,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437892213,
+        "sensorId": -1,
+        "timestamp": 1592437892,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437895633,
+        "sensorId": -1,
+        "timestamp": 1592437895,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437897441,
+        "sensorId": -1,
+        "timestamp": 1592437897,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437900906,
+        "sensorId": -1,
+        "timestamp": 1592437900,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437902947,
+        "sensorId": -1,
+        "timestamp": 1592437902,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437904368,
+        "sensorId": -1,
+        "timestamp": 1592437904,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437906105,
+        "sensorId": -1,
+        "timestamp": 1592437906,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437907798,
+        "sensorId": -1,
+        "timestamp": 1592437907,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437909508,
+        "sensorId": -1,
+        "timestamp": 1592437909,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437912925,
+        "sensorId": -1,
+        "timestamp": 1592437912,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437914639,
+        "sensorId": -1,
+        "timestamp": 1592437914,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437916372,
+        "sensorId": -1,
+        "timestamp": 1592437916,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437918051,
+        "sensorId": -1,
+        "timestamp": 1592437918,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437919792,
+        "sensorId": -1,
+        "timestamp": 1592437919,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437923228,
+        "sensorId": -1,
+        "timestamp": 1592437923,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437924920,
+        "sensorId": -1,
+        "timestamp": 1592437924,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437926658,
+        "sensorId": -1,
+        "timestamp": 1592437926,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437930178,
+        "sensorId": -1,
+        "timestamp": 1592437930,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437931881,
+        "sensorId": -1,
+        "timestamp": 1592437931,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437933642,
+        "sensorId": -1,
+        "timestamp": 1592437933,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437937076,
+        "sensorId": -1,
+        "timestamp": 1592437937,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437942357,
+        "sensorId": -1,
+        "timestamp": 1592437942,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437944073,
+        "sensorId": -1,
+        "timestamp": 1592437944,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437952768,
+        "sensorId": -1,
+        "timestamp": 1592437952,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437954568,
+        "sensorId": -1,
+        "timestamp": 1592437954,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437956260,
+        "sensorId": -1,
+        "timestamp": 1592437956,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437958096,
+        "sensorId": -1,
+        "timestamp": 1592437958,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437961554,
+        "sensorId": -1,
+        "timestamp": 1592437961,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437963302,
+        "sensorId": -1,
+        "timestamp": 1592437963,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437964990,
+        "sensorId": -1,
+        "timestamp": 1592437964,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437966913,
+        "sensorId": -1,
+        "timestamp": 1592437966,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437970150,
+        "sensorId": -1,
+        "timestamp": 1592437970,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437973636,
+        "sensorId": -1,
+        "timestamp": 1592437973,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437975414,
+        "sensorId": -1,
+        "timestamp": 1592437975,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437977115,
+        "sensorId": -1,
+        "timestamp": 1592437977,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437982356,
+        "sensorId": -1,
+        "timestamp": 1592437982,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437985785,
+        "sensorId": -1,
+        "timestamp": 1592437985,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437987549,
+        "sensorId": -1,
+        "timestamp": 1592437987,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437989230,
+        "sensorId": -1,
+        "timestamp": 1592437989,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437992752,
+        "sensorId": -1,
+        "timestamp": 1592437992,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437994483,
+        "sensorId": -1,
+        "timestamp": 1592437994,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437996246,
+        "sensorId": -1,
+        "timestamp": 1592437996,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592437999839,
+        "sensorId": -1,
+        "timestamp": 1592437999,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438001604,
+        "sensorId": -1,
+        "timestamp": 1592438001,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438003259,
+        "sensorId": -1,
+        "timestamp": 1592438003,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438008404,
+        "sensorId": -1,
+        "timestamp": 1592438008,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438017152,
+        "sensorId": -1,
+        "timestamp": 1592438017,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438022349,
+        "sensorId": -1,
+        "timestamp": 1592438022,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438024042,
+        "sensorId": -1,
+        "timestamp": 1592438024,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438025754,
+        "sensorId": -1,
+        "timestamp": 1592438025,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438027467,
+        "sensorId": -1,
+        "timestamp": 1592438027,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438030867,
+        "sensorId": -1,
+        "timestamp": 1592438030,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438032597,
+        "sensorId": -1,
+        "timestamp": 1592438032,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438036162,
+        "sensorId": -1,
+        "timestamp": 1592438036,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438037739,
+        "sensorId": -1,
+        "timestamp": 1592438037,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438039499,
+        "sensorId": -1,
+        "timestamp": 1592438039,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438041237,
+        "sensorId": -1,
+        "timestamp": 1592438041,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438043017,
+        "sensorId": -1,
+        "timestamp": 1592438043,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438044690,
+        "sensorId": -1,
+        "timestamp": 1592438044,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438046479,
+        "sensorId": -1,
+        "timestamp": 1592438046,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438048155,
+        "sensorId": -1,
+        "timestamp": 1592438048,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438056877,
+        "sensorId": -1,
+        "timestamp": 1592438056,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438062038,
+        "sensorId": -1,
+        "timestamp": 1592438062,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438063720,
+        "sensorId": -1,
+        "timestamp": 1592438063,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438065503,
+        "sensorId": -1,
+        "timestamp": 1592438065,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438077760,
+        "sensorId": -1,
+        "timestamp": 1592438077,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438079482,
+        "sensorId": -1,
+        "timestamp": 1592438079,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438084758,
+        "sensorId": -1,
+        "timestamp": 1592438084,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438086482,
+        "sensorId": -1,
+        "timestamp": 1592438086,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438088241,
+        "sensorId": -1,
+        "timestamp": 1592438088,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438090003,
+        "sensorId": -1,
+        "timestamp": 1592438090,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438096975,
+        "sensorId": -1,
+        "timestamp": 1592438096,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438100443,
+        "sensorId": -1,
+        "timestamp": 1592438100,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438102089,
+        "sensorId": -1,
+        "timestamp": 1592438102,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438103884,
+        "sensorId": -1,
+        "timestamp": 1592438103,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438112622,
+        "sensorId": -1,
+        "timestamp": 1592438112,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438114334,
+        "sensorId": -1,
+        "timestamp": 1592438114,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438116052,
+        "sensorId": -1,
+        "timestamp": 1592438116,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438117807,
+        "sensorId": -1,
+        "timestamp": 1592438117,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438121258,
+        "sensorId": -1,
+        "timestamp": 1592438121,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438123019,
+        "sensorId": -1,
+        "timestamp": 1592438123,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438129989,
+        "sensorId": -1,
+        "timestamp": 1592438129,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438131760,
+        "sensorId": -1,
+        "timestamp": 1592438131,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438144031,
+        "sensorId": -1,
+        "timestamp": 1592438144,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438145755,
+        "sensorId": -1,
+        "timestamp": 1592438145,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438147472,
+        "sensorId": -1,
+        "timestamp": 1592438147,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438149243,
+        "sensorId": -1,
+        "timestamp": 1592438149,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438161426,
+        "sensorId": -1,
+        "timestamp": 1592438161,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438163191,
+        "sensorId": -1,
+        "timestamp": 1592438163,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438170336,
+        "sensorId": -1,
+        "timestamp": 1592438170,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438177113,
+        "sensorId": -1,
+        "timestamp": 1592438177,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438180568,
+        "sensorId": -1,
+        "timestamp": 1592438180,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438182711,
+        "sensorId": -1,
+        "timestamp": 1592438182,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438192821,
+        "sensorId": -1,
+        "timestamp": 1592438192,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438194577,
+        "sensorId": -1,
+        "timestamp": 1592438194,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438199818,
+        "sensorId": -1,
+        "timestamp": 1592438199,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438201566,
+        "sensorId": -1,
+        "timestamp": 1592438201,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438203222,
+        "sensorId": -1,
+        "timestamp": 1592438203,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438208521,
+        "sensorId": -1,
+        "timestamp": 1592438208,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438210303,
+        "sensorId": -1,
+        "timestamp": 1592438210,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438211992,
+        "sensorId": -1,
+        "timestamp": 1592438211,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438213749,
+        "sensorId": -1,
+        "timestamp": 1592438213,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438215478,
+        "sensorId": -1,
+        "timestamp": 1592438215,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438220733,
+        "sensorId": -1,
+        "timestamp": 1592438220,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438224249,
+        "sensorId": -1,
+        "timestamp": 1592438224,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438229458,
+        "sensorId": -1,
+        "timestamp": 1592438229,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438231261,
+        "sensorId": -1,
+        "timestamp": 1592438231,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438234745,
+        "sensorId": -1,
+        "timestamp": 1592438234,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438236533,
+        "sensorId": -1,
+        "timestamp": 1592438236,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438238237,
+        "sensorId": -1,
+        "timestamp": 1592438238,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438239907,
+        "sensorId": -1,
+        "timestamp": 1592438239,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438241621,
+        "sensorId": -1,
+        "timestamp": 1592438241,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438248501,
+        "sensorId": -1,
+        "timestamp": 1592438248,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438252146,
+        "sensorId": -1,
+        "timestamp": 1592438252,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438253692,
+        "sensorId": -1,
+        "timestamp": 1592438253,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438258902,
+        "sensorId": -1,
+        "timestamp": 1592438258,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438260688,
+        "sensorId": -1,
+        "timestamp": 1592438260,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438262320,
+        "sensorId": -1,
+        "timestamp": 1592438262,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438265867,
+        "sensorId": -1,
+        "timestamp": 1592438265,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438267546,
+        "sensorId": -1,
+        "timestamp": 1592438267,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438269378,
+        "sensorId": -1,
+        "timestamp": 1592438269,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438272829,
+        "sensorId": -1,
+        "timestamp": 1592438272,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438274605,
+        "sensorId": -1,
+        "timestamp": 1592438274,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438276324,
+        "sensorId": -1,
+        "timestamp": 1592438276,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438278095,
+        "sensorId": -1,
+        "timestamp": 1592438278,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438279772,
+        "sensorId": -1,
+        "timestamp": 1592438279,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438288496,
+        "sensorId": -1,
+        "timestamp": 1592438288,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438290254,
+        "sensorId": -1,
+        "timestamp": 1592438290,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438293668,
+        "sensorId": -1,
+        "timestamp": 1592438293,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438298877,
+        "sensorId": -1,
+        "timestamp": 1592438298,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438304127,
+        "sensorId": -1,
+        "timestamp": 1592438304,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438305900,
+        "sensorId": -1,
+        "timestamp": 1592438305,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438307583,
+        "sensorId": -1,
+        "timestamp": 1592438307,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438309342,
+        "sensorId": -1,
+        "timestamp": 1592438309,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438311033,
+        "sensorId": -1,
+        "timestamp": 1592438311,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438312775,
+        "sensorId": -1,
+        "timestamp": 1592438312,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438318194,
+        "sensorId": -1,
+        "timestamp": 1592438318,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438319716,
+        "sensorId": -1,
+        "timestamp": 1592438319,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438321482,
+        "sensorId": -1,
+        "timestamp": 1592438321,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438332173,
+        "sensorId": -1,
+        "timestamp": 1592438332,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438333874,
+        "sensorId": -1,
+        "timestamp": 1592438333,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438339061,
+        "sensorId": -1,
+        "timestamp": 1592438339,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438342489,
+        "sensorId": -1,
+        "timestamp": 1592438342,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438345981,
+        "sensorId": -1,
+        "timestamp": 1592438345,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438349472,
+        "sensorId": -1,
+        "timestamp": 1592438349,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438356530,
+        "sensorId": -1,
+        "timestamp": 1592438356,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438359972,
+        "sensorId": -1,
+        "timestamp": 1592438359,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438363402,
+        "sensorId": -1,
+        "timestamp": 1592438363,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438365175,
+        "sensorId": -1,
+        "timestamp": 1592438365,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438366888,
+        "sensorId": -1,
+        "timestamp": 1592438366,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438370237,
+        "sensorId": -1,
+        "timestamp": 1592438370,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438371974,
+        "sensorId": -1,
+        "timestamp": 1592438371,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438373804,
+        "sensorId": -1,
+        "timestamp": 1592438373,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438375468,
+        "sensorId": -1,
+        "timestamp": 1592438375,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438378929,
+        "sensorId": -1,
+        "timestamp": 1592438378,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438382430,
+        "sensorId": -1,
+        "timestamp": 1592438382,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438384227,
+        "sensorId": -1,
+        "timestamp": 1592438384,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438385929,
+        "sensorId": -1,
+        "timestamp": 1592438385,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438387960,
+        "sensorId": -1,
+        "timestamp": 1592438387,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438391104,
+        "sensorId": -1,
+        "timestamp": 1592438391,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438392911,
+        "sensorId": -1,
+        "timestamp": 1592438392,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438396357,
+        "sensorId": -1,
+        "timestamp": 1592438396,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438398111,
+        "sensorId": -1,
+        "timestamp": 1592438398,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438401603,
+        "sensorId": -1,
+        "timestamp": 1592438401,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438403349,
+        "sensorId": -1,
+        "timestamp": 1592438403,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438405081,
+        "sensorId": -1,
+        "timestamp": 1592438405,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438406856,
+        "sensorId": -1,
+        "timestamp": 1592438406,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438410342,
+        "sensorId": -1,
+        "timestamp": 1592438410,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438412083,
+        "sensorId": -1,
+        "timestamp": 1592438412,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438419185,
+        "sensorId": -1,
+        "timestamp": 1592438419,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438422686,
+        "sensorId": -1,
+        "timestamp": 1592438422,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438426136,
+        "sensorId": -1,
+        "timestamp": 1592438426,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438427884,
+        "sensorId": -1,
+        "timestamp": 1592438427,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438433090,
+        "sensorId": -1,
+        "timestamp": 1592438433,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438434875,
+        "sensorId": -1,
+        "timestamp": 1592438434,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438438318,
+        "sensorId": -1,
+        "timestamp": 1592438438,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438440104,
+        "sensorId": -1,
+        "timestamp": 1592438440,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438441872,
+        "sensorId": -1,
+        "timestamp": 1592438441,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438448904,
+        "sensorId": -1,
+        "timestamp": 1592438448,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438450656,
+        "sensorId": -1,
+        "timestamp": 1592438450,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438454431,
+        "sensorId": -1,
+        "timestamp": 1592438454,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438456165,
+        "sensorId": -1,
+        "timestamp": 1592438456,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438457563,
+        "sensorId": -1,
+        "timestamp": 1592438457,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438459336,
+        "sensorId": -1,
+        "timestamp": 1592438459,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438464577,
+        "sensorId": -1,
+        "timestamp": 1592438464,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438466318,
+        "sensorId": -1,
+        "timestamp": 1592438466,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438468016,
+        "sensorId": -1,
+        "timestamp": 1592438468,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438469749,
+        "sensorId": -1,
+        "timestamp": 1592438469,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438473186,
+        "sensorId": -1,
+        "timestamp": 1592438473,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438476676,
+        "sensorId": -1,
+        "timestamp": 1592438476,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438478377,
+        "sensorId": -1,
+        "timestamp": 1592438478,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438480173,
+        "sensorId": -1,
+        "timestamp": 1592438480,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438483605,
+        "sensorId": -1,
+        "timestamp": 1592438483,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438485467,
+        "sensorId": -1,
+        "timestamp": 1592438485,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438487084,
+        "sensorId": -1,
+        "timestamp": 1592438487,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438490594,
+        "sensorId": -1,
+        "timestamp": 1592438490,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438494059,
+        "sensorId": -1,
+        "timestamp": 1592438494,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438497560,
+        "sensorId": -1,
+        "timestamp": 1592438497,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438499239,
+        "sensorId": -1,
+        "timestamp": 1592438499,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438500989,
+        "sensorId": -1,
+        "timestamp": 1592438500,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438507921,
+        "sensorId": -1,
+        "timestamp": 1592438507,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438511382,
+        "sensorId": -1,
+        "timestamp": 1592438511,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438514912,
+        "sensorId": -1,
+        "timestamp": 1592438514,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438516653,
+        "sensorId": -1,
+        "timestamp": 1592438516,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438520126,
+        "sensorId": -1,
+        "timestamp": 1592438520,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438521819,
+        "sensorId": -1,
+        "timestamp": 1592438521,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438525352,
+        "sensorId": -1,
+        "timestamp": 1592438525,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438528770,
+        "sensorId": -1,
+        "timestamp": 1592438528,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438532243,
+        "sensorId": -1,
+        "timestamp": 1592438532,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438534062,
+        "sensorId": -1,
+        "timestamp": 1592438534,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438541088,
+        "sensorId": -1,
+        "timestamp": 1592438541,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438544646,
+        "sensorId": -1,
+        "timestamp": 1592438544,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438548090,
+        "sensorId": -1,
+        "timestamp": 1592438548,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438549811,
+        "sensorId": -1,
+        "timestamp": 1592438549,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438556845,
+        "sensorId": -1,
+        "timestamp": 1592438556,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438558575,
+        "sensorId": -1,
+        "timestamp": 1592438558,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438560275,
+        "sensorId": -1,
+        "timestamp": 1592438560,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438563643,
+        "sensorId": -1,
+        "timestamp": 1592438563,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438572396,
+        "sensorId": -1,
+        "timestamp": 1592438572,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438577556,
+        "sensorId": -1,
+        "timestamp": 1592438577,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438582964,
+        "sensorId": -1,
+        "timestamp": 1592438582,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438584520,
+        "sensorId": -1,
+        "timestamp": 1592438584,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438586227,
+        "sensorId": -1,
+        "timestamp": 1592438586,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438587981,
+        "sensorId": -1,
+        "timestamp": 1592438587,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438589715,
+        "sensorId": -1,
+        "timestamp": 1592438589,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438591516,
+        "sensorId": -1,
+        "timestamp": 1592438591,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438595020,
+        "sensorId": -1,
+        "timestamp": 1592438595,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438596715,
+        "sensorId": -1,
+        "timestamp": 1592438596,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438598498,
+        "sensorId": -1,
+        "timestamp": 1592438598,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438601979,
+        "sensorId": -1,
+        "timestamp": 1592438601,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438603767,
+        "sensorId": -1,
+        "timestamp": 1592438603,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438605442,
+        "sensorId": -1,
+        "timestamp": 1592438605,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438610622,
+        "sensorId": -1,
+        "timestamp": 1592438610,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438612292,
+        "sensorId": -1,
+        "timestamp": 1592438612,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438614106,
+        "sensorId": -1,
+        "timestamp": 1592438614,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438619317,
+        "sensorId": -1,
+        "timestamp": 1592438619,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438621108,
+        "sensorId": -1,
+        "timestamp": 1592438621,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438624517,
+        "sensorId": -1,
+        "timestamp": 1592438624,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438626311,
+        "sensorId": -1,
+        "timestamp": 1592438626,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438627958,
+        "sensorId": -1,
+        "timestamp": 1592438627,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438629705,
+        "sensorId": -1,
+        "timestamp": 1592438629,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438631395,
+        "sensorId": -1,
+        "timestamp": 1592438631,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438633178,
+        "sensorId": -1,
+        "timestamp": 1592438633,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438634929,
+        "sensorId": -1,
+        "timestamp": 1592438634,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438638459,
+        "sensorId": -1,
+        "timestamp": 1592438638,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438640134,
+        "sensorId": -1,
+        "timestamp": 1592438640,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438641885,
+        "sensorId": -1,
+        "timestamp": 1592438641,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438643629,
+        "sensorId": -1,
+        "timestamp": 1592438643,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438645428,
+        "sensorId": -1,
+        "timestamp": 1592438645,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438647111,
+        "sensorId": -1,
+        "timestamp": 1592438647,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438650555,
+        "sensorId": -1,
+        "timestamp": 1592438650,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438659301,
+        "sensorId": -1,
+        "timestamp": 1592438659,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438664453,
+        "sensorId": -1,
+        "timestamp": 1592438664,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438666167,
+        "sensorId": -1,
+        "timestamp": 1592438666,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438669638,
+        "sensorId": -1,
+        "timestamp": 1592438669,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438679095,
+        "sensorId": -1,
+        "timestamp": 1592438679,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438686021,
+        "sensorId": -1,
+        "timestamp": 1592438686,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438687715,
+        "sensorId": -1,
+        "timestamp": 1592438687,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438689715,
+        "sensorId": -1,
+        "timestamp": 1592438689,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438691246,
+        "sensorId": -1,
+        "timestamp": 1592438691,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438696366,
+        "sensorId": -1,
+        "timestamp": 1592438696,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438698059,
+        "sensorId": -1,
+        "timestamp": 1592438698,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438699845,
+        "sensorId": -1,
+        "timestamp": 1592438699,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438705069,
+        "sensorId": -1,
+        "timestamp": 1592438705,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438710350,
+        "sensorId": -1,
+        "timestamp": 1592438710,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438712031,
+        "sensorId": -1,
+        "timestamp": 1592438712,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438715469,
+        "sensorId": -1,
+        "timestamp": 1592438715,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438718951,
+        "sensorId": -1,
+        "timestamp": 1592438718,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438720679,
+        "sensorId": -1,
+        "timestamp": 1592438720,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438725886,
+        "sensorId": -1,
+        "timestamp": 1592438725,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438727611,
+        "sensorId": -1,
+        "timestamp": 1592438727,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438731065,
+        "sensorId": -1,
+        "timestamp": 1592438731,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438732833,
+        "sensorId": -1,
+        "timestamp": 1592438732,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438747118,
+        "sensorId": -1,
+        "timestamp": 1592438747,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438748834,
+        "sensorId": -1,
+        "timestamp": 1592438748,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438755821,
+        "sensorId": -1,
+        "timestamp": 1592438755,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438759278,
+        "sensorId": -1,
+        "timestamp": 1592438759,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438762860,
+        "sensorId": -1,
+        "timestamp": 1592438762,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438767981,
+        "sensorId": -1,
+        "timestamp": 1592438767,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438769582,
+        "sensorId": -1,
+        "timestamp": 1592438769,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438774813,
+        "sensorId": -1,
+        "timestamp": 1592438774,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438776561,
+        "sensorId": -1,
+        "timestamp": 1592438776,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438778289,
+        "sensorId": -1,
+        "timestamp": 1592438778,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438799454,
+        "sensorId": -1,
+        "timestamp": 1592438799,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438801229,
+        "sensorId": -1,
+        "timestamp": 1592438801,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438806405,
+        "sensorId": -1,
+        "timestamp": 1592438806,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438809839,
+        "sensorId": -1,
+        "timestamp": 1592438809,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438811561,
+        "sensorId": -1,
+        "timestamp": 1592438811,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438813312,
+        "sensorId": -1,
+        "timestamp": 1592438813,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438815079,
+        "sensorId": -1,
+        "timestamp": 1592438815,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438816829,
+        "sensorId": -1,
+        "timestamp": 1592438816,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438818496,
+        "sensorId": -1,
+        "timestamp": 1592438818,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438820266,
+        "sensorId": -1,
+        "timestamp": 1592438820,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438834331,
+        "sensorId": -1,
+        "timestamp": 1592438834,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438838117,
+        "sensorId": -1,
+        "timestamp": 1592438838,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438839462,
+        "sensorId": -1,
+        "timestamp": 1592438839,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438841203,
+        "sensorId": -1,
+        "timestamp": 1592438841,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438844696,
+        "sensorId": -1,
+        "timestamp": 1592438844,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438853249,
+        "sensorId": -1,
+        "timestamp": 1592438853,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438856766,
+        "sensorId": -1,
+        "timestamp": 1592438856,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438858553,
+        "sensorId": -1,
+        "timestamp": 1592438858,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438861900,
+        "sensorId": -1,
+        "timestamp": 1592438861,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438863604,
+        "sensorId": -1,
+        "timestamp": 1592438863,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438865316,
+        "sensorId": -1,
+        "timestamp": 1592438865,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438868758,
+        "sensorId": -1,
+        "timestamp": 1592438868,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438874011,
+        "sensorId": -1,
+        "timestamp": 1592438874,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438875764,
+        "sensorId": -1,
+        "timestamp": 1592438875,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438879294,
+        "sensorId": -1,
+        "timestamp": 1592438879,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438882898,
+        "sensorId": -1,
+        "timestamp": 1592438882,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438888114,
+        "sensorId": -1,
+        "timestamp": 1592438888,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438891598,
+        "sensorId": -1,
+        "timestamp": 1592438891,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438898576,
+        "sensorId": -1,
+        "timestamp": 1592438898,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438902080,
+        "sensorId": -1,
+        "timestamp": 1592438902,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438921392,
+        "sensorId": -1,
+        "timestamp": 1592438921,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438923185,
+        "sensorId": -1,
+        "timestamp": 1592438923,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438930278,
+        "sensorId": -1,
+        "timestamp": 1592438930,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438932028,
+        "sensorId": -1,
+        "timestamp": 1592438932,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438933740,
+        "sensorId": -1,
+        "timestamp": 1592438933,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438935430,
+        "sensorId": -1,
+        "timestamp": 1592438935,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438937150,
+        "sensorId": -1,
+        "timestamp": 1592438937,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438938848,
+        "sensorId": -1,
+        "timestamp": 1592438938,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438945753,
+        "sensorId": -1,
+        "timestamp": 1592438945,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438947415,
+        "sensorId": -1,
+        "timestamp": 1592438947,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438950943,
+        "sensorId": -1,
+        "timestamp": 1592438950,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438952664,
+        "sensorId": -1,
+        "timestamp": 1592438952,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438954369,
+        "sensorId": -1,
+        "timestamp": 1592438954,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438963173,
+        "sensorId": -1,
+        "timestamp": 1592438963,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438964900,
+        "sensorId": -1,
+        "timestamp": 1592438964,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438966579,
+        "sensorId": -1,
+        "timestamp": 1592438966,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438971918,
+        "sensorId": -1,
+        "timestamp": 1592438971,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438973739,
+        "sensorId": -1,
+        "timestamp": 1592438973,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438975461,
+        "sensorId": -1,
+        "timestamp": 1592438975,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438978815,
+        "sensorId": -1,
+        "timestamp": 1592438978,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438980555,
+        "sensorId": -1,
+        "timestamp": 1592438980,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438982403,
+        "sensorId": -1,
+        "timestamp": 1592438982,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438984047,
+        "sensorId": -1,
+        "timestamp": 1592438984,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438985854,
+        "sensorId": -1,
+        "timestamp": 1592438985,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438991070,
+        "sensorId": -1,
+        "timestamp": 1592438991,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438992871,
+        "sensorId": -1,
+        "timestamp": 1592438992,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438996337,
+        "sensorId": -1,
+        "timestamp": 1592438996,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592438998133,
+        "sensorId": -1,
+        "timestamp": 1592438998,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439005043,
+        "sensorId": -1,
+        "timestamp": 1592439005,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439008511,
+        "sensorId": -1,
+        "timestamp": 1592439008,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439011960,
+        "sensorId": -1,
+        "timestamp": 1592439011,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439013665,
+        "sensorId": -1,
+        "timestamp": 1592439013,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439015455,
+        "sensorId": -1,
+        "timestamp": 1592439015,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439018930,
+        "sensorId": -1,
+        "timestamp": 1592439018,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439020698,
+        "sensorId": -1,
+        "timestamp": 1592439020,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439022463,
+        "sensorId": -1,
+        "timestamp": 1592439022,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439024194,
+        "sensorId": -1,
+        "timestamp": 1592439024,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439025932,
+        "sensorId": -1,
+        "timestamp": 1592439025,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439029427,
+        "sensorId": -1,
+        "timestamp": 1592439029,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439032961,
+        "sensorId": -1,
+        "timestamp": 1592439032,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439034608,
+        "sensorId": -1,
+        "timestamp": 1592439034,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439038105,
+        "sensorId": -1,
+        "timestamp": 1592439038,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439043312,
+        "sensorId": -1,
+        "timestamp": 1592439043,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439045074,
+        "sensorId": -1,
+        "timestamp": 1592439045,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439047138,
+        "sensorId": -1,
+        "timestamp": 1592439047,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439048565,
+        "sensorId": -1,
+        "timestamp": 1592439048,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439053637,
+        "sensorId": -1,
+        "timestamp": 1592439053,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439055372,
+        "sensorId": -1,
+        "timestamp": 1592439055,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439057166,
+        "sensorId": -1,
+        "timestamp": 1592439057,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439060935,
+        "sensorId": -1,
+        "timestamp": 1592439060,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439062509,
+        "sensorId": -1,
+        "timestamp": 1592439062,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439064226,
+        "sensorId": -1,
+        "timestamp": 1592439064,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439066038,
+        "sensorId": -1,
+        "timestamp": 1592439066,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439071218,
+        "sensorId": -1,
+        "timestamp": 1592439071,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439072984,
+        "sensorId": -1,
+        "timestamp": 1592439072,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439076470,
+        "sensorId": -1,
+        "timestamp": 1592439076,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439078260,
+        "sensorId": -1,
+        "timestamp": 1592439078,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439080017,
+        "sensorId": -1,
+        "timestamp": 1592439080,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439081754,
+        "sensorId": -1,
+        "timestamp": 1592439081,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439083434,
+        "sensorId": -1,
+        "timestamp": 1592439083,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439085206,
+        "sensorId": -1,
+        "timestamp": 1592439085,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439088721,
+        "sensorId": -1,
+        "timestamp": 1592439088,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439090530,
+        "sensorId": -1,
+        "timestamp": 1592439090,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439093948,
+        "sensorId": -1,
+        "timestamp": 1592439093,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439095700,
+        "sensorId": -1,
+        "timestamp": 1592439095,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439097380,
+        "sensorId": -1,
+        "timestamp": 1592439097,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439100814,
+        "sensorId": -1,
+        "timestamp": 1592439100,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439102493,
+        "sensorId": -1,
+        "timestamp": 1592439102,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439109330,
+        "sensorId": -1,
+        "timestamp": 1592439109,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439121667,
+        "sensorId": -1,
+        "timestamp": 1592439121,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439123438,
+        "sensorId": -1,
+        "timestamp": 1592439123,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439125123,
+        "sensorId": -1,
+        "timestamp": 1592439125,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439126890,
+        "sensorId": -1,
+        "timestamp": 1592439126,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439130282,
+        "sensorId": -1,
+        "timestamp": 1592439130,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439135472,
+        "sensorId": -1,
+        "timestamp": 1592439135,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439137236,
+        "sensorId": -1,
+        "timestamp": 1592439137,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439147706,
+        "sensorId": -1,
+        "timestamp": 1592439147,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439149467,
+        "sensorId": -1,
+        "timestamp": 1592439149,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439151137,
+        "sensorId": -1,
+        "timestamp": 1592439151,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439156391,
+        "sensorId": -1,
+        "timestamp": 1592439156,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439158145,
+        "sensorId": -1,
+        "timestamp": 1592439158,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439161668,
+        "sensorId": -1,
+        "timestamp": 1592439161,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439163421,
+        "sensorId": -1,
+        "timestamp": 1592439163,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439173930,
+        "sensorId": -1,
+        "timestamp": 1592439173,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439175746,
+        "sensorId": -1,
+        "timestamp": 1592439175,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439179180,
+        "sensorId": -1,
+        "timestamp": 1592439179,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439180924,
+        "sensorId": -1,
+        "timestamp": 1592439180,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439184412,
+        "sensorId": -1,
+        "timestamp": 1592439184,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439186309,
+        "sensorId": -1,
+        "timestamp": 1592439186,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439198736,
+        "sensorId": -1,
+        "timestamp": 1592439198,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439200528,
+        "sensorId": -1,
+        "timestamp": 1592439200,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439202231,
+        "sensorId": -1,
+        "timestamp": 1592439202,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439203922,
+        "sensorId": -1,
+        "timestamp": 1592439203,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439210758,
+        "sensorId": -1,
+        "timestamp": 1592439210,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439214218,
+        "sensorId": -1,
+        "timestamp": 1592439214,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439215955,
+        "sensorId": -1,
+        "timestamp": 1592439215,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439217738,
+        "sensorId": -1,
+        "timestamp": 1592439217,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439219438,
+        "sensorId": -1,
+        "timestamp": 1592439219,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439221342,
+        "sensorId": -1,
+        "timestamp": 1592439221,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439228204,
+        "sensorId": -1,
+        "timestamp": 1592439228,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439231671,
+        "sensorId": -1,
+        "timestamp": 1592439231,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439235203,
+        "sensorId": -1,
+        "timestamp": 1592439235,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439236986,
+        "sensorId": -1,
+        "timestamp": 1592439236,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439247594,
+        "sensorId": -1,
+        "timestamp": 1592439247,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439252859,
+        "sensorId": -1,
+        "timestamp": 1592439252,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439254571,
+        "sensorId": -1,
+        "timestamp": 1592439254,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439256356,
+        "sensorId": -1,
+        "timestamp": 1592439256,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439261559,
+        "sensorId": -1,
+        "timestamp": 1592439261,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439263318,
+        "sensorId": -1,
+        "timestamp": 1592439263,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439265038,
+        "sensorId": -1,
+        "timestamp": 1592439265,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439270237,
+        "sensorId": -1,
+        "timestamp": 1592439270,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439282435,
+        "sensorId": -1,
+        "timestamp": 1592439282,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439284175,
+        "sensorId": -1,
+        "timestamp": 1592439284,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439285884,
+        "sensorId": -1,
+        "timestamp": 1592439285,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439287676,
+        "sensorId": -1,
+        "timestamp": 1592439287,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439289350,
+        "sensorId": -1,
+        "timestamp": 1592439289,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439296343,
+        "sensorId": -1,
+        "timestamp": 1592439296,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439298501,
+        "sensorId": -1,
+        "timestamp": 1592439298,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439300319,
+        "sensorId": -1,
+        "timestamp": 1592439300,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439302004,
+        "sensorId": -1,
+        "timestamp": 1592439302,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439303773,
+        "sensorId": -1,
+        "timestamp": 1592439303,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439305467,
+        "sensorId": -1,
+        "timestamp": 1592439305,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439307247,
+        "sensorId": -1,
+        "timestamp": 1592439307,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439321467,
+        "sensorId": -1,
+        "timestamp": 1592439321,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439323168,
+        "sensorId": -1,
+        "timestamp": 1592439323,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439324842,
+        "sensorId": -1,
+        "timestamp": 1592439324,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439326696,
+        "sensorId": -1,
+        "timestamp": 1592439326,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439333747,
+        "sensorId": -1,
+        "timestamp": 1592439333,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439335512,
+        "sensorId": -1,
+        "timestamp": 1592439335,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439338975,
+        "sensorId": -1,
+        "timestamp": 1592439338,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439340784,
+        "sensorId": -1,
+        "timestamp": 1592439340,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439346105,
+        "sensorId": -1,
+        "timestamp": 1592439346,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439347892,
+        "sensorId": -1,
+        "timestamp": 1592439347,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439349573,
+        "sensorId": -1,
+        "timestamp": 1592439349,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439351386,
+        "sensorId": -1,
+        "timestamp": 1592439351,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439353049,
+        "sensorId": -1,
+        "timestamp": 1592439353,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439356499,
+        "sensorId": -1,
+        "timestamp": 1592439356,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439358251,
+        "sensorId": -1,
+        "timestamp": 1592439358,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439361674,
+        "sensorId": -1,
+        "timestamp": 1592439361,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439363349,
+        "sensorId": -1,
+        "timestamp": 1592439363,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439365113,
+        "sensorId": -1,
+        "timestamp": 1592439365,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439370389,
+        "sensorId": -1,
+        "timestamp": 1592439370,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439373874,
+        "sensorId": -1,
+        "timestamp": 1592439373,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439382586,
+        "sensorId": -1,
+        "timestamp": 1592439382,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439384320,
+        "sensorId": -1,
+        "timestamp": 1592439384,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439393118,
+        "sensorId": -1,
+        "timestamp": 1592439393,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439394924,
+        "sensorId": -1,
+        "timestamp": 1592439394,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439398386,
+        "sensorId": -1,
+        "timestamp": 1592439398,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439400071,
+        "sensorId": -1,
+        "timestamp": 1592439400,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439403598,
+        "sensorId": -1,
+        "timestamp": 1592439403,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439407124,
+        "sensorId": -1,
+        "timestamp": 1592439407,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439408858,
+        "sensorId": -1,
+        "timestamp": 1592439408,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439412295,
+        "sensorId": -1,
+        "timestamp": 1592439412,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439414019,
+        "sensorId": -1,
+        "timestamp": 1592439414,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439415795,
+        "sensorId": -1,
+        "timestamp": 1592439415,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439417488,
+        "sensorId": -1,
+        "timestamp": 1592439417,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439419253,
+        "sensorId": -1,
+        "timestamp": 1592439419,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439422741,
+        "sensorId": -1,
+        "timestamp": 1592439422,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439424508,
+        "sensorId": -1,
+        "timestamp": 1592439424,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439426177,
+        "sensorId": -1,
+        "timestamp": 1592439426,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439427911,
+        "sensorId": -1,
+        "timestamp": 1592439427,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439431371,
+        "sensorId": -1,
+        "timestamp": 1592439431,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439438217,
+        "sensorId": -1,
+        "timestamp": 1592439438,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439441639,
+        "sensorId": -1,
+        "timestamp": 1592439441,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439445149,
+        "sensorId": -1,
+        "timestamp": 1592439445,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439450383,
+        "sensorId": -1,
+        "timestamp": 1592439450,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439452202,
+        "sensorId": -1,
+        "timestamp": 1592439452,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439453893,
+        "sensorId": -1,
+        "timestamp": 1592439453,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439455633,
+        "sensorId": -1,
+        "timestamp": 1592439455,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439462726,
+        "sensorId": -1,
+        "timestamp": 1592439462,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439464486,
+        "sensorId": -1,
+        "timestamp": 1592439464,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439466155,
+        "sensorId": -1,
+        "timestamp": 1592439466,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439467887,
+        "sensorId": -1,
+        "timestamp": 1592439467,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439471430,
+        "sensorId": -1,
+        "timestamp": 1592439471,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439473189,
+        "sensorId": -1,
+        "timestamp": 1592439473,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439474928,
+        "sensorId": -1,
+        "timestamp": 1592439474,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439481893,
+        "sensorId": -1,
+        "timestamp": 1592439481,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439485277,
+        "sensorId": -1,
+        "timestamp": 1592439485,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439488797,
+        "sensorId": -1,
+        "timestamp": 1592439488,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439490532,
+        "sensorId": -1,
+        "timestamp": 1592439490,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439492233,
+        "sensorId": -1,
+        "timestamp": 1592439492,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439495627,
+        "sensorId": -1,
+        "timestamp": 1592439495,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439499147,
+        "sensorId": -1,
+        "timestamp": 1592439499,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439500876,
+        "sensorId": -1,
+        "timestamp": 1592439500,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439507902,
+        "sensorId": -1,
+        "timestamp": 1592439507,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439509644,
+        "sensorId": -1,
+        "timestamp": 1592439509,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439513130,
+        "sensorId": -1,
+        "timestamp": 1592439513,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439514875,
+        "sensorId": -1,
+        "timestamp": 1592439514,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439518358,
+        "sensorId": -1,
+        "timestamp": 1592439518,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439520127,
+        "sensorId": -1,
+        "timestamp": 1592439520,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439521776,
+        "sensorId": -1,
+        "timestamp": 1592439521,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439525182,
+        "sensorId": -1,
+        "timestamp": 1592439525,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439526986,
+        "sensorId": -1,
+        "timestamp": 1592439526,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439530482,
+        "sensorId": -1,
+        "timestamp": 1592439530,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439532191,
+        "sensorId": -1,
+        "timestamp": 1592439532,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439533966,
+        "sensorId": -1,
+        "timestamp": 1592439533,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439539158,
+        "sensorId": -1,
+        "timestamp": 1592439539,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439540936,
+        "sensorId": -1,
+        "timestamp": 1592439540,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439549724,
+        "sensorId": -1,
+        "timestamp": 1592439549,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439551473,
+        "sensorId": -1,
+        "timestamp": 1592439551,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439553139,
+        "sensorId": -1,
+        "timestamp": 1592439553,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439554957,
+        "sensorId": -1,
+        "timestamp": 1592439554,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439556640,
+        "sensorId": -1,
+        "timestamp": 1592439556,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439558393,
+        "sensorId": -1,
+        "timestamp": 1592439558,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439565408,
+        "sensorId": -1,
+        "timestamp": 1592439565,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439567197,
+        "sensorId": -1,
+        "timestamp": 1592439567,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439570653,
+        "sensorId": -1,
+        "timestamp": 1592439570,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439577522,
+        "sensorId": -1,
+        "timestamp": 1592439577,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439584577,
+        "sensorId": -1,
+        "timestamp": 1592439584,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439586351,
+        "sensorId": -1,
+        "timestamp": 1592439586,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439591598,
+        "sensorId": -1,
+        "timestamp": 1592439591,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439593349,
+        "sensorId": -1,
+        "timestamp": 1592439593,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439595148,
+        "sensorId": -1,
+        "timestamp": 1592439595,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439600271,
+        "sensorId": -1,
+        "timestamp": 1592439600,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439602035,
+        "sensorId": -1,
+        "timestamp": 1592439602,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439603749,
+        "sensorId": -1,
+        "timestamp": 1592439603,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439617824,
+        "sensorId": -1,
+        "timestamp": 1592439617,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439619626,
+        "sensorId": -1,
+        "timestamp": 1592439619,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439624916,
+        "sensorId": -1,
+        "timestamp": 1592439624,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439626682,
+        "sensorId": -1,
+        "timestamp": 1592439626,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439628354,
+        "sensorId": -1,
+        "timestamp": 1592439628,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439630120,
+        "sensorId": -1,
+        "timestamp": 1592439630,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439631761,
+        "sensorId": -1,
+        "timestamp": 1592439631,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439633574,
+        "sensorId": -1,
+        "timestamp": 1592439633,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439642275,
+        "sensorId": -1,
+        "timestamp": 1592439642,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439647475,
+        "sensorId": -1,
+        "timestamp": 1592439647,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439650942,
+        "sensorId": -1,
+        "timestamp": 1592439650,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439652769,
+        "sensorId": -1,
+        "timestamp": 1592439652,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439654505,
+        "sensorId": -1,
+        "timestamp": 1592439654,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439657965,
+        "sensorId": -1,
+        "timestamp": 1592439657,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439663187,
+        "sensorId": -1,
+        "timestamp": 1592439663,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439668402,
+        "sensorId": -1,
+        "timestamp": 1592439668,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439673462,
+        "sensorId": -1,
+        "timestamp": 1592439673,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439675232,
+        "sensorId": -1,
+        "timestamp": 1592439675,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439676950,
+        "sensorId": -1,
+        "timestamp": 1592439676,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439678753,
+        "sensorId": -1,
+        "timestamp": 1592439678,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439680449,
+        "sensorId": -1,
+        "timestamp": 1592439680,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439687497,
+        "sensorId": -1,
+        "timestamp": 1592439687,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439689248,
+        "sensorId": -1,
+        "timestamp": 1592439689,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439705070,
+        "sensorId": -1,
+        "timestamp": 1592439705,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439708509,
+        "sensorId": -1,
+        "timestamp": 1592439708,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439713738,
+        "sensorId": -1,
+        "timestamp": 1592439713,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439717230,
+        "sensorId": -1,
+        "timestamp": 1592439717,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439718956,
+        "sensorId": -1,
+        "timestamp": 1592439718,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439720780,
+        "sensorId": -1,
+        "timestamp": 1592439720,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439727768,
+        "sensorId": -1,
+        "timestamp": 1592439727,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439734606,
+        "sensorId": -1,
+        "timestamp": 1592439734,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439736338,
+        "sensorId": -1,
+        "timestamp": 1592439736,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439741573,
+        "sensorId": -1,
+        "timestamp": 1592439741,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439745005,
+        "sensorId": -1,
+        "timestamp": 1592439745,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439746834,
+        "sensorId": -1,
+        "timestamp": 1592439746,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439748555,
+        "sensorId": -1,
+        "timestamp": 1592439748,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439750286,
+        "sensorId": -1,
+        "timestamp": 1592439750,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439751961,
+        "sensorId": -1,
+        "timestamp": 1592439751,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439753758,
+        "sensorId": -1,
+        "timestamp": 1592439753,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439760991,
+        "sensorId": -1,
+        "timestamp": 1592439760,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439762514,
+        "sensorId": -1,
+        "timestamp": 1592439762,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439764200,
+        "sensorId": -1,
+        "timestamp": 1592439764,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439767631,
+        "sensorId": -1,
+        "timestamp": 1592439767,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439774655,
+        "sensorId": -1,
+        "timestamp": 1592439774,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439776369,
+        "sensorId": -1,
+        "timestamp": 1592439776,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439778096,
+        "sensorId": -1,
+        "timestamp": 1592439778,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439779819,
+        "sensorId": -1,
+        "timestamp": 1592439779,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439783329,
+        "sensorId": -1,
+        "timestamp": 1592439783,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439785104,
+        "sensorId": -1,
+        "timestamp": 1592439785,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439793822,
+        "sensorId": -1,
+        "timestamp": 1592439793,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439797379,
+        "sensorId": -1,
+        "timestamp": 1592439797,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439800867,
+        "sensorId": -1,
+        "timestamp": 1592439800,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439802646,
+        "sensorId": -1,
+        "timestamp": 1592439802,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439804337,
+        "sensorId": -1,
+        "timestamp": 1592439804,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439806101,
+        "sensorId": -1,
+        "timestamp": 1592439806,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439807788,
+        "sensorId": -1,
+        "timestamp": 1592439807,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439809663,
+        "sensorId": -1,
+        "timestamp": 1592439809,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439811574,
+        "sensorId": -1,
+        "timestamp": 1592439811,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439813050,
+        "sensorId": -1,
+        "timestamp": 1592439813,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439814734,
+        "sensorId": -1,
+        "timestamp": 1592439814,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439820222,
+        "sensorId": -1,
+        "timestamp": 1592439820,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439823425,
+        "sensorId": -1,
+        "timestamp": 1592439823,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439825136,
+        "sensorId": -1,
+        "timestamp": 1592439825,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439826887,
+        "sensorId": -1,
+        "timestamp": 1592439826,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439832140,
+        "sensorId": -1,
+        "timestamp": 1592439832,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439833888,
+        "sensorId": -1,
+        "timestamp": 1592439833,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439837434,
+        "sensorId": -1,
+        "timestamp": 1592439837,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439839194,
+        "sensorId": -1,
+        "timestamp": 1592439839,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439842614,
+        "sensorId": -1,
+        "timestamp": 1592439842,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439844293,
+        "sensorId": -1,
+        "timestamp": 1592439844,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439846031,
+        "sensorId": -1,
+        "timestamp": 1592439846,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439851196,
+        "sensorId": -1,
+        "timestamp": 1592439851,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439854745,
+        "sensorId": -1,
+        "timestamp": 1592439854,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439856419,
+        "sensorId": -1,
+        "timestamp": 1592439856,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439858175,
+        "sensorId": -1,
+        "timestamp": 1592439858,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439861550,
+        "sensorId": -1,
+        "timestamp": 1592439861,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439863282,
+        "sensorId": -1,
+        "timestamp": 1592439863,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439865016,
+        "sensorId": -1,
+        "timestamp": 1592439865,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439874004,
+        "sensorId": -1,
+        "timestamp": 1592439874,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439875554,
+        "sensorId": -1,
+        "timestamp": 1592439875,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439877214,
+        "sensorId": -1,
+        "timestamp": 1592439877,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439879016,
+        "sensorId": -1,
+        "timestamp": 1592439879,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439886013,
+        "sensorId": -1,
+        "timestamp": 1592439886,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439887818,
+        "sensorId": -1,
+        "timestamp": 1592439887,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439903677,
+        "sensorId": -1,
+        "timestamp": 1592439903,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439908960,
+        "sensorId": -1,
+        "timestamp": 1592439908,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439917672,
+        "sensorId": -1,
+        "timestamp": 1592439917,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439924578,
+        "sensorId": -1,
+        "timestamp": 1592439924,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439931553,
+        "sensorId": -1,
+        "timestamp": 1592439931,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439933325,
+        "sensorId": -1,
+        "timestamp": 1592439933,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439935125,
+        "sensorId": -1,
+        "timestamp": 1592439935,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439936914,
+        "sensorId": -1,
+        "timestamp": 1592439936,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439938660,
+        "sensorId": -1,
+        "timestamp": 1592439938,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439942139,
+        "sensorId": -1,
+        "timestamp": 1592439942,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439943825,
+        "sensorId": -1,
+        "timestamp": 1592439943,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439945525,
+        "sensorId": -1,
+        "timestamp": 1592439945,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439949005,
+        "sensorId": -1,
+        "timestamp": 1592439949,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439950749,
+        "sensorId": -1,
+        "timestamp": 1592439950,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439952449,
+        "sensorId": -1,
+        "timestamp": 1592439952,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439959288,
+        "sensorId": -1,
+        "timestamp": 1592439959,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439962774,
+        "sensorId": -1,
+        "timestamp": 1592439962,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439964518,
+        "sensorId": -1,
+        "timestamp": 1592439964,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439967996,
+        "sensorId": -1,
+        "timestamp": 1592439967,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439969850,
+        "sensorId": -1,
+        "timestamp": 1592439969,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439978707,
+        "sensorId": -1,
+        "timestamp": 1592439978,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439983954,
+        "sensorId": -1,
+        "timestamp": 1592439983,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439992714,
+        "sensorId": -1,
+        "timestamp": 1592439992,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439994492,
+        "sensorId": -1,
+        "timestamp": 1592439994,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439996262,
+        "sensorId": -1,
+        "timestamp": 1592439996,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592439999722,
+        "sensorId": -1,
+        "timestamp": 1592439999,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440001428,
+        "sensorId": -1,
+        "timestamp": 1592440001,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440003230,
+        "sensorId": -1,
+        "timestamp": 1592440003,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440004909,
+        "sensorId": -1,
+        "timestamp": 1592440004,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440008347,
+        "sensorId": -1,
+        "timestamp": 1592440008,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440010066,
+        "sensorId": -1,
+        "timestamp": 1592440010,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440017012,
+        "sensorId": -1,
+        "timestamp": 1592440017,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440018684,
+        "sensorId": -1,
+        "timestamp": 1592440018,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440025536,
+        "sensorId": -1,
+        "timestamp": 1592440025,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440028987,
+        "sensorId": -1,
+        "timestamp": 1592440028,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440032460,
+        "sensorId": -1,
+        "timestamp": 1592440032,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440034146,
+        "sensorId": -1,
+        "timestamp": 1592440034,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440035931,
+        "sensorId": -1,
+        "timestamp": 1592440035,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440037583,
+        "sensorId": -1,
+        "timestamp": 1592440037,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440039388,
+        "sensorId": -1,
+        "timestamp": 1592440039,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440042857,
+        "sensorId": -1,
+        "timestamp": 1592440042,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440053197,
+        "sensorId": -1,
+        "timestamp": 1592440053,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440069019,
+        "sensorId": -1,
+        "timestamp": 1592440069,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440070796,
+        "sensorId": -1,
+        "timestamp": 1592440070,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440072546,
+        "sensorId": -1,
+        "timestamp": 1592440072,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440074341,
+        "sensorId": -1,
+        "timestamp": 1592440074,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440083129,
+        "sensorId": -1,
+        "timestamp": 1592440083,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440086526,
+        "sensorId": -1,
+        "timestamp": 1592440086,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440088273,
+        "sensorId": -1,
+        "timestamp": 1592440088,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440091870,
+        "sensorId": -1,
+        "timestamp": 1592440091,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440095479,
+        "sensorId": -1,
+        "timestamp": 1592440095,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440096846,
+        "sensorId": -1,
+        "timestamp": 1592440096,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440098549,
+        "sensorId": -1,
+        "timestamp": 1592440098,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440102057,
+        "sensorId": -1,
+        "timestamp": 1592440102,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440108987,
+        "sensorId": -1,
+        "timestamp": 1592440108,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440112485,
+        "sensorId": -1,
+        "timestamp": 1592440112,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440114225,
+        "sensorId": -1,
+        "timestamp": 1592440114,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440119393,
+        "sensorId": -1,
+        "timestamp": 1592440119,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440121167,
+        "sensorId": -1,
+        "timestamp": 1592440121,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440122929,
+        "sensorId": -1,
+        "timestamp": 1592440122,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440133512,
+        "sensorId": -1,
+        "timestamp": 1592440133,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440135250,
+        "sensorId": -1,
+        "timestamp": 1592440135,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440137054,
+        "sensorId": -1,
+        "timestamp": 1592440137,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440138710,
+        "sensorId": -1,
+        "timestamp": 1592440138,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440147473,
+        "sensorId": -1,
+        "timestamp": 1592440147,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440149251,
+        "sensorId": -1,
+        "timestamp": 1592440149,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440152666,
+        "sensorId": -1,
+        "timestamp": 1592440152,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440156157,
+        "sensorId": -1,
+        "timestamp": 1592440156,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440163538,
+        "sensorId": -1,
+        "timestamp": 1592440163,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440164914,
+        "sensorId": -1,
+        "timestamp": 1592440164,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440168389,
+        "sensorId": -1,
+        "timestamp": 1592440168,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440170122,
+        "sensorId": -1,
+        "timestamp": 1592440170,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440171779,
+        "sensorId": -1,
+        "timestamp": 1592440171,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440173581,
+        "sensorId": -1,
+        "timestamp": 1592440173,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440175247,
+        "sensorId": -1,
+        "timestamp": 1592440175,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440178697,
+        "sensorId": -1,
+        "timestamp": 1592440178,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440180388,
+        "sensorId": -1,
+        "timestamp": 1592440180,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440182168,
+        "sensorId": -1,
+        "timestamp": 1592440182,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440187448,
+        "sensorId": -1,
+        "timestamp": 1592440187,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440189207,
+        "sensorId": -1,
+        "timestamp": 1592440189,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440190927,
+        "sensorId": -1,
+        "timestamp": 1592440190,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440192706,
+        "sensorId": -1,
+        "timestamp": 1592440192,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440194463,
+        "sensorId": -1,
+        "timestamp": 1592440194,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440203075,
+        "sensorId": -1,
+        "timestamp": 1592440203,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440204800,
+        "sensorId": -1,
+        "timestamp": 1592440204,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440206539,
+        "sensorId": -1,
+        "timestamp": 1592440206,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440210020,
+        "sensorId": -1,
+        "timestamp": 1592440210,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440211796,
+        "sensorId": -1,
+        "timestamp": 1592440211,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440217021,
+        "sensorId": -1,
+        "timestamp": 1592440217,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440218818,
+        "sensorId": -1,
+        "timestamp": 1592440218,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440220552,
+        "sensorId": -1,
+        "timestamp": 1592440220,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440222302,
+        "sensorId": -1,
+        "timestamp": 1592440222,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440223956,
+        "sensorId": -1,
+        "timestamp": 1592440223,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440225675,
+        "sensorId": -1,
+        "timestamp": 1592440225,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440227361,
+        "sensorId": -1,
+        "timestamp": 1592440227,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440230859,
+        "sensorId": -1,
+        "timestamp": 1592440230,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440232419,
+        "sensorId": -1,
+        "timestamp": 1592440232,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440234192,
+        "sensorId": -1,
+        "timestamp": 1592440234,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440239490,
+        "sensorId": -1,
+        "timestamp": 1592440239,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440241290,
+        "sensorId": -1,
+        "timestamp": 1592440241,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440244809,
+        "sensorId": -1,
+        "timestamp": 1592440244,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440249944,
+        "sensorId": -1,
+        "timestamp": 1592440249,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440253496,
+        "sensorId": -1,
+        "timestamp": 1592440253,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440258615,
+        "sensorId": -1,
+        "timestamp": 1592440258,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440263824,
+        "sensorId": -1,
+        "timestamp": 1592440263,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440265618,
+        "sensorId": -1,
+        "timestamp": 1592440265,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440267327,
+        "sensorId": -1,
+        "timestamp": 1592440267,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440269034,
+        "sensorId": -1,
+        "timestamp": 1592440269,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440270759,
+        "sensorId": -1,
+        "timestamp": 1592440270,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440272503,
+        "sensorId": -1,
+        "timestamp": 1592440272,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440274379,
+        "sensorId": -1,
+        "timestamp": 1592440274,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440276010,
+        "sensorId": -1,
+        "timestamp": 1592440276,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440281257,
+        "sensorId": -1,
+        "timestamp": 1592440281,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440288190,
+        "sensorId": -1,
+        "timestamp": 1592440288,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440291744,
+        "sensorId": -1,
+        "timestamp": 1592440291,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440293472,
+        "sensorId": -1,
+        "timestamp": 1592440293,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440295225,
+        "sensorId": -1,
+        "timestamp": 1592440295,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440296951,
+        "sensorId": -1,
+        "timestamp": 1592440296,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440300396,
+        "sensorId": -1,
+        "timestamp": 1592440300,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440302130,
+        "sensorId": -1,
+        "timestamp": 1592440302,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440303863,
+        "sensorId": -1,
+        "timestamp": 1592440303,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440305595,
+        "sensorId": -1,
+        "timestamp": 1592440305,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440309099,
+        "sensorId": -1,
+        "timestamp": 1592440309,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440310822,
+        "sensorId": -1,
+        "timestamp": 1592440310,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440319508,
+        "sensorId": -1,
+        "timestamp": 1592440319,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440321171,
+        "sensorId": -1,
+        "timestamp": 1592440321,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440322875,
+        "sensorId": -1,
+        "timestamp": 1592440322,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440324631,
+        "sensorId": -1,
+        "timestamp": 1592440324,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440331627,
+        "sensorId": -1,
+        "timestamp": 1592440331,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440333468,
+        "sensorId": -1,
+        "timestamp": 1592440333,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440342170,
+        "sensorId": -1,
+        "timestamp": 1592440342,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440343961,
+        "sensorId": -1,
+        "timestamp": 1592440343,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440347403,
+        "sensorId": -1,
+        "timestamp": 1592440347,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440349188,
+        "sensorId": -1,
+        "timestamp": 1592440349,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440350927,
+        "sensorId": -1,
+        "timestamp": 1592440350,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440352699,
+        "sensorId": -1,
+        "timestamp": 1592440352,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440363201,
+        "sensorId": -1,
+        "timestamp": 1592440363,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440364936,
+        "sensorId": -1,
+        "timestamp": 1592440364,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440366620,
+        "sensorId": -1,
+        "timestamp": 1592440366,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440368387,
+        "sensorId": -1,
+        "timestamp": 1592440368,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440370062,
+        "sensorId": -1,
+        "timestamp": 1592440370,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440371857,
+        "sensorId": -1,
+        "timestamp": 1592440371,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440382468,
+        "sensorId": -1,
+        "timestamp": 1592440382,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440385907,
+        "sensorId": -1,
+        "timestamp": 1592440385,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440391221,
+        "sensorId": -1,
+        "timestamp": 1592440391,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440393012,
+        "sensorId": -1,
+        "timestamp": 1592440393,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440394652,
+        "sensorId": -1,
+        "timestamp": 1592440394,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440396366,
+        "sensorId": -1,
+        "timestamp": 1592440396,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440398141,
+        "sensorId": -1,
+        "timestamp": 1592440398,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440401616,
+        "sensorId": -1,
+        "timestamp": 1592440401,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440403371,
+        "sensorId": -1,
+        "timestamp": 1592440403,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440408783,
+        "sensorId": -1,
+        "timestamp": 1592440408,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440410554,
+        "sensorId": -1,
+        "timestamp": 1592440410,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440412254,
+        "sensorId": -1,
+        "timestamp": 1592440412,
+        "type": "hvacStatus"
+    },
+    {
+        "id": 1592440413964,
+        "sensorId": -1,
+        "timestamp": 1592440413,
+        "type": "hvacStatus"
+    }
+]
